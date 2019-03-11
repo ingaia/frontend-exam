@@ -21,4 +21,3 @@ Convert the following design to a Single Web Application (SPA):
 ## Tips
 - We use a simple and fast front-end framework called [Marko JS](https://markojs.com/) for some projects - if you complete this test using it, that will be a **GREAT** differential for your job application - but feel free to choose your preferred library
 - We ❤️ animations, code coverage, end-to-end tests and continuos integration (that's not mandatory for you to complete the test)
-- Prefer inline SVG instead of static images
