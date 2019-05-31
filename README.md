@@ -11,13 +11,14 @@ Convert the following design to a Single Web Application (SPA):
 
 ## Instructions
 - Fork this project, work and make a pull request when you're done
+- All assets you'll need are inside assets/ folder
+- Expect any username or password to get into the private area
 
 ## Requirements
-- Use a popular Javascript library ([Marko JS](https://markojs.com/), [React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Angular](https://angular.io/), etc)
+- Use a popular Javascript library ([React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Marko JS](https://markojs.com/), etc)
 - Your application must be responsive (we did not create a mobile design version because we want to see your solution to this problem)
 - List all videos from this public playlist: https://www.youtube.com/playlist?list=PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF
 - Unit tests
 
 ## Tips
-- We use a simple and fast front-end framework called [Marko JS](https://markojs.com/) for some projects - if you complete this test using it, that will be a **GREAT** differential for your job application - but feel free to choose your preferred library
-- We ❤️ animations, code coverage, end-to-end tests and continuos integration (that's not mandatory for you to complete the test)
+- We ❤️ animations, code coverage, end-to-end tests and CI/CD (that's not mandatory for you to complete the test)
