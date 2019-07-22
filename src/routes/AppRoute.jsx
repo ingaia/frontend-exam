@@ -13,7 +13,7 @@ const AppRoute = () => {
 		//Fake loading
 		setTimeout(() => {
 			setLoading(false)
-		},0);
+		},3000);
 	},[]);
 
 	const PrivateRoute = ({ component: Component, ...rest }) => (

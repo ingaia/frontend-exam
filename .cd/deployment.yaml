@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingaia-ui
+  labels:
+    name: ingaia-ui
+    tier: frontend
+spec:
+  template:
+    metadata:
+      name: ingaia-ui-pod
+      labels:
+        app: ingaia-ui-pod
+        tier: frontend
+    spec:
+      containers:
+        - name: ingaia-container
+          image: gcr.io/pedrok/ingaia-ui@sha256:110689c91f02167181db78257a0d275039af1f321e6c3a15ffbe9d5dde4efe3a
+  selector:
+    matchLabels:
+      tier: frontend
