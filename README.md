@@ -8,7 +8,7 @@ Make sure you have Yarn installed: <link>https://yarnpkg.com</link>
 
 So, just run this command: `yarn dev`
 
-##Tools used
+## Tools used
 - React
     - styled-components
     - prop-types
