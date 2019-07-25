@@ -20,6 +20,6 @@ $ yarn install
 
 <b>Rodar o Projeto</b>
 
-$ yarn install
+$ yarn start
 
 ps: para fazer o login é só utilizar um e-mail válido 
