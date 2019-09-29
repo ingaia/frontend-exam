@@ -5,35 +5,35 @@ import {withRouter} from "react-router-dom";
 const videoList = [
   {
     id: 'cCXgQ7-Y9ps',
-    text: "asdf"
+    text: "The Witcher 3: Wild Hunt - Title Reveal"
   },
   {
     id: '2T_DG1xnVPg',
-    text: "asdf"
+    text: "The Witcher 3: Wild Hunt - Debut Gameplay-Trailer"
   },
   {
     id: 'aIbPBnvGSnc',
-    text: "asdf"
+    text: "The Witcher 3: Wild Hunt - \"Killing Monsters\"-Cinematic-Trailer\n"
   },
   {
     id: '7T91vrI8hGA',
-    text: "asdf"
+    text: "The Witcher 3: Wild Hunt - VGX-Trailer (2013)\n"
   },
   {
     id: '1ke3zayKKm8',
-    text: "asdf"
+    text: "The Witcher 3: Wild Hunt - \"The Sword Of Destiny\"\n"
   },
   {
     id: 'jd8YQ8pu908',
-    text: "asdf"
+    text: "The Witcher 3: Wild Hunt - Opening Cinematic\n"
   },
   {
     id: 'mS7O2V0xLqA',
-    text: "asdf"
+    text: "The Witcher 3: Wild Hunt - The World Of The Witcher\n"
   },
   {
     id: '_RDeZGEOSV8',
-    text: "asdf"
+    text: "The Witcher 3: Wild Hunt - Global Hands-on-Events\n"
   },
 ]
 
