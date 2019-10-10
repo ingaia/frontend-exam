@@ -1,0 +1,150 @@
+@import '../../../node_modules/react-modal-video/scss/modal-video.scss';
+
+.video__item {
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #a99e7e;
+    width: 44%;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+    float: left;
+    padding: 1px;
+    display: inline-flex;
+}
+.video__item div img{
+    min-width: 145%;
+    max-width: 100%;
+    margin-left: -80px;
+    height: auto;
+}
+.video__content{
+    border: 2px solid #252525;
+    overflow: hidden;
+    cursor: pointer;
+}
+.video__content:hover{
+    background: #252525;
+}
+.video__content:hover img{
+    opacity: .5;
+}
+
+.wrapper__item{
+    height: 14.5rem;
+    margin-top: -40px;
+}
+.wrapper__item-text{
+    width: calc(100% - 6px);
+    background: rgba(0,0,0,.6);
+    height: 30px;
+    bottom: 3px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper__item-text p{
+    color: #a99e7e;
+    font-size: .875em;
+}
+.modal-video{
+    background-color: rgba(0,0,0,.8);
+}
+.modal-video-movie-wrap{
+
+    background-color: transparent;
+}
+
+iframe{
+    width: 100% !important;
+    height: 580px !important;
+    margin-top: 30px;
+    border: 1px solid #a99e7e;
+    padding: 2px;
+}
+.modal-video-close-btn{
+    right: -35%;
+    top: -10%;
+}
+.modal-video-close-btn::before{
+    content: 'CLOSE';
+    font-size: 12px;
+    color: rgba(169, 158, 126, 1);
+    width: 100%;
+    /* text-transform: uppercase; */
+}
+@media (max-width: 1440px) and (min-width: 1280px) {
+    iframe{
+        width: 100% !important;
+        height: 420px !important;
+        margin-top: 7.5rem;
+    }
+    .modal-video-close-btn{
+        right: -15%;
+        top: -0%;
+    }
+}
+
+@media (max-width: 1279px) and (min-width: 991px) {
+    .video__item {
+        width: 40%;
+    }
+    .wrapper__item {
+        height: 7rem;
+        margin-top: -20px;
+    }
+    .video__item div img{
+        min-width: 150%;
+        margin-left: -50px;
+    }
+    iframe{
+        width: 100% !important;
+        height: 420px !important;
+        margin-top: 7.5rem;
+    }
+    .modal-video-close-btn{
+        right: 0%;
+        top: -0%;
+    }
+}
+@media (max-width: 990px) and (min-width: 600px) {
+    .video__item {
+        width: 80%;
+    }
+    .video__item div img {
+        min-width: 165%;
+    }
+    iframe{
+        width: 90% !important;
+        height: 360px !important;
+        margin-left: 2rem;
+        margin-top: 10vh;
+    }
+    .modal-video-close-btn{
+        right: 5%;
+        top: 0%;
+    }
+    
+}
+@media (max-width: 599px) and (min-width: 320px) {
+    .video__item {
+        width: 85%;
+    }
+    .video__item div img {
+        min-width: 165%;
+    }
+    iframe{
+        width: 90% !important;
+        height: 240px !important;
+        margin-left: 3.5vh;
+    }
+    .modal-video-close-btn{
+        right: 5%;
+        top: -10%;
+    }
+    
+}
+.modal-video-inner{
+    background: none !important
+}
