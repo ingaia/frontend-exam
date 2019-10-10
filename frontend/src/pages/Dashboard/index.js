@@ -21,7 +21,7 @@ class Dashboard extends React.Component{
 
         this.loadMore = this.loadMore.bind(this);
 
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleClick = this.handleClick.bind(this);
     }
     
 
