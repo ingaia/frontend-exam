@@ -1,0 +1,49 @@
+@import "Variables.scss";
+
+.desktop-menu-container {
+    position: relative;
+    display: block;
+    width: 410px;
+    height: auto;
+    padding-top: 90px;
+    text-align: center;
+    border-right: 2px solid #393939;
+
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
+
+    img {
+        position: relative;
+        display: block;
+        max-width: 270px;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 120px;
+    }
+
+    #desktop-menu {
+        button {
+            display: block;
+            width: 270px;
+            font-size: 14px;
+            color: $primaryColor;
+            margin: 0 auto;
+            margin-top: 20px;
+            padding: 10px;
+            text-transform: uppercase;
+            background-color: transparent;
+            border: 1px solid $primaryColor;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .logout-button {
+            border: 0;
+            color: $white;
+        }
+    }
+}

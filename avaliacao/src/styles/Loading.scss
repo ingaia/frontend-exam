@@ -1,0 +1,64 @@
+@import "Variables.scss";
+
+@keyframes color_fill {
+    0% {
+      fill: #4c4c4c;
+    }
+  
+    100% {
+        fill: $secondaryColor;
+    }
+  }
+
+  @keyframes hide_element {
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+        opacity: 0;
+        display: none;
+        z-index: -1;
+    }
+  }
+
+
+.loading-overlay {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $loadingBackground;
+
+    .loading-svg {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -50px;
+
+
+        path {
+            fill: #4c4c4c;
+
+            &:first-child {
+                animation: color_fill .5s ease 2s 1 normal forwards;
+            }
+
+            &:nth-child(2) {
+                animation: color_fill .5s ease 3s 1 normal forwards;
+            }
+
+            &:last-child {
+                animation: color_fill .5s ease 1s 1 normal forwards;
+            }
+        }
+    }
+}
+
+.loading-overlay.hide {
+    animation: hide_element .5s ease 0s 1 normal forwards;
+}
