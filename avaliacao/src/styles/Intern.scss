@@ -1,0 +1,15 @@
+@import "Variables.scss";
+
+.intern-section {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-height: 100vh;
+    height: 100%;
+    min-height: 500px;
+
+    @media screen and (max-width: 992px) {
+        display: block;
+        max-height: inherit;
+    }
+}

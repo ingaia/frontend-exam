@@ -1,0 +1,58 @@
+@import "Variables.scss";
+
+.mobile-header {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: $black;
+    border-bottom: 1px solid $white;
+
+    @media screen and (max-width: 992px) {
+        display: block;
+    }
+
+    #mobile-menu {
+        width: 100%;
+        height: 60px;
+
+        ul {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 60px;
+            
+            li {
+                position: absolute;
+                display: block;
+            }
+
+            .logo-menu-container {
+                left:50%;
+                margin-left: -22.5px;
+                transform: translateY(18%);
+
+                .min-logo {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+
+            .button-menu-container {
+                top: 50%;
+                right: 20px;
+                margin-top: -12.5px;
+
+                button {
+                    background-color: transparent;
+                    border: 0;
+                    cursor: pointer;
+
+                    svg {
+                        fill: $primaryColor;
+                    }
+                }
+            }
+        }
+    }
+}

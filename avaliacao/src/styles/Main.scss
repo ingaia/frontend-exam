@@ -1,0 +1,51 @@
+@import "Variables.scss";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+  }
+  
+  body {
+    font-family: Arial;
+    background-image: url('../assets/images/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    #root {
+        height: 100%;
+    }
+  }
+
+  body, html {
+    height: 100%;
+}
+
+body.intern-page {
+  @media screen and (max-width: 992px) {
+    height: auto;
+    background: $black;
+  }
+}
+
+body.playing-video {
+  min-width: 500px;
+  height: 100vh;
+  overflow: hidden;
+
+  .intern-section {
+    overflow: hidden;
+  }
+}
+
+.login-overlay {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $login-overlay;
+}

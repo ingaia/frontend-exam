@@ -1,0 +1,26 @@
+@import "Variables.scss";
+
+.video-list-container ul li.more-video-item {
+    position: relative;
+    display: block;
+    width: 48%;
+    height: 200px;
+    margin-top: 4%;
+    overflow: hidden;
+
+    button {
+        display: block;
+        border: 1px solid $primaryColor;
+        color: #a99e7e;
+        text-transform: uppercase;
+        height: auto;
+        padding: 10px;
+        width: 80%;
+        margin: 0 auto;
+        transform: translateY(200%);
+        
+        @media screen and (max-width: 992px) {
+            width: 100%;
+        }
+    }
+}
