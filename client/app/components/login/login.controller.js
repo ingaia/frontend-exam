@@ -1,6 +1,9 @@
 class LoginController {
-  constructor() {
+  constructor($state) {
     'ngInject';
+
+    this.$state = $state;
+    this.model = {email:'sadfj@cijij.com', password:'1234'};
   }
 
   $onInit() {
@@ -8,7 +11,9 @@ class LoginController {
   }
 
   onSubmit() {
-    console.log('entrou');
+    if (this.form.$valid) {
+      this.$state.go('authenticated');
+    }
   }
 }
 

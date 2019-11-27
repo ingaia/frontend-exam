@@ -1,0 +1,25 @@
+<!--<div class="authenticated" layout="row">
+  <header flex="">
+    <div>
+      <img ng-src="{{$ctrl.logo}}" alt="logo" class="logo">
+    </div>
+
+  </header>
+  <div ui-view class="container" flex=""></div>
+</div>-->
+
+<div class="authenticated" layout="row" layout-xs="column">
+  <div flex="" class="c1">
+    <header>
+      <div class="img-wrapper">
+        <img ng-src="{{$ctrl.logo}}" alt="logo" class="logo">
+      </div>
+
+      <md-button class="md-primary" type="submit">TRAILERS</md-button>
+      <md-button ui-sref="guest.login">LOGOUT</md-button>
+    </header>
+  </div>
+  <div flex="" class="c2">
+    I'm below on mobile, and to the right on larger devices.
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import angular from 'angular';
-import uiRouter from '@uirouter/angularjs';
+import uiRouter from 'angular-ui-router';
 import authenticatedComponent from './authenticated.component';
 
 export default angular.module('authenticated', [
@@ -10,21 +10,9 @@ export default angular.module('authenticated', [
 
     $stateProvider
       .state('authenticated', {
-        abstract: true,
-        component: 'authenticated',
-        resolve: {
-          isLogged: ($q, User, $state) => {
-            const defer = $q.defer();
-            const request = User.getMe();
-            request.then(() => {
-              defer.resolve();
-            }, () => {
-              defer.reject();
-              $state.go('guest.login');
-            });
-            return defer.promise;
-          },
-        },
+        // abstract: true,
+        url: '/main',
+        component: 'authenticated'
       });
   })
   .component('authenticated', authenticatedComponent)
