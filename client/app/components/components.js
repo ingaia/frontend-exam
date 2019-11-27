@@ -8,7 +8,7 @@ import Authenticated from './authenticated';
 import Trailers from './trailers';
 
 export default angular
-  .module('app.components', [
+  .module('components', [
     Home,
 
     Guest,

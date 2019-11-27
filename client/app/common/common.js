@@ -3,7 +3,7 @@ import Navbar from './navbar/navbar';
 import User from './user/user';
 
 export default angular
-  .module('app.common', [
+  .module('common', [
     Navbar,
     User,
   ])
