@@ -1,0 +1,29 @@
+$contentw: 250px;
+guest {
+	display: block;
+	height: 100%;
+	.guest {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		max-width: $contentw;
+		margin: 0 auto;
+		.logo {
+			width: 100%;
+			margin: 0 auto;
+			display: block;
+		}
+		.container {
+			margin-top: 50px;
+		}
+	}
+}
+
+
+@media screen and (max-width: 480px) {
+  guest {
+  	.guest {
+		margin: 0 ((480px - $contentw)/2);
+	}
+  }
+}

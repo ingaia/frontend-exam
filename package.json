@@ -5,6 +5,10 @@
   "main": "index.js",
   "dependencies": {
     "angular": "^1.5.0",
+    "angular-animate": "^1.7.9",
+    "angular-aria": "^1.7.9",
+    "angular-material": "^1.1.20",
+    "angular-messages": "^1.7.9",
     "angular-ui-router": "^1.0.0-beta.1",
     "normalize.css": "^3.0.3"
   },
@@ -23,12 +27,14 @@
     "connect-history-api-fallback": "^1.1.0",
     "css-loader": "^0.19.0",
     "del": "^2.2.0",
+    "eslint": "^4.19.1",
     "file-loader": "^1.1.6",
     "fs-walk": "0.0.1",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-template": "^3.0.0",
     "gulp-util": "^3.0.7",
+    "htmlhint": "^0.9.13",
     "html-minifier-loader": "^1.4.1",
     "html-webpack-plugin": "^1.7.0",
     "karma": "^0.13.22",
@@ -60,7 +66,9 @@
     "start": "gulp serve",
     "test": "karma start",
     "watch": "gulp serve",
-    "webpack": "gulp webpack"
+    "webpack": "gulp webpack",
+    "eslint": "./node_modules/eslint/bin/eslint.js ./src/ --quiet",
+    "htmlhint": "./node_modules/htmlhint/bin/htmlhint --ignore src/app/lib/**/*.html -c .htmlhintrc.json src/*.html src/app/*.html src/app/common/**/**/**/**/**/**/*.html src/app/common/**/**/**/**/**/*.html src/app/common/**/**/**/**/*.html src/app/common/**/**/**/*.html src/app/common/**/**/*.html src/app/common/**/*.html src/app/common/*.html src/app/components/**/**/**/**/**/**/**/*.html src/app/components/**/**/**/**/**/**/*.html src/app/components/**/**/**/**/**/*.html src/app/components/**/**/**/**/*.html src/app/components/**/**/**/*.html src/app/components/**/**/*.html src/app/components/**/*.html src/app/components/*.html"
   },
   "keywords": [
     "angular",

@@ -1,7 +1,32 @@
 @import "common/common";
+@import "~angular-material/angular-material";
 
-.app {
-  height: 100%;
-  background-color: $lightBgColor;
+app {
+	display: block;
+	position: relative;
+	height: 100%;
+	.app {
+		height: 100%;
+		background-color: $darkBgColor;
+		background-image: url('../../assets/background.png');
+		background-size: cover;
+		background-position: center;
+
+		color: $darkTextColor;
+		font-family: Heveltica, Arial, sans-serif;
+		font-size: 13px;
+		.darkoverlay {
+			background-color: rgba(0, 0, 0, 0.5);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		.app-view {
+			height: 100%;
+		}
+	}
 }
+
 
