@@ -7,11 +7,9 @@ authenticated {
 		height: 100%;
 		.c1 {
 			max-width: 400px;
-			padding: 40px;
 			border-right: 1px solid gray;
 		}
 		.c2 {
-			padding: 40px;
 			background-color: rgba(black, 0.5);
 		}
 		header {
@@ -33,25 +31,6 @@ authenticated {
 				}
 			}
 		}
-
-		.container {
-		// height: 100%;
-		// display: inline-block;
-		// width: 100px;
-		}
-		// position: relative;
-		// top: 50%;
-		// transform: translateY(-50%);
-		// max-width: $contentw;
-		// margin: 0 auto;
-		// .logo {
-		// 	width: 100%;
-		// 	margin: 0 auto;
-		// 	display: block;
-		// }
-		// .container {
-		// 	margin-top: 50px;
-		// }
 	}
 }
 
@@ -59,7 +38,6 @@ authenticated {
 @media screen and (max-width: 480px) {
   authenticated {
   	.authenticated {
-		// margin: 0 ((480px - $contentw)/2);
 	}
   }
 }

@@ -79,6 +79,10 @@ gulp.task('serve', () => {
     port: process.env.PORT || 3000,
     open: false,
     server: {baseDir: root},
+    serveStatic: [{
+        route: '/assets/screenshots',
+        dir: ['./assets/screenshots']
+    }],
     middleware: [
       historyApiFallback(),
       webpackDevMiddleware(compiler, {

@@ -1,0 +1,28 @@
+trailers {
+	display: block;
+	max-height: 100%;
+	height: 100%;
+	overflow-x: hidden;
+    overflow-y: scroll;
+	md-grid-list md-grid-tile {
+		border: 1px solid;
+	}
+	.trailers {
+		padding: 40px;
+		.trailer {
+			display: inline-block;
+			float: left;
+			width: 25%;
+			padding: 10px;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	.container	{
+		height: 100%;
+		background-color: rgba(green, 0.3);
+
+	}
+
+}

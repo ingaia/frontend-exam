@@ -10,8 +10,8 @@ export default angular.module('authenticated', [
 
     $stateProvider
       .state('authenticated', {
-        // abstract: true,
-        url: '/main',
+        abstract: true,
+        // url: '/main',
         component: 'authenticated'
       });
   })

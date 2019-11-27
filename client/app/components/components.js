@@ -6,6 +6,7 @@ import Guest from './guest';
 import Login from './login';
 
 import Authenticated from './authenticated';
+import Trailers from './trailers';
 
 let componentModule = angular.module('app.components', [
   Home,
@@ -15,6 +16,7 @@ let componentModule = angular.module('app.components', [
   Login,
 
   Authenticated,
+  Trailers,
 ])
 
 .name;

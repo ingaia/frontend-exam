@@ -12,7 +12,7 @@ class LoginController {
 
   onSubmit() {
     if (this.form.$valid) {
-      this.$state.go('authenticated');
+      this.$state.go('authenticated.trailers');
     }
   }
 }
