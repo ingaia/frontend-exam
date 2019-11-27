@@ -1,6 +1,8 @@
 class TrailersController {
   constructor() {
     'ngInject';
+
+    this.trailers = [];
   }
 
   $onInit() {
