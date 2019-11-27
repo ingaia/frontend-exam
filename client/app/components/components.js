@@ -2,7 +2,7 @@ import angular from 'angular';
 import Home from './home/home';
 
 import Guest from './guest';
-import Login from './login';
+import Login from './login/login';
 
 import Authenticated from './authenticated';
 import Trailers from './trailers';

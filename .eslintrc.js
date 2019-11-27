@@ -48,5 +48,11 @@ module.exports = {
         'props': true,
         'ignorePropertyModificationsFor': ['$window', '$rootScope', 'blockUIConfig']
       }]
-    }
+    },
+    "overrides": [{
+      "files": ["*-test.js","*.spec.js"],
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }]
 };
