@@ -1,15 +1,15 @@
-import NavbarModule from './navbar'
+import NavbarModule from './navbar';
 
 describe('Navbar', () => {
-  let $rootScope, $state, $location, $componentController, $compile;
+  let $rootScope;
+  let $componentController;
+  let $compile;
 
   beforeEach(window.module(NavbarModule));
 
   beforeEach(inject(($injector) => {
     $rootScope = $injector.get('$rootScope');
     $componentController = $injector.get('$componentController');
-    $state = $injector.get('$state');
-    $location = $injector.get('$location');
     $compile = $injector.get('$compile');
   }));
 
@@ -22,7 +22,7 @@ describe('Navbar', () => {
     let controller;
     beforeEach(() => {
       controller = $componentController('navbar', {
-        $scope: $rootScope.$new()
+        $scope: $rootScope.$new(),
       });
     });
 
@@ -33,7 +33,8 @@ describe('Navbar', () => {
 
   describe('View', () => {
     // view layer specs.
-    let scope, template;
+    let scope;
+    let template;
 
     beforeEach(() => {
       scope = $rootScope.$new();
@@ -44,6 +45,5 @@ describe('Navbar', () => {
     it('has name in template', () => {
       expect(template.find('h1').find('a').html()).to.eq('navbar');
     });
-
   });
 });

@@ -1,4 +1,5 @@
-import logo from './../../../../assets/logo_dark.png'
+import logo from './../../../../assets/logo_dark.png';
+
 class GuestController {
   constructor() {
     this.name = 'guest';

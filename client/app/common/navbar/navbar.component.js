@@ -2,10 +2,8 @@ import template from './navbar.html';
 import controller from './navbar.controller';
 import './navbar.scss';
 
-let navbarComponent = {
+export default {
   bindings: {},
   template,
-  controller
+  controller,
 };
-
-export default navbarComponent;

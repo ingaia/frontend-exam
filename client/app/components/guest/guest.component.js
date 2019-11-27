@@ -6,4 +6,3 @@ export default {
   controller,
   template,
 };
-

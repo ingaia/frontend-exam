@@ -12,6 +12,11 @@ module.exports = {
       RdIntegration: true,
       FileReader: true,
       Conpass: true,
+      describe: true,
+      beforeEach: true,
+      expect: true,
+      it: true,
+      inject: true,
     },
     'rules': {
       'no-underscore-dangle': 0,

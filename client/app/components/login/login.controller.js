@@ -3,7 +3,7 @@ class LoginController {
     'ngInject';
 
     this.$state = $state;
-    this.model = {email:'sadfj@cijij.com', password:'1234'};
+    this.model = { email: 'sadfj@cijij.com', password: '1234' };
   }
 
   $onInit() {

@@ -1,7 +1,11 @@
-import HomeModule from './home'
+import HomeModule from './home';
 
 describe('Home', () => {
-  let $rootScope, $state, $location, $componentController, $compile;
+  let $rootScope;
+  let $state;
+  let $location;
+  let $componentController;
+  let $compile;
 
   beforeEach(window.module(HomeModule));
 
@@ -38,7 +42,8 @@ describe('Home', () => {
 
   describe('View', () => {
     // view layer specs.
-    let scope, template;
+    let scope;
+    let template;
 
     beforeEach(() => {
       scope = $rootScope.$new();
@@ -49,6 +54,5 @@ describe('Home', () => {
     it('has name in template', () => {
       expect(template.find('h1').html()).to.eq('Found in home.html');
     });
-
   });
 });
