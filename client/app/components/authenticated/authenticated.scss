@@ -35,9 +35,10 @@ authenticated {
 }
 
 
-@media screen and (max-width: 480px) {
-  authenticated {
-  	.authenticated {
+@media (max-width: 599px) {
+	authenticated {
+		.layout-xs-column {
+			flex-direction: row;
+		}
 	}
-  }
 }
