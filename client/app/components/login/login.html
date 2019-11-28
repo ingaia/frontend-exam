@@ -1,0 +1,20 @@
+<form ng-submit="$ctrl.onSubmit()" class="login" name="$ctrl.form">
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Email</label>
+    <input ng-model="$ctrl.model.email" type="email" name="email" required>
+    <div ng-messages="$ctrl.form.email.$error">
+      <div ng-message="required">This is required.</div>
+      <div ng-message="email">Type a valid email.</div>
+    </div>
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Password</label>
+    <input ng-model="$ctrl.model.password" type="password" name="password" required>
+    <div ng-messages="$ctrl.form.password.$error">
+      <div ng-message="required">This is required.</div>
+    </div>
+  </md-input-container>
+
+  <md-button class="md-primary" type="submit">LOGIN</md-button>
+</form>

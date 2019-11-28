@@ -1,0 +1,44 @@
+$contentw: 250px;
+authenticated {
+	display: block;
+	height: 100%;
+	.authenticated {
+		// display: block;
+		height: 100%;
+		.c1 {
+			max-width: 400px;
+			border-right: 1px solid gray;
+		}
+		.c2 {
+			background-color: rgba(black, 0.5);
+		}
+		header {
+			top:50%;
+			transform: translateY(-50%);
+			position: relative;
+			.img-wrapper {
+				padding: 0 50px;
+				img {
+					width: 100%;
+				}
+			}
+			.md-button {
+				display: block;
+				margin: 20px auto 0px;
+				&.md-primary {
+					border-width: 1px;
+					border-style: solid;
+				}
+			}
+		}
+	}
+}
+
+
+@media (max-width: 599px) {
+	authenticated {
+		.layout-xs-column {
+			flex-direction: row;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+@import "common/common";
+@import "~angular-material/angular-material";
+
+app {
+	display: block;
+	position: relative;
+	height: 100%;
+	.app {
+		height: 100%;
+		background-color: $darkBgColor;
+		background-image: url('../../assets/background.png');
+		background-size: cover;
+		background-position: center;
+
+		color: $darkTextColor;
+		font-family: 'Roboto', sans-serif;
+		font-size: 18px;
+		.app-view {
+			height: 100%;
+		}
+	}
+}
+
+
