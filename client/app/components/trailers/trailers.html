@@ -1,17 +1,17 @@
 <div class="trailers">
   <md-grid-list
-        md-cols-xs="1" md-cols-sm="1" md-cols-md="4" md-cols-gt-md="6"
-        md-row-height-gt-md="1:1" md-row-height="2:2"
-        md-gutter="24px" md-gutter-gt-sm="14px" >
+    md-cols-xs="1" md-cols-sm="1" md-cols-md="4" md-cols-gt-md="6"
+    md-row-height-gt-md="3:4" md-row-height="4:3"
+    md-gutter="24px" md-gutter-gt-sm="14px" >
 
     <md-grid-tile class="gray" ng-repeat="trailer in $ctrl.trailers track by $index" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
-      <img ng-src="{{trailer.src}}" alt="" layout-fill>
-
-
+      <img ng-src="{{trailer.snippet.thumbnails.high.url}}" alt="" layout-fill ng-click="$ctrl.openVideo($event, trailer)">
       <md-grid-tile-footer>
-        <h3>{{trailer.title}}</h3>
+        <h3>{{trailer.snippet.title}}</h3>
       </md-grid-tile-footer>
     </md-grid-tile>
   </md-grid-list>
+
+  <md-button class="md-primary" type="button" ng-click="$ctrl.fetchVideos()">LOAD MORE</md-button>
 
 </div>

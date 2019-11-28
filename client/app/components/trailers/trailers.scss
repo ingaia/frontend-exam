@@ -18,11 +18,15 @@ trailers {
 				width: 100%;
 			}
 		}
+		.md-primary {
+			display: block;
+			margin: 50px auto;
+			border-width: 1px;
+			border-style: solid;
+		}
 	}
 	.container	{
 		height: 100%;
 		background-color: rgba(green, 0.3);
-
 	}
-
 }

@@ -5,6 +5,8 @@ import ngMessages from 'angular-messages';
 import ngMaterial from 'angular-material';
 import uiRouter from 'angular-ui-router';
 
+import ngYt from 'angular-youtube-api-factory'; // eslint-disable-line no-unused-vars
+
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
@@ -14,6 +16,7 @@ angular
     ngMaterial,
     ngMessages,
     uiRouter,
+    'jtt_youtube',
 
     Common,
     Components,
@@ -30,6 +33,14 @@ angular
       .primaryPalette('orange')
       .accentPalette('orange')
       .dark();
+  })
+  .config(($sceDelegateProvider) => {
+    'ngInject';
+
+    $sceDelegateProvider.resourceUrlWhitelist([
+      'self',
+      '*://www.youtube.com/**',
+    ]);
   })
   .component('app', AppComponent);
 
