@@ -1,0 +1,29 @@
+.InputContainer {
+  position: relative;
+  width: 100%;
+  > label {
+    position: absolute;
+    color: var(--mainColor);
+    font-size: 1rem;
+    transition: font-size 0.2s;
+    user-select: none;
+  }
+  &:focus-within > label,
+  & > label.inputHasValue {
+    font-size: 0.75rem;
+    margin-top: -0.125rem;
+  }
+  > input {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 2rem;
+    border: none;
+    border-bottom: 1px solid var(--mainColor);
+    background: none;
+    color: var(--white);
+    &:focus {
+      outline: none;
+    }
+  }
+}
