@@ -1,35 +1,27 @@
-import React, { useState } from "react";
-import classnames from "classnames";
-import Logo from "components/Logo";
-import TextInput from "components/TextInput";
+import React from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { UserProvider } from "./UserContext";
+import ProtectedRoute from "components/ProtectedRoute";
+import LoginView from "views/Login";
+import VideoListView from "views/VideoList";
 import styles from "./App.module.scss";
 
 function App() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   return (
-    <div className={styles.App}>
-      <div className={styles.loginPanel}>
-        <Logo className={styles.logo} />
-        <TextInput
-          id="emailInput"
-          label="Email"
-          className={styles.email}
-          value={email}
-          onChange={evt => setEmail(evt.target.value)}
-          type="email"
-        />
-        <TextInput
-          id="passwordInput"
-          label="Password"
-          className={styles.password}
-          value={password}
-          onChange={evt => setPassword(evt.target.value)}
-          type="password"
-        />
-        <button className={classnames(styles.submitLogin)}>LOGIN</button>
+    <UserProvider>
+      <div className={styles.App}>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/Login" render={() => <LoginView />} />
+            <ProtectedRoute
+              path="/ListVideos"
+              render={() => <VideoListView />}
+            />
+            <Route path="/" render={() => <Redirect to="/ListVideos" />} />
+          </Switch>
+        </BrowserRouter>
       </div>
-    </div>
+    </UserProvider>
   );
 }
 

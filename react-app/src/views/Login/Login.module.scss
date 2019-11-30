@@ -1,0 +1,32 @@
+.loginPanel {
+  // width: 20rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template:
+    "logo"
+    "." 0rem
+    "email"
+    "password"
+    "submitLogin" /
+    20rem;
+  .logo {
+    grid-area: logo;
+  }
+  .email {
+    grid-area: email;
+  }
+  .password {
+    grid-area: password;
+  }
+  .submitLogin {
+    grid-area: submitLogin;
+    margin-top: 1rem;
+    background: none;
+    color: var(--mainColor);
+    border: 1px solid var(--mainColor);
+    height: 2.5rem;
+    width: 7rem;
+    justify-self: center;
+    cursor: pointer;
+  }
+}

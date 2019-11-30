@@ -1,4 +1,7 @@
-@import-normalize; /* bring in normalize.css styles */
+/* bring in normalize.css styles
+    This is a create-react-app specific tag that will be
+    processed by webpack based on the browserlist. */
+@import-normalize;
 
 body {
   margin: 0;
@@ -7,4 +10,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
 }

@@ -1,41 +1,14 @@
 .App {
+  --mainColor: #a99d81;
+  --white: white;
+  --black: black;
+
   background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)),
     center / cover url(./assets/background.png);
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  width: fit-content;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  --mainColor: #a99d81;
-  --white: white;
-  .loginPanel {
-    width: 20rem;
-    display: grid;
-    gap: 1.5rem;
-    grid-template:
-      "logo"
-      "." 0rem
-      "email"
-      "password"
-      "submitLogin";
-    .logo {
-      grid-area: logo;
-    }
-    .email {
-      grid-area: email;
-    }
-    .password {
-      grid-area: password;
-    }
-    .submitLogin {
-      grid-area: submitLogin;
-      margin-top: 1rem;
-      background: none;
-      color: var(--mainColor);
-      border: 1px solid var(--mainColor);
-      height: 2.5rem;
-      width: 7rem;
-      justify-self: center;
-    }
-  }
 }
