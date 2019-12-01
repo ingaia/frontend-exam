@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-import classnames from "classnames";
 import Logo from "components/Logo";
 import Modal from "components/Modal";
 
@@ -9,15 +8,14 @@ import { useHistory } from "react-router-dom";
 import styles from "./VideoList.module.scss";
 import axios from "axios";
 
-const apitoken = "AIzaSyDyk9Bt7LtRIpSL5fLRv7BqHK0eKHFMawg";
-
 // Need to create an Axios instance to avoid a bug where
 // the Authorization header is changed to authorization
 const axiosInstance = axios.create({
   headers: { "Content-Type": "application/json", Accept: "application/json" },
   responseType: "json"
 });
-axiosInstance.defaults.headers.common["Authorization"] = "Bearer " + apitoken;
+axiosInstance.defaults.headers.common["Authorization"] =
+  "Bearer " + process.env.REACT_APP_YOUTUBE_KEY;
 
 const VideoList = () => {
   const [, setUserData] = useUser();
@@ -42,7 +40,7 @@ const VideoList = () => {
               part: "snippet,contentDetails",
               maxResults: 5,
               playlistId: "PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF",
-              key: apitoken
+              key: process.env.REACT_APP_YOUTUBE_KEY
             }
           }
         );
@@ -73,7 +71,7 @@ const VideoList = () => {
               part: "snippet,contentDetails",
               maxResults: 5,
               playlistId: "PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF",
-              key: apitoken,
+              key: process.env.REACT_APP_YOUTUBE_KEY,
               pageToken: nextPageToken
             }
           }
