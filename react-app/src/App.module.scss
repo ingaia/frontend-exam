@@ -1,10 +1,7 @@
 .App {
-  --mainColor: #a99d81;
-  --white: white;
-  --black: black;
-
   background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)),
     center / cover url(./assets/background.png);
+  color: var(--white);
   min-width: 100vw;
   width: fit-content;
   min-height: 100vh;

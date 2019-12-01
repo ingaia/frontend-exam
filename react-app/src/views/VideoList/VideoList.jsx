@@ -1,13 +1,172 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import classnames from "classnames";
 import Logo from "components/Logo";
+import Modal from "components/Modal";
+
+import { useUser } from "UserContext";
+import { useHistory } from "react-router-dom";
 import styles from "./VideoList.module.scss";
+import axios from "axios";
+
+const apitoken = "AIzaSyDyk9Bt7LtRIpSL5fLRv7BqHK0eKHFMawg";
+
+// Need to create an Axios instance to avoid a bug where
+// the Authorization header is changed to authorization
+const axiosInstance = axios.create({
+  headers: { "Content-Type": "application/json", Accept: "application/json" },
+  responseType: "json"
+});
+axiosInstance.defaults.headers.common["Authorization"] = "Bearer " + apitoken;
 
 const VideoList = () => {
+  const [, setUserData] = useUser();
+
+  const history = useHistory();
+
+  const [videosList, setVideosList] = useState(undefined);
+  const [videosLoadingState, setVideosLoadingState] = useState("loading");
+  const [nextPageToken, setNextPageToken] = useState();
+  const [nextPageLoading, setNextPageLoading] = useState();
+
+  const [videoOpen, setVideoOpen] = useState();
+
+  useEffect(() => {
+    const getYoutubePlaylist = async () => {
+      setVideosLoadingState("loading");
+      try {
+        const response = await axios.get(
+          "https://www.googleapis.com/youtube/v3/playlistItems",
+          {
+            params: {
+              part: "snippet,contentDetails",
+              maxResults: 5,
+              playlistId: "PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF",
+              key: apitoken
+            }
+          }
+        );
+        setNextPageToken(response.data.nextPageToken);
+        setVideosList(
+          response.data.items.map(item => ({
+            id: item.contentDetails.videoId,
+            title: item.snippet.title,
+            thumbnails: item.snippet.thumbnails
+          }))
+        );
+        setVideosLoadingState("ready");
+      } catch (e) {
+        setVideosLoadingState("error");
+      }
+    };
+    getYoutubePlaylist();
+  }, []);
+
+  const fetchNextPage = useCallback(() => {
+    const getNextPage = async () => {
+      setNextPageLoading("loading");
+      try {
+        const response = await axios.get(
+          "https://www.googleapis.com/youtube/v3/playlistItems",
+          {
+            params: {
+              part: "snippet,contentDetails",
+              maxResults: 5,
+              playlistId: "PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF",
+              key: apitoken,
+              pageToken: nextPageToken
+            }
+          }
+        );
+        console.log(response.data);
+        setNextPageToken(response.data.nextPageToken);
+        setVideosList([
+          ...videosList,
+          ...response.data.items.map(item => ({
+            id: item.contentDetails.videoId,
+            title: item.snippet.title,
+            thumbnails: item.snippet.thumbnails
+          }))
+        ]);
+        setNextPageLoading("ready");
+      } catch (e) {
+        setNextPageLoading("error");
+      }
+    };
+    getNextPage();
+  }, [nextPageToken, videosList]);
+
+  console.log(videoOpen);
+
   return (
-    <div className={styles.loginPanel}>
+    <div className={styles.container}>
       <Logo className={styles.logo} />
+      <ul className={styles.buttons}>
+        <li>TRAILERS</li>
+        <li className={styles.logout}>
+          <button
+            onClick={() => {
+              setUserData({ isAuthenticated: false });
+              history.push("/Login");
+            }}
+          >
+            LOGOUT
+          </button>
+        </li>
+      </ul>
+      <div className={styles.list}>
+        {videosLoadingState === "loading" && "Carregando....."}
+        {videosLoadingState === "error" && "Ops. Algo de errado aconteceu"}
+        {videosLoadingState === "ready" && (
+          <>
+            {videosList.map(video => (
+              <React.Fragment key={video.id}>
+                <div
+                  role="button"
+                  tabIndex={0}
+                  className={styles.videoItem}
+                  onClick={() => setVideoOpen(video.id)}
+                  onKeyDown={evt => {
+                    switch (evt.key) {
+                      case " ":
+                      case "Enter": {
+                        setVideoOpen(video.id);
+                        break;
+                      }
+                      default: {
+                      }
+                    }
+                  }}
+                >
+                  <h2>{video.title}</h2>
+                  <img
+                    src={video.thumbnails.standard.url}
+                    alt="Thumbnail do vídeo"
+                  />
+                </div>
+                {video.id === videoOpen && (
+                  <Modal onClose={() => setVideoOpen(null)}>
+                    {video.title}
+                  </Modal>
+                )}
+              </React.Fragment>
+            ))}
+            {!!nextPageToken && (
+              <div className={styles.loadMoreContainer}>
+                <button
+                  className={styles.showMore}
+                  onClick={fetchNextPage}
+                  disabled={nextPageLoading === "loading"}
+                >
+                  {nextPageLoading === "loading"
+                    ? "Carregando..."
+                    : "LOAD MORE"}
+                </button>
+              </div>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };

@@ -1,0 +1,30 @@
+.modalWrapper {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  color: var(--white);
+  .modalBody {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 20rem;
+    min-height: 10rem;
+    max-width: calc(100vw - 8rem);
+    max-height: calc(100vh - 8rem);
+    overflow: auto;
+    background: var(--black);
+    box-shadow: 0 0 3rem var(--black);
+  }
+  .closeButton {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+}
+
+.hideBodyOverflow {
+  overflow: hidden;
+}

@@ -1,0 +1,124 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template:
+    "logo    list" 40%
+    "buttons list"/
+    25rem 1fr;
+
+  .logo {
+    grid-area: logo;
+    align-self: center;
+    justify-self: center;
+    width: 18rem;
+  }
+  ul.buttons {
+    grid-area: buttons;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    > li:not(:first-child) {
+      margin-top: 1rem;
+    }
+    > li {
+      display: block;
+      width: 18rem;
+      height: 2rem;
+      text-align: center;
+      &:not(.logout) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--mainColor);
+        border: 1px solid var(--mainColor);
+        height: 2.5rem;
+      }
+      &.logout {
+        button {
+          width: 100%;
+          height: 100%;
+          background: none;
+          border: none;
+          color: inherit;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .list {
+    grid-area: list;
+    background: linear-gradient(to right, var(--black), transparent);
+    border-left: solid 1px #444;
+    overflow: auto;
+    display: flex;
+    padding: 4rem 2rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    --itemsPerRow: 2;
+    @media screen and (max-width: 1024px) {
+      --itemsPerRow: 1;
+    }
+    .videoItem {
+      width: calc(calc(calc(100% - 4rem) / var(--itemsPerRow)) - 2px);
+      position: relative;
+      margin: 1rem;
+      padding: 0;
+      height: 16rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 3px var(--black), 0 0 0 4px var(--mainColor);
+      cursor: pointer;
+      user-select: none;
+      h2 {
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        // padding: 0 1rem;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        font-weight: inherit;
+        font-size: 1rem;
+        width: 100%;
+        height: 3rem;
+        line-height: 3rem;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      img {
+        object-fit: cover;
+        object-position: 50% 50%;
+        height: 180%;
+      }
+    }
+    .loadMoreContainer {
+      min-width: 10rem;
+      align-self: center;
+      flex-grow: 1;
+      margin: 1rem;
+      height: 8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .showMore {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        color: var(--mainColor);
+        border: 1px solid var(--mainColor);
+        height: 2.5rem;
+        width: 18rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

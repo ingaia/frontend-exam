@@ -8,7 +8,7 @@ export const UserProvider = ({ initialState, children }) => (
   </UserContext.Provider>
 );
 
-UserProvider.defaultProps = { initialState: { isAuthenticated: false } };
+UserProvider.defaultProps = { initialState: { isAuthenticated: true } };
 
 export const useUser = () => useContext(UserContext);
 

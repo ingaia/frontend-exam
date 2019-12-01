@@ -10,7 +10,7 @@ import styles from "./Login.module.scss";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userData, setUserData] = useUser();
+  const [, setUserData] = useUser();
 
   const history = useHistory();
   return (
