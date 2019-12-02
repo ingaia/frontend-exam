@@ -4,6 +4,7 @@ import { UserProvider } from "./UserContext";
 import ProtectedRoute from "components/ProtectedRoute";
 import LoginView from "views/Login";
 import VideoListView from "views/VideoList";
+import LoadScreenView from "views/LoadScreen";
 import styles from "./App.module.scss";
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
               path="/ListVideos"
               render={() => <VideoListView />}
             />
-            <Route path="/" render={() => <Redirect to="/ListVideos" />} />
+            <Route path="/" render={() => <LoadScreenView />} />
           </Switch>
         </BrowserRouter>
       </div>
