@@ -76,7 +76,6 @@ const VideoList = () => {
             }
           }
         );
-        console.log(response.data);
         setNextPageToken(response.data.nextPageToken);
         setVideosList([
           ...videosList,
@@ -93,8 +92,6 @@ const VideoList = () => {
     };
     getNextPage();
   }, [nextPageToken, videosList]);
-
-  console.log(videoOpen);
 
   return (
     <div className={styles.container}>
