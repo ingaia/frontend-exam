@@ -6,6 +6,7 @@ import Spinner from "components/Spinner";
 
 import { useUser } from "UserContext";
 import { useHistory } from "react-router-dom";
+import { Scrollbars } from "react-custom-scrollbars";
 import styles from "./VideoList.module.scss";
 import axios from "axios";
 
@@ -114,59 +115,82 @@ const VideoList = () => {
         {videosLoadingState === "loading" && <Spinner />}
         {videosLoadingState === "error" && "Ops. Algo de errado aconteceu"}
         {videosLoadingState === "ready" && (
-          <>
-            {videosList.map(video => (
-              <React.Fragment key={video.id}>
-                <div
-                  role="button"
-                  tabIndex={0}
-                  className={styles.videoItem}
-                  onClick={() => setVideoOpen(video.id)}
-                  onKeyDown={evt => {
-                    switch (evt.key) {
-                      case " ":
-                      case "Enter": {
-                        setVideoOpen(video.id);
-                        break;
-                      }
-                      default: {
-                      }
-                    }
-                  }}
-                >
-                  <h2>{video.title}</h2>
-                  <img
-                    src={video.thumbnails.standard.url}
-                    alt="Thumbnail do vídeo"
-                  />
-                </div>
-                {video.id === videoOpen && (
-                  <Modal onClose={() => setVideoOpen(null)}>
-                    <iframe
-                      title={video.title}
-                      width="1120"
-                      height="630"
-                      src={`https://www.youtube.com/embed/${video.id}`}
-                      frameborder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </Modal>
-                )}
-              </React.Fragment>
-            ))}
-            {!!nextPageToken && (
-              <div className={styles.loadMoreContainer}>
-                {nextPageLoading === "loading" ? (
-                  <Spinner />
-                ) : (
-                  <button className={styles.showMore} onClick={fetchNextPage}>
-                    LOAD MORE
-                  </button>
-                )}
-              </div>
+          <Scrollbars
+            renderThumbVertical={({
+              style: { width, ...otherStyles },
+              ...otherProps
+            }) => (
+              <div
+                {...otherProps}
+                style={otherStyles}
+                className={styles.scrollbarThumb}
+              />
             )}
-          </>
+            renderTrackVertical={({
+              style: { width, ...otherStyles },
+              ...otherProps
+            }) => (
+              <div
+                {...otherProps}
+                style={otherStyles}
+                className={styles.scrollbarTrack}
+              />
+            )}
+          >
+            <div className={styles.container}>
+              {videosList.map(video => (
+                <React.Fragment key={video.id}>
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    className={styles.videoItem}
+                    onClick={() => setVideoOpen(video.id)}
+                    onKeyDown={evt => {
+                      switch (evt.key) {
+                        case " ":
+                        case "Enter": {
+                          setVideoOpen(video.id);
+                          break;
+                        }
+                        default: {
+                        }
+                      }
+                    }}
+                  >
+                    <h2>{video.title}</h2>
+                    <img
+                      src={video.thumbnails.standard.url}
+                      alt="Thumbnail do vídeo"
+                    />
+                  </div>
+                  {video.id === videoOpen && (
+                    <Modal onClose={() => setVideoOpen(null)}>
+                      <iframe
+                        title={video.title}
+                        width="1120"
+                        height="630"
+                        src={`https://www.youtube.com/embed/${video.id}`}
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </Modal>
+                  )}
+                </React.Fragment>
+              ))}
+              {!!nextPageToken && (
+                <div className={styles.loadMoreContainer}>
+                  {nextPageLoading === "loading" ? (
+                    <Spinner />
+                  ) : (
+                    <button className={styles.showMore} onClick={fetchNextPage}>
+                      LOAD MORE
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
+          </Scrollbars>
         )}
       </div>
     </div>

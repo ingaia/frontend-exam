@@ -53,72 +53,91 @@
     grid-area: list;
     background: linear-gradient(to right, var(--black), transparent);
     border-left: solid 1px #444;
-    overflow: auto;
-    display: flex;
-    padding: 4rem 2rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    --itemsPerRow: 2;
-    @media screen and (max-width: 1024px) {
-      --itemsPerRow: 1;
-    }
-    .videoItem {
-      width: calc(calc(calc(100% - 4rem) / var(--itemsPerRow)) - 2px);
-      position: relative;
-      margin: 1rem;
-      padding: 0;
-      height: 16rem;
-      overflow: hidden;
+    padding: 0 1rem 0 2rem;
+    .container {
+      width: 100%;
+      height: fit-content;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 0 3px var(--black), 0 0 0 4px var(--mainColor);
-      cursor: pointer;
-      user-select: none;
-      h2 {
-        position: absolute;
-        bottom: 0;
-        margin: 0;
-        // padding: 0 1rem;
-        text-align: center;
+      padding: 4rem 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      --itemsPerRow: 2;
+      @media screen and (max-width: 1024px) {
+        --itemsPerRow: 1;
+      }
+      .videoItem {
+        width: calc(calc(calc(100% - 4rem) / var(--itemsPerRow)) - 2px);
+        position: relative;
+        margin: 1rem;
+        padding: 0;
+        height: 16rem;
         overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-
-        font-weight: inherit;
-        font-size: 1rem;
-        width: 100%;
-        height: 3rem;
-        line-height: 3rem;
-        background: rgba(0, 0, 0, 0.5);
-      }
-      img {
-        object-fit: cover;
-        object-position: 50% 50%;
-        height: 180%;
-      }
-    }
-    .loadMoreContainer {
-      min-width: 10rem;
-      align-self: center;
-      flex-grow: 1;
-      margin: 1rem;
-      height: 8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .showMore {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: none;
-        color: var(--mainColor);
-        border: 1px solid var(--mainColor);
-        height: 2.5rem;
-        width: 18rem;
+        box-shadow: 0 0 0 3px var(--black), 0 0 0 4px var(--mainColor);
         cursor: pointer;
+        user-select: none;
+        h2 {
+          position: absolute;
+          bottom: 0;
+          margin: 0;
+          // padding: 0 1rem;
+          text-align: center;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+
+          font-weight: inherit;
+          font-size: 1rem;
+          width: 100%;
+          height: 3rem;
+          line-height: 3rem;
+          background: rgba(0, 0, 0, 0.5);
+        }
+        img {
+          object-fit: cover;
+          object-position: 50% 50%;
+          height: 180%;
+        }
       }
+      .loadMoreContainer {
+        min-width: 10rem;
+        align-self: center;
+        flex-grow: 1;
+        margin: 1rem;
+        height: 8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .showMore {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: none;
+          color: var(--mainColor);
+          border: 1px solid var(--mainColor);
+          height: 2.5rem;
+          width: 18rem;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .scrollbarThumb {
+      background: var(--mainColor);
+      border-radius: 100px;
+      right: 3px;
+      width: 6px;
+    }
+    .scrollbarTrack {
+      background: var(--mainColor);
+      right: 3px;
+      bottom: 4rem;
+      top: 4rem;
+      border-radius: 3px;
+      width: 1px;
     }
   }
 }
