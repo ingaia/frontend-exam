@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import Logo from "components/Logo";
 import Modal from "components/Modal";
+import Spinner from "components/Spinner";
 
 import { useUser } from "UserContext";
 import { useHistory } from "react-router-dom";
@@ -110,7 +111,7 @@ const VideoList = () => {
         </li>
       </ul>
       <div className={styles.list}>
-        {videosLoadingState === "loading" && "Carregando....."}
+        {videosLoadingState === "loading" && <Spinner />}
         {videosLoadingState === "error" && "Ops. Algo de errado aconteceu"}
         {videosLoadingState === "ready" && (
           <>
@@ -156,15 +157,13 @@ const VideoList = () => {
             ))}
             {!!nextPageToken && (
               <div className={styles.loadMoreContainer}>
-                <button
-                  className={styles.showMore}
-                  onClick={fetchNextPage}
-                  disabled={nextPageLoading === "loading"}
-                >
-                  {nextPageLoading === "loading"
-                    ? "Carregando..."
-                    : "LOAD MORE"}
-                </button>
+                {nextPageLoading === "loading" ? (
+                  <Spinner />
+                ) : (
+                  <button className={styles.showMore} onClick={fetchNextPage}>
+                    LOAD MORE
+                  </button>
+                )}
               </div>
             )}
           </>
