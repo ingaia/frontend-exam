@@ -157,11 +157,11 @@ const VideoList = () => {
                       }
                     }}
                   >
-                    <h2>{video.title}</h2>
                     <img
                       src={video.thumbnails.standard.url}
                       alt="Thumbnail do vídeo"
                     />
+                    <h2>{video.title}</h2>
                   </div>
                   {video.id === videoOpen && (
                     <Modal onClose={() => setVideoOpen(null)}>
