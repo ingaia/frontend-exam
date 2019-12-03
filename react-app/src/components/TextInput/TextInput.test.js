@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import TextInput from "./TextInput";
 
-it("App renders without crashing", () => {
+it("TextInput renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<TextInput />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

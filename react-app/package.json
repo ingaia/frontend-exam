@@ -39,6 +39,7 @@
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react-hooks": "^2.3.0"
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "mutationobserver-shim": "^0.3.3"
   }
 }
