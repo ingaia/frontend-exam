@@ -165,15 +165,16 @@ const VideoList = () => {
                   </div>
                   {video.id === videoOpen && (
                     <Modal onClose={() => setVideoOpen(null)}>
-                      <iframe
-                        title={video.title}
-                        width="1120"
-                        height="630"
-                        src={`https://www.youtube.com/embed/${video.id}`}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                      ></iframe>
+                      <div className={styles.iframeContainer}>
+                        <iframe
+                          title={video.title}
+                          src={`https://www.youtube.com/embed/${video.id}`}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className={styles.iframe}
+                        ></iframe>
+                      </div>
                     </Modal>
                   )}
                 </React.Fragment>

@@ -1,6 +1,14 @@
 .App {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)),
     center / cover url(./assets/background.png);
+  @media screen and (max-width: 1024px) {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.1)
+      ),
+      top no-repeat url(./assets/background.png);
+  }
   color: var(--white);
   min-width: 100vw;
   width: fit-content;

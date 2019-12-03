@@ -8,6 +8,37 @@
     "buttons list"/
     25rem 1fr;
 
+  --itemsPerRow: 2;
+  @media screen and (max-width: 1024px) {
+    min-height: 100vh;
+    height: fit-content;
+    overflow: visible;
+    margin: 2rem 0 0 0;
+    gap: 2rem;
+    grid-template:
+      "logo" auto
+      "buttons" auto
+      "list" 1fr;
+    --itemsPerRow: 1;
+    div.list {
+      background: var(--black);
+      //linear-gradient(to bottom, var(--black), transparent);
+      padding: 2rem 0 2rem 2rem;
+      > div > div {
+        position: relative !important;
+        overflow: visible !important;
+        .container {
+          margin: 0;
+          padding: 0;
+          div.videoItem {
+            justify-self: center;
+            width: calc(calc(calc(100% - 2.5rem) / var(--itemsPerRow)) - 2px);
+            padding-bottom: 50%;
+          }
+        }
+      }
+    }
+  }
   .logo {
     grid-area: logo;
     align-self: center;
@@ -61,11 +92,6 @@
       padding: 4rem 0;
       flex-direction: row;
       flex-wrap: wrap;
-
-      --itemsPerRow: 2;
-      @media screen and (max-width: 1024px) {
-        --itemsPerRow: 1;
-      }
       .videoItem {
         width: calc(calc(calc(100% - 4rem) / var(--itemsPerRow)) - 2px);
         position: relative;
@@ -121,7 +147,8 @@
           color: var(--mainColor);
           border: 1px solid var(--mainColor);
           height: 2.5rem;
-          width: 18rem;
+          max-width: 18rem;
+          width: 100%;
           cursor: pointer;
         }
       }
@@ -141,5 +168,17 @@
       border-radius: 3px;
       width: 1px;
     }
+  }
+}
+
+.iframeContainer {
+  //w: 1120 h: 630
+  width: 90vw;
+  height: 50.62vh;
+  max-width: 160vw;
+  max-height: 90vh;
+  .iframe {
+    width: 100%;
+    height: 100%;
   }
 }
