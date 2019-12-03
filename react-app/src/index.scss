@@ -34,4 +34,10 @@ button {
   border: none;
   color: inherit;
   cursor: pointer;
+  box-shadow: 0 0 0 0px var(--white);
+  transition: box-shadow 0.3s;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--white);
+  }
 }

@@ -58,7 +58,7 @@
     > li {
       display: block;
       width: 18rem;
-      height: 2rem;
+      height: 2.5rem;
       text-align: center;
       &:not(.logout) {
         display: flex;
@@ -104,6 +104,14 @@
         box-shadow: 0 0 0 3px var(--black), 0 0 0 4px var(--mainColor);
         cursor: pointer;
         user-select: none;
+
+        box-shadow: 0 0 0 0px var(--white);
+        transition: box-shadow 0.3s;
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 2px var(--white);
+        }
+
         h2 {
           position: absolute;
           bottom: 0;
