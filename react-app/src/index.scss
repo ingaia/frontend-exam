@@ -5,6 +5,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Oswald&display=swap");
 
+// Main color pallete
 :root {
   --mainColor: #a99d81;
   --white: white;
@@ -34,6 +35,8 @@ button {
   border: none;
   color: inherit;
   cursor: pointer;
+
+  // focus-ring animation
   box-shadow: 0 0 0 0px var(--white);
   transition: box-shadow 0.3s;
   &:focus {

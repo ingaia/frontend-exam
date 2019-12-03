@@ -22,7 +22,6 @@
     --itemsPerRow: 1;
     div.list {
       background: var(--black);
-      //linear-gradient(to bottom, var(--black), transparent);
       padding: 2rem 0 2rem 2rem;
       > div > div {
         position: relative !important;
@@ -83,7 +82,14 @@
   .list {
     grid-area: list;
     background: linear-gradient(to right, var(--black), transparent);
+
+    // separator line
     border-left: solid 1px #444;
+    @media screen and (max-width: 1024px) {
+      border-top: solid 1px #444;
+      border-left: none;
+    }
+
     padding: 0 4rem 0 2rem;
     .container {
       width: 96%;
@@ -101,15 +107,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 0 0 3px var(--black), 0 0 0 4px var(--mainColor);
         cursor: pointer;
         user-select: none;
 
-        box-shadow: 0 0 0 0px var(--white);
+        // double border implementation
+        box-shadow: 0 0 0 3px var(--black), 0 0 0 4px var(--mainColor);
+
+        // focus-ring animation
         transition: box-shadow 0.3s;
         &:focus {
           outline: none;
-          box-shadow: 0 0 0 2px var(--white);
+          box-shadow: 0 0 0 3px var(--white), 0 0 0 4px var(--mainColor);
         }
 
         h2 {
@@ -180,11 +188,15 @@
 }
 
 .iframeContainer {
-  //w: 1120 h: 630
-  width: 90vw;
-  height: 50.62vh;
-  max-width: 160vw;
-  max-height: 90vh;
+  // set video at maximum screen keeping aspect ratio
+  width: 1120px;
+  height: 630px;
+  @media screen and (max-width: 1250px) {
+    width: 100vw;
+    height: 50.62vw;
+    max-width: 160vh;
+    max-height: 90vh;
+  }
   .iframe {
     width: 100%;
     height: 100%;

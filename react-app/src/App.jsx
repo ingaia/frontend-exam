@@ -7,6 +7,9 @@ import VideoListView from "views/VideoList";
 import LoadScreenView from "views/LoadScreen";
 import styles from "./App.module.scss";
 
+/*
+  Root component for the app
+ */
 function App() {
   return (
     <UserProvider>
@@ -18,6 +21,7 @@ function App() {
               path="/ListVideos"
               render={() => <VideoListView />}
             />
+            {/* Renders the loading animation before redirecting to the app itself */}
             <Route path="/" render={() => <LoadScreenView />} />
           </Switch>
         </BrowserRouter>

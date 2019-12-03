@@ -4,7 +4,11 @@ import "wicg-inert";
 
 import styles from "./Modal.module.scss";
 
+/* Modal component. Must have a div with id modal-root on the body, where the
+ * modal and it's children will be rendered.
+ */
 const Modal = ({ children, onClose }) => {
+  // Disable scroll and interactions with other elements on the page
   useEffect(() => {
     document.body.classList.add(styles.hideBodyOverflow);
 
@@ -26,7 +30,7 @@ const Modal = ({ children, onClose }) => {
   }, []);
 
   return createPortal(
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    // Users can close the dark area or press Escape to close the modal
     <div
       className={styles.modalWrapper}
       onClick={evt => {
@@ -35,6 +39,7 @@ const Modal = ({ children, onClose }) => {
           onClose();
         }
       }}
+      onKeyDown={evt => evt.key === "Escape" && onClose()}
       role="presentation"
     >
       <div className={styles.modalBody} role="dialog">

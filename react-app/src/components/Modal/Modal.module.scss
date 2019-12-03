@@ -12,9 +12,6 @@
     transform: translate(-50%, -50%);
     min-width: 20rem;
     min-height: 10rem;
-    max-width: calc(100vw - 8rem);
-    max-height: calc(100vh - 8rem);
-    overflow: auto;
     background: var(--black);
     box-shadow: 0 0 3rem var(--black);
   }

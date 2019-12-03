@@ -16,6 +16,7 @@ const axiosInstance = axios.create({
   headers: { "Content-Type": "application/json", Accept: "application/json" },
   responseType: "json"
 });
+// the API key must be stored on an .env variable
 axiosInstance.defaults.headers.common["Authorization"] =
   "Bearer " + process.env.REACT_APP_YOUTUBE_KEY;
 
@@ -31,6 +32,7 @@ const VideoList = () => {
 
   const [videoOpen, setVideoOpen] = useState();
 
+  // When this view mounts, start fetching the youtube playlist data
   useEffect(() => {
     const getYoutubePlaylist = async () => {
       setVideosLoadingState("loading");
@@ -62,6 +64,7 @@ const VideoList = () => {
     getYoutubePlaylist();
   }, []);
 
+  // function to fetch the next page;
   const fetchNextPage = useCallback(() => {
     const getNextPage = async () => {
       setNextPageLoading("loading");
