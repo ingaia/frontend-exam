@@ -1,0 +1,204 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template:
+    "logo    list" 40%
+    "buttons list"/
+    25rem 1fr;
+
+  --itemsPerRow: 2;
+  @media screen and (max-width: 1024px) {
+    min-height: 100vh;
+    height: fit-content;
+    overflow: visible;
+    margin: 2rem 0 0 0;
+    gap: 2rem;
+    grid-template:
+      "logo" auto
+      "buttons" auto
+      "list" 1fr;
+    --itemsPerRow: 1;
+    div.list {
+      background: var(--black);
+      padding: 2rem 0 2rem 2rem;
+      > div > div {
+        position: relative !important;
+        overflow: visible !important;
+        .container {
+          margin: 0;
+          padding: 0;
+          div.videoItem {
+            justify-self: center;
+            width: calc(calc(calc(100% - 2.5rem) / var(--itemsPerRow)) - 2px);
+            padding-bottom: 50%;
+          }
+        }
+      }
+    }
+  }
+  .logo {
+    grid-area: logo;
+    align-self: center;
+    justify-self: center;
+    width: 18rem;
+  }
+  ul.buttons {
+    grid-area: buttons;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    > li:not(:first-child) {
+      margin-top: 1rem;
+    }
+    > li {
+      display: block;
+      width: 18rem;
+      height: 2.5rem;
+      text-align: center;
+      &:not(.logout) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--mainColor);
+        border: 1px solid var(--mainColor);
+        height: 2.5rem;
+      }
+      &.logout {
+        button {
+          width: 100%;
+          height: 100%;
+          background: none;
+          border: none;
+          color: inherit;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .list {
+    grid-area: list;
+    background: linear-gradient(to right, var(--black), transparent);
+
+    // separator line
+    border-left: solid 1px #444;
+    @media screen and (max-width: 1024px) {
+      border-top: solid 1px #444;
+      border-left: none;
+    }
+
+    padding: 0 4rem 0 2rem;
+    .container {
+      width: 96%;
+      height: fit-content;
+      display: flex;
+      padding: 4rem 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .videoItem {
+        width: calc(calc(calc(100% - 4rem) / var(--itemsPerRow)) - 2px);
+        position: relative;
+        margin: 1rem;
+        padding-bottom: 25%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+
+        // double border implementation
+        box-shadow: 0 0 0 3px var(--black), 0 0 0 4px var(--mainColor);
+
+        // focus-ring animation
+        transition: box-shadow 0.3s;
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px var(--white), 0 0 0 4px var(--mainColor);
+        }
+
+        h2 {
+          position: absolute;
+          bottom: 0;
+          margin: 0;
+          text-align: center;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+
+          font-weight: inherit;
+          font-size: 1rem;
+          width: 100%;
+          height: 3rem;
+          line-height: 3rem;
+          background: rgba(0, 0, 0, 0.5);
+        }
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          object-fit: cover;
+          object-position: 50% 50%;
+          height: 180%;
+        }
+      }
+      .loadMoreContainer {
+        min-width: 10rem;
+        align-self: center;
+        flex-grow: 1;
+        margin: 1rem;
+        height: 8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .showMore {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: none;
+          color: var(--mainColor);
+          border: 1px solid var(--mainColor);
+          height: 2.5rem;
+          max-width: 18rem;
+          width: 100%;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .scrollbarThumb {
+      background: var(--mainColor);
+      border-radius: 100px;
+      right: 3px;
+      width: 6px;
+    }
+    .scrollbarTrack {
+      background: var(--mainColor);
+      right: 3px;
+      bottom: 4rem;
+      top: 4rem;
+      border-radius: 3px;
+      width: 1px;
+    }
+  }
+}
+
+.iframeContainer {
+  // set video at maximum screen keeping aspect ratio
+  width: 1120px;
+  height: 630px;
+  @media screen and (max-width: 1250px) {
+    width: 100vw;
+    height: 50.62vw;
+    max-width: 160vh;
+    max-height: 90vh;
+  }
+  .iframe {
+    width: 100%;
+    height: 100%;
+  }
+}

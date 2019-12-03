@@ -1,0 +1,46 @@
+/* bring in normalize.css styles
+    This is a create-react-app specific tag that will be
+    processed by webpack based on the browserlist. */
+@import-normalize;
+
+@import url("https://fonts.googleapis.com/css?family=Oswald&display=swap");
+
+// Main color pallete
+:root {
+  --mainColor: #a99d81;
+  --white: white;
+  --black: black;
+}
+
+body,
+button {
+  font-family: "Oswald", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+
+  // focus-ring animation
+  box-shadow: 0 0 0 0px var(--white);
+  transition: box-shadow 0.3s;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--white);
+  }
+}

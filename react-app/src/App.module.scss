@@ -1,0 +1,22 @@
+.App {
+  // background image with gradient on top
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)),
+    center / cover url(./assets/background.png);
+
+  // different positioning on the background image for small screens
+  @media screen and (max-width: 1024px) {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.1)
+      ),
+      top no-repeat url(./assets/background.png);
+  }
+  color: var(--white);
+  min-width: 100vw;
+  width: fit-content;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

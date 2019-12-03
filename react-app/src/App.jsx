@@ -1,0 +1,33 @@
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { UserProvider } from "./UserContext";
+import ProtectedRoute from "components/ProtectedRoute";
+import LoginView from "views/Login";
+import VideoListView from "views/VideoList";
+import LoadScreenView from "views/LoadScreen";
+import styles from "./App.module.scss";
+
+/*
+  Root component for the app
+ */
+function App() {
+  return (
+    <UserProvider>
+      <div className={styles.App}>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/Login" render={() => <LoginView />} />
+            <ProtectedRoute
+              path="/ListVideos"
+              render={() => <VideoListView />}
+            />
+            {/* Renders the loading animation before redirecting to the app itself */}
+            <Route path="/" render={() => <LoadScreenView />} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    </UserProvider>
+  );
+}
+
+export default App;
