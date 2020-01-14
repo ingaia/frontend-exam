@@ -1,0 +1,52 @@
+@import './../../variables.less';
+
+.input-group {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 15px;
+
+    input {
+        height: 100%;
+        width: 100%;
+        padding-top: 10px;
+        background: transparent;
+        border: none;
+        color: #FFFFFF;
+        font-size: 14px;
+        outline: none;
+
+        &::placeholder {
+            color: transparent;
+        }
+
+        &:focus + .label .label-content,
+        &:not(:placeholder-shown)+ .label .label-content {
+            transform: translateY(-150%);  
+            font-size: 11px; 
+        }
+    }
+    
+    label {
+        position: absolute;
+        bottom: 0px;
+        left: 0%;
+        height: 100%;
+        width: 100%;
+        border-bottom: 1px solid @hillary;
+        color: @hillary;
+        pointer-events: none;
+
+        &:after {
+            content: '';
+            position: absolute;
+        }
+    }
+
+    .label-content {
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+}
