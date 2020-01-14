@@ -1,0 +1,21 @@
+import React from 'react';
+
+import Trailer from '../Trailer';
+
+import './style.less';
+import Button from '../Button';
+
+export default function Trailers(props){
+    return (
+        <ul className="trailers">
+            {props.trailers.map(({id, snippet: {title, thumbnails: { maxres }}}) => (
+                <Trailer key={id} title={title} thumbnail={maxres.url}/>
+            ))}
+            { props.nextPageToken ? 
+                <li className="load-more">
+                    <Button className="btn-hillary" label="Load More" onClick={props.loadMore}/>
+                </li>
+            : null}
+        </ul>
+    );
+}
