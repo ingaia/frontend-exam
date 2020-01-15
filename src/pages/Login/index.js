@@ -6,14 +6,13 @@ import Button from '../../components/Button';
 import './style.less';
 import logo_dark from '../../../assets/logo_dark.png';
 
-export default function Login(){
+export default function Login({ history }){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     function handleSubmit(event){
         event.preventDefault();
-        console.log(email);
-        console.log(password);
+        history.push('/trailers');
     }
 
     return (

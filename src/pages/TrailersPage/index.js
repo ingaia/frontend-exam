@@ -5,7 +5,7 @@ import Trailers from '../../components/Trailers';
 import api from '../../services/youtube-api';
 import './style.less';
 
-export default function TrailersPage() {
+export default function TrailersPage({ history }) {
     const [loading, setLoading] = useState(false);
     const [trailers, setTrailers] = useState([]);
     const [nextPageToken, setNextPageToken] = useState('');
@@ -43,9 +43,13 @@ export default function TrailersPage() {
         loadPlaylist(params);
     }, []);
 
+    function logOut(){
+        history.push('/');
+    }
+
     return (
         <div className="trailers-page">
-            <SideMenu />
+            <SideMenu logOut={logOut}/>
             <Trailers trailers={trailers} nextPageToken={nextPageToken} loadMore={loadMore} loading={loading}/>
         </div>
     );
