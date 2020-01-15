@@ -1,9 +1,10 @@
 import React from 'react';
 
 import Trailer from '../Trailer';
+import Button from '../Button';
+import Loader from '../Loader';
 
 import './style.less';
-import Button from '../Button';
 
 export default function Trailers(props){
     return (
@@ -12,11 +13,16 @@ export default function Trailers(props){
                 {props.trailers.map(({id, snippet: {title, thumbnails: { maxres }, resourceId}}) => (
                     <Trailer key={id} title={title} thumbnail={maxres.url} videoId={resourceId.videoId}/>
                 ))}
-                { props.nextPageToken ? 
+                { props.nextPageToken && !props.loading &&
                     <li className="load-more">
                         <Button className="btn-hillary" label="Load More" onClick={props.loadMore}/>
                     </li>
-                : null}
+                }
+                { props.loading && 
+                    <li className="load-more">
+                        <Loader/>
+                    </li>
+                }
             </ul>
         </div>
     );

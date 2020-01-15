@@ -6,6 +6,7 @@ import api from '../../services/youtube-api';
 import './style.less';
 
 export default function TrailersPage() {
+    const [loading, setLoading] = useState(false);
     const [trailers, setTrailers] = useState([]);
     const [nextPageToken, setNextPageToken] = useState('');
 
@@ -13,14 +14,16 @@ export default function TrailersPage() {
         const response = await api.get('/playlistItems', {
             params
         });
-
+        
         let newTrailers = trailers.concat(response.data.items);
-
+        
+        setLoading(false);
         setTrailers(newTrailers);
         setNextPageToken(response.data.nextPageToken);
     }
-
+    
     function loadMore(){
+        setLoading(true);
         const params = {
             key: 'AIzaSyBh99ay4rru9-e4pccxqd8BXvPT76Nw4WQ',
             part: 'snippet',
@@ -43,7 +46,7 @@ export default function TrailersPage() {
     return (
         <div className="trailers-page">
             <SideMenu />
-            <Trailers trailers={trailers} nextPageToken={nextPageToken} loadMore={loadMore}/>
+            <Trailers trailers={trailers} nextPageToken={nextPageToken} loadMore={loadMore} loading={loading}/>
         </div>
     );
 }
