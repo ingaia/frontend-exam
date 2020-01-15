@@ -1,14 +1,16 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import Login from './pages/Login';
+import TrailersPage from './pages/TrailersPage';
 
 export default function Routes(){
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Switch>
                 <Route path="/" exact component={Login}></Route>
+                <Route path="/trailers" component={TrailersPage}></Route>
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
     )
 }

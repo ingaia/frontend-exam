@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 import InputText from '../../components/InputText';
+import Button from '../../components/Button';
 
 import './style.less';
 import logo_dark from '../../../assets/logo_dark.png';
-import Button from '../../components/Button';
 
 export default function Login(){
     const [email, setEmail] = useState('');
@@ -25,7 +25,7 @@ export default function Login(){
                         value={email} onChange={event => setEmail(event.target.value)} required={true}/>
                     <InputText type="password" name="password" label="Password" 
                         value={password} onChange={event => setPassword(event.target.value)} required={true}/>
-                    <Button type="submit" label="LOGIN" />
+                    <Button type="submit" className="btn-hillary" label="Login" />
                 </form>
             </div>
         </div>
