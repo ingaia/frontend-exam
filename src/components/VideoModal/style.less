@@ -1,0 +1,30 @@
+@import './../../variables.less';
+
+.video-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background: rgba(29, 26, 26, 0.9);
+    z-index: 1; 
+
+    .video-content {
+        padding: 10px;
+        background-color: #000;
+        border: 2px solid @hillary;
+
+        iframe {
+            border: none;
+        }
+    }
+
+    .btn-default {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}
