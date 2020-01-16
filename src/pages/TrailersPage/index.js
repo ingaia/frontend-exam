@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Menu from '../../components/Menu';
 import SideMenu from '../../components/SideMenu';
 import Trailers from '../../components/Trailers';
 
@@ -49,6 +50,7 @@ export default function TrailersPage({ history }) {
 
     return (
         <div className="trailers-page">
+            <Menu logOut={logOut}/>
             <SideMenu logOut={logOut}/>
             <Trailers trailers={trailers} nextPageToken={nextPageToken} loadMore={loadMore} loading={loading}/>
         </div>

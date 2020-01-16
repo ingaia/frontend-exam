@@ -1,21 +1,67 @@
+@import './../../variables.less';
+
 .side-menu {
-    flex: 2;
-    height: 100%;
+    display: none;
+    flex: unset;
+    position: sticky;
+    top: 0;
+    padding: 10px 5px;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid @hillary;
+    z-index: 10;
     
-    .box-menu {
+    .side-menu-header {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        margin-top: 150px;
+        justify-content: center;
+        position: relative;
+    }
+
+    .fa-bars, .fa-times {
+        position: absolute;
+        left: 0;
+        padding-left: 10px;
+        color:#fff;
+        font-size: 30px;
+    }
+
+    .logo-box {
+        width: 100%;
+        text-align: center;
     }
 
     .logo {
-        height: 137px;
-        width: 274px;
-        margin-bottom: 100px;
+        width: 130px;
+    }
+
+    .sidenav {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 92px;
+        height: 100%;
+        width: 0;
+        padding-top: 60px;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 1;
+        overflow-x: hidden;
+        transition: 0.5s;
+
+        &.open {
+            width: 250px;
+        }
     }
 
     .btn {
-        padding: 10px 100px;
+        padding: 10px 50px;
+    }
+}
+
+
+@media @mobile {
+    .side-menu {
+        display: inline;
     }
 }
