@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TrailersPage/> should render 1`] = `
+<div
+  className="trailers-page"
+>
+  <Menu
+    logOut={[Function]}
+  />
+  <SideMenu
+    logOut={[Function]}
+  />
+  <Trailers
+    loadMore={[Function]}
+    loading={false}
+    nextPageToken=""
+    trailers={Array []}
+  />
+</div>
+`;

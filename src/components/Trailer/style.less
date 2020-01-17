@@ -1,0 +1,50 @@
+@import './../../variables.less';
+
+.trailer {
+    position: relative;
+    height: 222px;
+    width: 375px;
+    margin: 30px;
+    overflow: hidden;
+    border: 1px solid @hillary;
+    cursor: pointer;
+    
+    .thumbnail {
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: scale(1.4);
+    }
+    
+    .trailer-title {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0px;
+        padding: 10px 5px;
+        background-color: rgba(20,20,20, .7);
+        color: #fff;
+        text-align: center;
+        pointer-events: none;
+    }
+}
+
+@media @mobile {
+    .trailer {
+        margin: 10px;
+        width: -webkit-fill-available;
+    }
+}
+
+@media @tablet {
+    .trailer {
+        margin: 20px 10px;
+    }
+}
+
+@media only screen and (max-width: 730px) and (min-width: 500px) {
+    .trailer {
+        height: 320px;
+    }
+}

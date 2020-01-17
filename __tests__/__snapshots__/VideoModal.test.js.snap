@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VideoModal/> should render 1`] = `
+<div
+  className="video-modal"
+>
+  <Button
+    className="btn-default"
+    label="Close"
+  />
+  <div
+    className="video-content"
+  >
+    <iframe
+      height="530"
+      src="https://www.youtube.com/embed/undefined?autoplay=1&showinfo=0"
+      width="900"
+    />
+  </div>
+</div>
+`;

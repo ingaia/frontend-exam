@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputText/> should render 1`] = `
+<div
+  className="input-group"
+>
+  <input
+    name="email"
+    placeholder="Email"
+    type="text"
+  />
+  <label
+    className="label"
+    htmlFor="email"
+  >
+    <span
+      className="label-content"
+    >
+      Email
+    </span>
+  </label>
+</div>
+`;
+
+exports[`<InputText/> should the input a type email 1`] = `
+<div
+  className="input-group"
+>
+  <input
+    type="email"
+  />
+  <label
+    className="label"
+  >
+    <span
+      className="label-content"
+    />
+  </label>
+</div>
+`;

@@ -1,0 +1,70 @@
+@import './../../variables.less';
+
+.trailers {
+    flex: 5;
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 98%);
+    border-left: 1px solid @hillary;
+    padding: 50px 10px;
+    
+    .trailers-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-height: 1500px;
+        height: 100%;
+        overflow-y: scroll;
+        list-style-type: none;
+        
+    }
+
+    .trailers-list::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    .trailers-list::-webkit-scrollbar-track {
+        background-color: @hillary;
+        background-clip: content-box; 
+        border: 2px solid transparent;
+        border-radius: 5px;
+    }
+    
+    .trailers-list::-webkit-scrollbar-thumb {
+        background-color: @hillary;
+        border-radius: 5px;
+    }
+
+    .load-more {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 222px;
+        width: 375px;
+        margin: 50px;
+    }
+}
+
+@media @mobile {
+    .trailers {
+        padding: 10px;
+        background: none;
+        border: none;
+        
+        .trailers-list {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: center;
+            max-height: unset;        
+        }
+    }
+
+
+    .trailers-list::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media @tablet {
+    .trailers {
+        padding: 50px 0px;
+    }
+}

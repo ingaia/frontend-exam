@@ -1,0 +1,29 @@
+@import './../../variables.less';
+
+.menu {
+    flex: 2;
+    height: 100%;
+    
+    .box-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        margin-top: 150px;
+    }
+
+    .logo {
+        width: 275px;
+        margin-bottom: 100px;
+    }
+
+    .btn {
+        padding: 10px 100px;
+    }
+}
+
+@media @mobile {
+    .menu {
+        display: none;
+    }
+}

@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Trailers/> should render 1`] = `
+<div
+  className="trailers"
+>
+  <ul
+    className="trailers-list"
+  >
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi41NkI0NEY2RDEwNTU3Q0M2"
+      thumbnail="https://i.ytimg.com/vi/cCXgQ7-Y9ps/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - Title Reveal"
+      videoId="cCXgQ7-Y9ps"
+    />
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi4yODlGNEE0NkRGMEEzMEQy"
+      thumbnail="https://i.ytimg.com/vi/2T_DG1xnVPg/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - Debut Gameplay-Trailer"
+      videoId="2T_DG1xnVPg"
+    />
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi4wOTA3OTZBNzVEMTUzOTMy"
+      thumbnail="https://i.ytimg.com/vi/aIbPBnvGSnc/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - \\"Killing Monsters\\"-Cinematic-Trailer"
+      videoId="aIbPBnvGSnc"
+    />
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi41MjE1MkI0OTQ2QzJGNzNG"
+      thumbnail="https://i.ytimg.com/vi/7T91vrI8hGA/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - VGX-Trailer (2013)"
+      videoId="7T91vrI8hGA"
+    />
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi4wMTcyMDhGQUE4NTIzM0Y5"
+      thumbnail="https://i.ytimg.com/vi/1ke3zayKKm8/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - \\"The Sword Of Destiny\\""
+      videoId="1ke3zayKKm8"
+    />
+  </ul>
+</div>
+`;
+
+exports[`<Trailers/> should show button load more 1`] = `
+<div
+  className="trailers"
+>
+  <ul
+    className="trailers-list"
+  >
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi41NkI0NEY2RDEwNTU3Q0M2"
+      thumbnail="https://i.ytimg.com/vi/cCXgQ7-Y9ps/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - Title Reveal"
+      videoId="cCXgQ7-Y9ps"
+    />
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi4yODlGNEE0NkRGMEEzMEQy"
+      thumbnail="https://i.ytimg.com/vi/2T_DG1xnVPg/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - Debut Gameplay-Trailer"
+      videoId="2T_DG1xnVPg"
+    />
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi4wOTA3OTZBNzVEMTUzOTMy"
+      thumbnail="https://i.ytimg.com/vi/aIbPBnvGSnc/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - \\"Killing Monsters\\"-Cinematic-Trailer"
+      videoId="aIbPBnvGSnc"
+    />
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi41MjE1MkI0OTQ2QzJGNzNG"
+      thumbnail="https://i.ytimg.com/vi/7T91vrI8hGA/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - VGX-Trailer (2013)"
+      videoId="7T91vrI8hGA"
+    />
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi4wMTcyMDhGQUE4NTIzM0Y5"
+      thumbnail="https://i.ytimg.com/vi/1ke3zayKKm8/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - \\"The Sword Of Destiny\\""
+      videoId="1ke3zayKKm8"
+    />
+    <li
+      className="load-more"
+    >
+      <Button
+        className="btn-hillary"
+        label="Load More"
+      />
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`<Trailers/> should show the Loader component 1`] = `
+<div
+  className="trailers"
+>
+  <ul
+    className="trailers-list"
+  >
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi41NkI0NEY2RDEwNTU3Q0M2"
+      thumbnail="https://i.ytimg.com/vi/cCXgQ7-Y9ps/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - Title Reveal"
+      videoId="cCXgQ7-Y9ps"
+    />
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi4yODlGNEE0NkRGMEEzMEQy"
+      thumbnail="https://i.ytimg.com/vi/2T_DG1xnVPg/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - Debut Gameplay-Trailer"
+      videoId="2T_DG1xnVPg"
+    />
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi4wOTA3OTZBNzVEMTUzOTMy"
+      thumbnail="https://i.ytimg.com/vi/aIbPBnvGSnc/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - \\"Killing Monsters\\"-Cinematic-Trailer"
+      videoId="aIbPBnvGSnc"
+    />
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi41MjE1MkI0OTQ2QzJGNzNG"
+      thumbnail="https://i.ytimg.com/vi/7T91vrI8hGA/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - VGX-Trailer (2013)"
+      videoId="7T91vrI8hGA"
+    />
+    <Trailer
+      key="UEw2dDkzblVGUVExWmlYTWZoUHloamIwUFgzTGdFVk1jRi4wMTcyMDhGQUE4NTIzM0Y5"
+      thumbnail="https://i.ytimg.com/vi/1ke3zayKKm8/maxresdefault.jpg"
+      title="The Witcher 3: Wild Hunt - \\"The Sword Of Destiny\\""
+      videoId="1ke3zayKKm8"
+    />
+    <li
+      className="load-more"
+    >
+      <Loader />
+    </li>
+  </ul>
+</div>
+`;

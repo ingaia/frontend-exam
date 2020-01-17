@@ -1,0 +1,34 @@
+@import './../../variables.less';
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(20,20,20, .7), rgba(20,20,20, .7)), url("../../../assets/background.png");
+    background-size: cover;
+
+    .box-login {
+        width: 275px;
+        .logo {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .form-login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media @mobile {
+    .login {
+        .box-login {
+            width: 250px;
+        }
+    }
+}
