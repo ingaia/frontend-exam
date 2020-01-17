@@ -22,3 +22,33 @@ Convert the following design to a Single Web Application (SPA):
 
 ## Tips
 - We ❤️ animations, code coverage, end-to-end tests and CI/CD (that's not mandatory for you to complete the test)
+
+## Installation
+
+```bash
+yarn
+```
+
+## Development
+
+```bash
+yarn start
+```
+
+## Build
+
+```bash
+yarn build
+```
+
+## Test
+
+```bash
+yarn test
+```
+
+## Coverage
+
+```bash
+yarn test:coverage
+```
