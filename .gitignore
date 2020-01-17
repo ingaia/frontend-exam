@@ -8,6 +8,7 @@ logs
 node_modules
 bower_componets
 dist
+coverage
 
 psd
 thumb
