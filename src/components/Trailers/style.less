@@ -4,7 +4,7 @@
     flex: 5;
     background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 98%);
     border-left: 1px solid @hillary;
-    padding: 50px;
+    padding: 50px 10px;
     
     .trailers-list {
         display: flex;
@@ -60,5 +60,11 @@
 
     .trailers-list::-webkit-scrollbar {
         display: none;
+    }
+}
+
+@media @tablet {
+    .trailers {
+        padding: 50px 0px;
     }
 }

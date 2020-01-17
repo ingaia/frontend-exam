@@ -4,7 +4,7 @@
     position: relative;
     height: 222px;
     width: 375px;
-    margin: 50px;
+    margin: 30px;
     overflow: hidden;
     border: 1px solid @hillary;
     cursor: pointer;
@@ -34,5 +34,17 @@
     .trailer {
         margin: 10px;
         width: -webkit-fill-available;
+    }
+}
+
+@media @tablet {
+    .trailer {
+        margin: 20px 10px;
+    }
+}
+
+@media only screen and (max-width: 730px) and (min-width: 500px) {
+    .trailer {
+        height: 320px;
     }
 }
