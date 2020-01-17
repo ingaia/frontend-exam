@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Menu/> should render 1`] = `
+<div
+  className="menu"
+>
+  <div
+    className="box-menu"
+  >
+    <img
+      alt=""
+      className="logo"
+      src="test-file-stub"
+    />
+    <Button
+      className="btn-hillary"
+      label="Trailers"
+    />
+    <Button
+      className="btn-default"
+      label="Logout"
+    />
+  </div>
+</div>
+`;

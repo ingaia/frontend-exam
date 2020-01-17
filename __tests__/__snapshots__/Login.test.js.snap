@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login/> should render 1`] = `
+<div
+  className="login"
+>
+  <div
+    className="box-login"
+  >
+    <img
+      alt=""
+      className="logo"
+      src="test-file-stub"
+    />
+    <form
+      className="form-login"
+      name="formLogin"
+      onSubmit={[Function]}
+    >
+      <InputText
+        label="Email"
+        name="email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+        value=""
+      />
+      <InputText
+        label="Password"
+        name="password"
+        onChange={[Function]}
+        required={true}
+        type="password"
+        value=""
+      />
+      <Button
+        className="btn-hillary"
+        label="Login"
+        type="submit"
+      />
+    </form>
+  </div>
+</div>
+`;

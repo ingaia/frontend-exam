@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Trailer/> should render 1`] = `
+<Fragment>
+  <li
+    className="trailer"
+    onClick={[Function]}
+  >
+    <div
+      className="thumbnail"
+      style={
+        Object {
+          "backgroundImage": "url(undefined)",
+        }
+      }
+    />
+    <span
+      className="trailer-title"
+    >
+      The Witcher 3: Wild Hunt
+    </span>
+  </li>
+</Fragment>
+`;
