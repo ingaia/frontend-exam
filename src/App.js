@@ -70,26 +70,11 @@ class App extends React.Component {
 
             })
 
-        }, 4000)
-
-    }
-
-    async componentDidUpdate(prevProps, prevState){
-
+        }, 2500)
 
     }
 
     /* */
-
-    init(){
-
-        this.setState({
-
-            loading : true
-
-        })
-
-    }
 
     setAuthData(data){
 
@@ -141,7 +126,7 @@ class App extends React.Component {
 
                                                 {
 
-                                                    this.props.auth ? <Home key="home" /> : <Login key="login" onSubmit={ data => this.setAuthData(data) } />
+                                                    this.props.auth ? <Home key="home" items={ this.state.items }/> : <Login key="login" onSubmit={ data => this.setAuthData(data) } />
 
                                                 }
 

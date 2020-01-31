@@ -2,6 +2,31 @@
 
 /* */
 
+$loading-placeholder-color: darken($md-grey-900, 2%);
+$loading-placeholder-color-dark: $md-grey-900;
+
+%loadingPlaceholder {
+
+    animation: loadingPlaceholder 1.5s infinite;
+
+    @keyframes loadingPlaceholder {
+
+        0%, 75%, 100% {
+
+            background: $loading-placeholder-color;
+
+        }
+
+        25% {
+
+            background: $loading-placeholder-color-dark;
+
+        }
+
+    }
+
+}
+
 .home {
 
     position: fixed;
@@ -11,5 +36,363 @@
 
     width: 100%;
     height: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    &Menu {
+
+        position: relative;
+
+        width: 400px;
+        height: 100%;
+
+        padding: $theme-padding * 5;
+
+        border-right: 1px solid rgba(#4C4C4C, .2);
+
+        flex-shrink: 0;
+
+        &Logo {
+
+            img {
+
+                width: 100%;
+
+            }
+
+        }
+
+        &Logos {
+
+            position: absolute;
+
+            width: 100%;
+
+            bottom: 0;
+            left: 0;
+
+            padding: $theme-padding * 2;
+
+            img {
+
+                height: 50px;
+
+                &[alt=inGaia]{
+
+                    height: 25px;
+
+                }
+
+            }
+
+            a {
+
+                display: block;
+
+            }
+
+        }
+
+    }
+
+    &Main {
+
+        width: 100%;
+        height: 100%;
+
+        padding: $theme-padding * 3;
+
+        background: black;
+        background: linear-gradient(to right, rgba(black, .5) 0%, rgba(black, 0) 100%);
+
+        :global(.no-touch) & {
+
+            padding: $theme-padding * 2;
+
+        }
+
+        // &Title {
+        //
+        //     margin-bottom: $theme-padding * 3;
+        //
+        //     font-family: 'Roboto Condensed', sans-serif;
+        //     font-weight: 300;
+        //     @include font-sizer(24);
+        //     text-transform: uppercase;
+        //     color: $md-gold-500;
+        //
+        // }
+
+    }
+
+    &Playlist {
+
+        position: relative;
+
+        height: 100%;
+        width: 100%;
+
+        :global(.no-touch) & {
+
+            padding-right: 10px;
+
+            &::after {
+
+                content: '';
+
+                position: absolute;
+
+                width: 1px;
+                height: 100%;
+
+                top: 0;
+                right: 0;
+
+                border-right: 1px solid rgba(white, .2);
+
+                pointer-events: none;
+
+                z-index: -1;
+
+            }
+
+        }
+
+        &Row {
+
+            height: 100%;
+
+            padding: 0;
+
+            list-style: none;
+
+            overflow-y: auto;
+
+            :global(.no-touch) & {
+
+                padding-right: 10px;
+
+                &::-webkit-scrollbar {
+
+                    width: 10px;
+
+                }
+
+                &::-webkit-scrollbar-thumb {
+
+                    $size: 6px;
+
+                    width: $size;
+
+                    background: $md-gold-500;
+
+                    border-radius: $size;
+
+                }
+
+            }
+
+        }
+
+        &List {
+
+            margin-bottom: $theme-padding * 2;
+
+        }
+
+        &Cover {
+
+            position: relative;
+
+            width: 100%;
+
+            padding-bottom: percentage(1080 / 1920);
+            margin-bottom: $theme-padding;
+
+            border: 1px solid rgba($md-gold-500, 0);
+
+            transition: border-color .2s ease;
+
+            cursor: pointer;
+
+            overflow: hidden;
+
+            display: block;
+
+            &Loading {
+
+                background: $loading-placeholder-color;
+
+                pointer-events: none;
+
+                border-radius: 6px;
+
+                @extend %loadingPlaceholder;
+
+            }
+
+            &:hover {
+
+                border-color: $md-gold-500;
+            }
+
+            &:hover img {
+
+                transition: transform 40s ease;
+
+                transform: scale(1.6);
+
+            }
+
+            &:not(&Loading) &Wrapper::before {
+
+                content: '';
+
+                position: absolute;
+
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                border: 3px solid $theme-color-1;
+
+                z-index: 10;
+
+            }
+
+            &Wrapper {
+
+                position: absolute;
+
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+
+                overflow: hidden;
+
+                &Duration {
+
+                    position: absolute;
+
+                    bottom: 5px;
+                    right: 5px;
+
+                    padding: 3px 5px;
+
+                    font-family: 'Roboto Condensed', sans-serif;
+                    font-weight: 600;
+                    @include font-sizer(12);
+                    color: white;
+
+                    background: $theme-color-1;
+
+                    z-index: 20;
+
+                }
+
+                img {
+
+                    width: 100%;
+
+                    object-fit: cover;
+
+                    transition: transform .6s ease;
+
+                    backface-visibility: hidden;
+
+                    animation: fadeIn .8s ease;
+
+                    @keyframes fadeIn {
+
+                        from {
+
+                            opacity: 0;
+                            transform: scale(1.025)
+
+                        }
+
+                        to {
+
+                            opacity: 1;
+                            transform: scale(1)
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        &Info {
+
+            &Title {
+
+                font-family: 'Roboto Condensed', sans-serif;
+                font-weight: 600;
+                @include font-sizer(16);
+                color: white;
+
+                &Loading {
+
+                    width: 80%;
+
+                    background: $loading-placeholder-color;
+
+                    display: inline-block;
+
+                    border-radius: 6px;
+
+                    @extend %loadingPlaceholder;
+
+                }
+
+            }
+
+            &Owner {
+
+                font-family: 'Roboto Condensed', sans-serif;
+                font-weight: 300;
+                @include font-sizer(14);
+                color: rgba(white, .6);
+
+                transition: color .2s ease;
+
+                &Loading {
+
+                    width: 60%;
+
+                    margin-top: 3px;
+
+                    background: $loading-placeholder-color;
+
+                    display: inline-block;
+
+                    border-radius: 6px;
+
+                    @extend %loadingPlaceholder;
+
+                }
+
+                &:hover {
+
+                    color: $md-gold-500;
+
+                }
+
+            }
+
+        }
+
+    }
 
 }

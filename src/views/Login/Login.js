@@ -20,7 +20,9 @@ class Login extends React.Component {
         this.state = {
 
             email: '',
-            password: ''
+            password: '',
+
+            loading : false
 
         }
 
@@ -32,11 +34,21 @@ class Login extends React.Component {
 
         e.preventDefault()
 
-        this.props.onSubmit({
+        this.setState({
 
-            email: this.state.email
+            loading: true
 
         })
+
+        setTimeout(() => {
+
+            this.props.onSubmit({
+
+                email: this.state.email
+
+            })
+
+        }, 2000)
 
     }
 
@@ -82,6 +94,8 @@ class Login extends React.Component {
 
                                     }}
 
+                                    readOnly={ this.state.loading }
+
                                     />
                                     <label className={
 
@@ -116,8 +130,19 @@ class Login extends React.Component {
 
                                     }}
 
+                                    readOnly={ this.state.loading }
+
                                     />
-                                    <label className={ styles.loginFormLabel } htmlFor="ig_password">Senha</label>
+                                    <label  className={
+
+                                        [
+
+                                            styles.loginFormLabel,
+                                            this.state.password.length && styles.loginFormLabelActive
+
+                                        ].filter(Boolean).join(' ')
+
+                                    } htmlFor="ig_password">Senha</label>
 
                                 </div>
 
@@ -125,7 +150,7 @@ class Login extends React.Component {
 
                                     <div className="col-auto mt-5">
 
-                                        <Button label="LOGIN" color="gold" type="submit" />
+                                        <Button label="Login" color="gold" type="submit" loading={ this.state.loading } />
 
                                     </div>
 

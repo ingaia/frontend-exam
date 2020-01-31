@@ -8,8 +8,6 @@ export const AuthReducer = (state = null, action) => {
 
         case SET_AUTH :
 
-            console.log(action.data)
-
             state = action.data
 
             return state

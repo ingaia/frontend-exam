@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
 
-    filter: drop-shadow(0 0 6px black);
+    filter: drop-shadow(0 0 10px black);
 
     animation: loginFadeIn 3s ease;
 
@@ -94,6 +94,12 @@
             @include font-sizer(16);
             font-weight: 300;
             color: white;
+
+            &[readonly]{
+
+                color: rgba(white, .5)
+
+            }
 
         }
 

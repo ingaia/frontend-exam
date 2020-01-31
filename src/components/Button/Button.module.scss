@@ -2,16 +2,6 @@
 
 /* */
 
-:global {
-
-    :root {
-
-        --md-gold-500: #A99E7E;
-
-    }
-
-}
-
 .button {
 
     $min-size: 40px;
@@ -57,6 +47,56 @@
     &--small {
 
         min-height: $min-size-small
+
+    }
+
+    &--loading {
+
+        color: transparent !important;
+
+        border-color: inherit;
+
+        &::before {
+
+            content: '';
+
+            $size: 20px;
+
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            width: $size;
+            height: $size;
+
+            margin-top: -$size / 2;
+            margin-left: -$size / 2;
+
+            border: 3px solid transparent;
+            border-right-color: inherit;
+
+            border-radius: $size;
+
+            animation: rotate .4s linear infinite;
+
+            @keyframes rotate {
+
+                from {
+
+                    transform: rotate(0deg);
+
+                }
+
+                to {
+
+                    transform: rotate(360deg);
+
+                }
+
+            }
+
+        }
 
     }
 

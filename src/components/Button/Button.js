@@ -42,13 +42,15 @@ class Button extends React.Component {
 
                     styles.button,
                     withLabel && styles['button--padding'],
-                    this.props.small && styles['button--small']
+                    this.props.small && styles['button--small'],
+                    this.props.loading && styles['button--loading']
 
                 ].join(' ')
 
             } type={this.props.type} style={{
 
-                color: `var(--md-${colorDefault})`
+                color: `var(--md-${colorDefault})`,
+                borderColor: this.props.light ? `var(--md-grey-200)` : `var(--md-${colorDefault})`
 
             }}>
 
