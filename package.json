@@ -43,5 +43,6 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "material-colors": "^1.2.6",
     "node-sass": "^4.13.0"
-  }
+},
+"homepage": "https://diancabral.github.io/frontend-exam"
 }
