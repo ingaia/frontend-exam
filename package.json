@@ -41,8 +41,9 @@
     "concurrently": "^5.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "jsdom": "^16.0.1",
     "material-colors": "^1.2.6",
     "node-sass": "^4.13.0"
-},
-"homepage": "https://diancabral.github.io/frontend-exam"
+  },
+  "homepage": "https://diancabral.github.io/frontend-exam"
 }

@@ -6,6 +6,8 @@ import styles from './Player.module.scss'
 
 /* */
 
+const YT = window.YT
+
 class Player extends React.Component {
 
     constructor(){
@@ -38,7 +40,7 @@ class Player extends React.Component {
 
         this.setState({
 
-            player : new window.YT.Player('ytplayer', {
+            player : new YT.Player('ytplayer', {
 
                 height: '100%',
                 width: '100%',
@@ -63,15 +65,15 @@ class Player extends React.Component {
 
     watchYouTubePlayerChange(e){
 
-        if(e.data == window.YT.PlayerState.PLAYING){
+        if(e.data == YT.PlayerState.PLAYING){
 
             this.props.onChange('playing')
 
-        } else if(e.data === window.YT.PlayerState.ENDED){
+        } else if(e.data === YT.PlayerState.ENDED){
 
             this.props.onChange('stopped')
 
-        } else if([window.YT.PlayerState.PAUSED, window.YT.PlayerState.BUFFERING, window.YT.PlayerState.CUED].includes(e.data)){
+        } else if([YT.PlayerState.PAUSED, YT.PlayerState.BUFFERING, YT.PlayerState.CUED].includes(e.data)){
 
             this.props.onChange('waiting')
 
