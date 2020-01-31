@@ -7,6 +7,8 @@ import Button from 'components/Button/Button'
 /* */
 
 import logo from 'assets/logo/logo_dark.png'
+import cdProjektLogo from 'assets/logo/cd-projekt-red.png'
+import ingaiaLogo from 'assets/logo/ingaia.png'
 import styles from './Login.module.scss'
 
 /* */
@@ -59,6 +61,34 @@ class Login extends React.Component {
         return (
 
             <div className={ styles.login }>
+
+                <div className={ styles.loginLogos }>
+
+                    <div className="row no-gutters align-items-center justify-content-center">
+
+                        <div className="col-auto pr-4">
+
+                            <a href="https://en.cdprojektred.com/" target="_blank" rel="noopener noreferrer" title="CD PROJEKT RED">
+
+                                <img src={ cdProjektLogo } alt="CD PROJEKT RED" />
+
+                            </a>
+
+                        </div>
+
+                        <div className="col-auto">
+
+                            <a href="https://www.ingaia.com.br/" target="_blank" rel="noopener noreferrer" title="inGaia">
+
+                                <img src={ ingaiaLogo } alt="inGaia" />
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
                 <div className="container">
 

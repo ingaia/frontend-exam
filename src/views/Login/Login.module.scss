@@ -14,7 +14,10 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: column-reverse;
+
+    overflow: auto;
 
     filter: drop-shadow(0 0 10px black);
 
@@ -38,11 +41,36 @@
 
     &Logo {
 
+        padding-top: $theme-padding * 2;
         margin-bottom: $theme-padding * 2;
 
         img {
 
             width: 100%;
+
+        }
+
+    }
+
+    &Logos {
+
+        padding: $theme-padding * 2;
+
+        img {
+
+            height: 50px;
+
+            &[alt=inGaia]{
+
+                height: 25px;
+
+            }
+
+        }
+
+        a {
+
+            display: block;
 
         }
 

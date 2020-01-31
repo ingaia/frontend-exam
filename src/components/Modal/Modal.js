@@ -16,6 +16,20 @@ const Modal = props => {
 
         <div className={ styles.Modal } role="dialog">
 
+            {
+
+                props.close && (
+
+                <button className={ styles.ModalClose } onClick={ () => props.onClose() } aria-label="Fechar" title="Fechar">
+
+                    <Icon glyph="close" />
+
+                </button>
+
+                )
+
+            }
+
             <div className="container-fluid">
 
                 <div className="row justify-content-center">
@@ -36,42 +50,6 @@ const Modal = props => {
                     }>
 
                         <div className={ styles.ModalWrapper }>
-
-                            { props.title && (
-
-                                <div className={ styles.ModalHeader }>
-
-                                    <div className="row align-items-center">
-
-                                        <div className="col">
-
-                                            <div className={ styles.ModalHeaderTitle }>{ props.title }</div>
-
-                                        </div>
-
-                                        {
-
-                                        props.close && (
-
-                                            <div className="col-auto">
-
-                                                <button className={ styles.ModalHeaderClose } onClick={ () => props.onClose() } aria-label="Fechar" title="Fechar">
-
-                                                    <Icon glyph="close" />
-
-                                                </button>
-
-                                            </div>
-
-                                        )
-
-                                        }
-
-                                    </div>
-
-                                </div>
-
-                            )}
 
                             <div className={ styles.ModalContent }>{ props.children }</div>
 

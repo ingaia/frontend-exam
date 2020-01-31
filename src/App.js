@@ -84,6 +84,14 @@ class App extends React.Component {
 
     }
 
+    setLogoutData(){
+
+        this.props.SetAuth(null)
+
+        localStorage.removeItem(STORAGE_AUTH_HASH)
+
+    }
+
     /* */
 
     render(){
@@ -126,7 +134,7 @@ class App extends React.Component {
 
                                                 {
 
-                                                    this.props.auth ? <Home key="home" items={ this.state.items }/> : <Login key="login" onSubmit={ data => this.setAuthData(data) } />
+                                                    this.props.auth ? <Home key="home" items={ this.state.items } onLogout={ e => this.setLogoutData() } /> : <Login key="login" onSubmit={ data => this.setAuthData(data) } />
 
                                                 }
 

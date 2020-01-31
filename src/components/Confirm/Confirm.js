@@ -27,6 +27,7 @@ class Confirm extends React.Component {
             active : false,
             message: '',
             buttonOkText : 'OK',
+            buttonCancelText : 'Não',
 
             resolve : null,
             reject : null
@@ -61,22 +62,10 @@ class Confirm extends React.Component {
 
         })
 
-    }
-
-    ok(){
-
-        this.state.resolve()
-
-        this.setState({
-
-            active : false
-
-        })
-
         setTimeout(() => {
 
             this.setState({
-                
+
                 resolve: null,
                 reject : null,
                 buttonOkText : 'OK'
@@ -84,6 +73,22 @@ class Confirm extends React.Component {
             })
 
         }, 300)
+
+    }
+
+    ok(){
+
+        this.state.resolve()
+
+        this.close()
+
+    }
+
+    cancel(){
+
+        this.state.reject()
+
+        this.close()
 
     }
 
@@ -102,6 +107,8 @@ class Confirm extends React.Component {
 
                 <Modal
 
+                close={ false }
+
                 colXl="4"
                 colLg="6"
                 colMd="6"
@@ -116,7 +123,21 @@ class Confirm extends React.Component {
                         <div className={ styles.ConfirmTitle }>Atenção</div>
                         <div className={ styles.ConfirmDescription } dangerouslySetInnerHTML={{ __html : this.state.message }}></div>
 
-                        <Button label={ this.state.buttonOkText } color="green" onClick={ () => this.ok() }/>
+                        <div className="row no-gutters">
+
+                            <div className="col-12 col-sm-auto">
+
+                                <Button label={ this.state.buttonCancelText } color="grey" onClick={ () => this.cancel() } full={ true } />
+
+                            </div>
+
+                            <div className="col-12 mt-4 mt-sm-0 col-sm-auto pl-sm-4">
+
+                                <Button label={ this.state.buttonOkText } color="gold" onClick={ () => this.ok() } full={ true } />
+
+                            </div>
+
+                        </div>
 
                     </div>
 

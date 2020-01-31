@@ -42,6 +42,7 @@ class Button extends React.Component {
 
                     styles.button,
                     withLabel && styles['button--padding'],
+                    this.props.full && styles['button--full'],
                     this.props.small && styles['button--small'],
                     this.props.loading && styles['button--loading']
 
