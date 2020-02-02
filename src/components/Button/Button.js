@@ -48,7 +48,7 @@ class Button extends React.Component {
 
                 ].join(' ')
 
-            } type={this.props.type} style={{
+            } type={ this.props.type } style={{
 
                 color: `var(--md-${colorDefault})`,
                 borderColor: this.props.light ? `var(--md-grey-200)` : `var(--md-${colorDefault})`
