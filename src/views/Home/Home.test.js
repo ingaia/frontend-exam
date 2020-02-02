@@ -32,7 +32,7 @@ describe('Home.js', () => {
 
         }).catch(error => {
 
-            done(error)
+            done(error.response.data)
 
         })
 
@@ -78,7 +78,7 @@ describe('Home.js', () => {
 
         }).catch(error => {
 
-            done(error)
+            done(error.response.data)
 
         })
 
@@ -115,7 +115,7 @@ describe('Home.js', () => {
 
         }).catch(error => {
 
-            done(error)
+            done(error.response.data)
 
         })
 
