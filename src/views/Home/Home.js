@@ -258,7 +258,7 @@ class Home extends React.Component {
 
     logout(){
 
-        this.ConfirmRef.current.open(`Deseja realmente sair da aplicação?`, `Sim, quero sair`).then(() => {
+        return this.ConfirmRef.current.open(`Deseja realmente sair da aplicação?`, `Sim, quero sair`).then(() => {
 
             this.props.onLogout()
 
