@@ -56,3 +56,61 @@ export const Content = styled.div`
         }
     }
 `;
+
+export const FloatInput = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 13px;
+
+    input {
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid #a99e7e;
+        outline: none;
+        height: 24px;
+        padding: 0;
+        color: #fff;
+        margin: 0 0 10px;
+        font-size: 14px;
+        line-height: 16px;
+        transition: all 0.3s ease-out;
+        border-radius: 0;
+
+        &:focus {
+            border-bottom: 1px solid #a99e7e;
+        }
+        &::placeholder {
+            color: transparent;
+        }
+
+        &:required:invalid + label {
+            color: red;
+        }
+        &:required:invalid {
+            border-bottom: 1px solid red;
+        }
+        &:required:invalid + label:before {
+            content: '*';
+        }
+        &:focus + label,
+        &:not(:placeholder-shown) + label {
+            font-size: 14px;
+            line-height: 16px;
+            margin-top: 0;
+            color: #a99e7e;
+        }
+    }
+
+    label {
+        pointer-events: none;
+        position: absolute;
+        font-size: 14px;
+        line-height: 16px;
+        top: 0;
+        left: 0;
+        margin-top: 13px;
+        transition: all 0.3s ease-out;
+        color: #a99e7e;
+    }
+`;
