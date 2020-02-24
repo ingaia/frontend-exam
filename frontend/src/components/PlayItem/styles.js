@@ -13,6 +13,11 @@ export const Container = styled.div`
             background-image: url(${props.thumb});
             background-size: 385px 232px;
         `}
+
+    &:hover {
+        cursor: pointer;
+    }
+
     div {
         display: flex;
         justify-content: center;

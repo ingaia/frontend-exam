@@ -3,8 +3,7 @@ import { Switch, Redirect } from 'react-router-dom';
 
 import Route from './Route';
 
-import SignIn from '~/pages/SignIn';
-import Dashboard from '~/pages/Dashboard';
+import { Dashboard, SignIn } from '~/pages';
 
 export default function Routes() {
     return (
