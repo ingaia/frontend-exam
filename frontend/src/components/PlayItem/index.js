@@ -34,6 +34,7 @@ export default function PlayItem({ id, thumb, title, videoId }) {
 }
 
 PlayItem.propTypes = {
+    id: PropTypes.string.isRequired,
     thumb: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     videoId: PropTypes.string.isRequired,
