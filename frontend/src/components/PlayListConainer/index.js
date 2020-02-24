@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Loader from 'react-loader-spinner';
 
 import { videosRequest } from '~/store/modules/videos/actions';
 
@@ -41,7 +42,7 @@ export default function PlayListConainer() {
                 />
                 <LoadMore>
                     {loading ? (
-                        <div />
+                        <Loader type="TailSpin" color="#A99E7E" />
                     ) : (
                         <button type="button">LOAD MORE</button>
                     )}

@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import BackGroundImage from '~/assets/background.png';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 export default createGlobalStyle`
     * {
