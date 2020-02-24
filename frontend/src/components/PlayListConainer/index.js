@@ -36,6 +36,8 @@ export default function PlayListConainer() {
                         key={info.id}
                         thumb={info.thumbnails}
                         title={info.title}
+                        videoId={info.videoId}
+                        id={info.id}
                     />
                 ))}
                 <LoadMore>
