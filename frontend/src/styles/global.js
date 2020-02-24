@@ -21,6 +21,9 @@ export default createGlobalStyle`
       background-size: cover;
       background-image: url(${BackGroundImage});
     }
+    #root {
+        background-color: rgba(0,0,0,0.6);
+    }
     body, input, button {
       font: 14px 'Roboto', sans-serif;
     }
