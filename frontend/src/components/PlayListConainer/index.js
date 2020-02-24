@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { videosRequest } from '~/store/modules/videos/actions';
 
 import PlayItem from '../PlayItem';
 import { Content, VideoList, LoadMore } from './styles';
-import store from '~/store';
+import { store } from '~/store';
 
 export default function PlayListConainer() {
     const dispatch = useDispatch();
+    const loading = useSelector(state => state.videos.loading);
 
     useEffect(() => {
         const { pageToken } = store.getState().videos;
         dispatch(videosRequest(pageToken));
-    });
+    }, [dispatch]);
 
     return (
         <Content>
@@ -39,7 +40,11 @@ export default function PlayListConainer() {
                     title="titulo do video"
                 />
                 <LoadMore>
-                    <button type="button">LOAD MORE</button>
+                    {loading ? (
+                        <div />
+                    ) : (
+                        <button type="button">LOAD MORE</button>
+                    )}
                 </LoadMore>
             </VideoList>
         </Content>

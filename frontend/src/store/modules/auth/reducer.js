@@ -1,7 +1,7 @@
 import produce from 'immer';
 
 const INITIAL_STATE = {
-    signed: true,
+    signed: false,
 };
 
 export default function auth(state = INITIAL_STATE, action) {
