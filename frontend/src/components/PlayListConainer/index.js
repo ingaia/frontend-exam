@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from 'react-loader-spinner';
 
@@ -11,40 +11,40 @@ import { store } from '~/store';
 export default function PlayListConainer() {
     const dispatch = useDispatch();
     const loading = useSelector(state => state.videos.loading);
+    const videos = useSelector(state => state.videos.videos);
+
+    const [infosVideos, setInfosVideos] = useState(videos);
 
     useEffect(() => {
         const { pageToken } = store.getState().videos;
         dispatch(videosRequest(pageToken));
     }, [dispatch]);
 
+    useEffect(() => {
+        setInfosVideos(videos);
+    }, [videos]);
+
+    function handlerMore() {
+        const { pageToken } = store.getState().videos;
+        dispatch(videosRequest(pageToken));
+    }
     return (
         <Content>
             <VideoList>
-                <PlayItem
-                    thumb="https://i.ytimg.com/vi/XGx5iMbufio/hq720.jpg"
-                    title="titulo do video"
-                />
-                <PlayItem
-                    thumb="https://i.ytimg.com/vi/XGx5iMbufio/hq720.jpg"
-                    title="titulo do video"
-                />
-                <PlayItem
-                    thumb="https://i.ytimg.com/vi/XGx5iMbufio/hq720.jpg"
-                    title="titulo do video"
-                />
-                <PlayItem
-                    thumb="https://i.ytimg.com/vi/XGx5iMbufio/hq720.jpg"
-                    title="titulo do video"
-                />
-                <PlayItem
-                    thumb="https://i.ytimg.com/vi/XGx5iMbufio/hq720.jpg"
-                    title="titulo do video"
-                />
+                {infosVideos.map(info => (
+                    <PlayItem
+                        key={info.id}
+                        thumb={info.thumbnails}
+                        title={info.title}
+                    />
+                ))}
                 <LoadMore>
                     {loading ? (
                         <Loader type="TailSpin" color="#A99E7E" />
                     ) : (
-                        <button type="button">LOAD MORE</button>
+                        <button type="button" onClick={handlerMore}>
+                            LOAD MORE
+                        </button>
                     )}
                 </LoadMore>
             </VideoList>

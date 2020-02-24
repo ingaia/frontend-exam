@@ -15,8 +15,16 @@ export default function videos(state = INITIAL_STATE, action) {
                 break;
             }
             case '@videos/VIDEOS_SUCCESS': {
+                const arrVideos = action.payload.videos.map(video => {
+                    return {
+                        id: video.id,
+                        title: video.snippet.title,
+                        thumbnails: video.snippet.thumbnails.high.url,
+                        videoId: video.snippet.resourceId.videoId,
+                    };
+                });
                 draft.pageToken = action.payload.pageToken;
-                draft.videos = action.payload.videos;
+                draft.videos = [...draft.videos, ...arrVideos];
                 draft.loading = false;
                 break;
             }

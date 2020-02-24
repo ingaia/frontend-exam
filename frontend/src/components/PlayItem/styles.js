@@ -10,8 +10,9 @@ export const Container = styled.div`
     ${props =>
         props.thumb &&
         css`
+            background: no-repeat center;
             background-image: url(${props.thumb});
-            background-size: 385px 232px;
+            background-size: cover;
         `}
 
     &:hover {
@@ -26,7 +27,7 @@ export const Container = styled.div`
         height: 57px;
         margin-top: 175px;
         color: #fff;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 16px;
     }
 `;
