@@ -41,7 +41,7 @@ export const Content = styled.div`
     button {
         width: 106px;
         height: 39px;
-        background: rgba(255, 255, 255, 0);
+        background: transparent;
         margin-top: 50px;
         margin-left: auto;
         margin-right: auto;
