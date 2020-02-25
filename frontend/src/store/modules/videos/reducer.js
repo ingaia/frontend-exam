@@ -32,6 +32,11 @@ export default function videos(state = INITIAL_STATE, action) {
                 draft.loading = false;
                 break;
             }
+            case '@auth/SIGN_OUT': {
+                draft.pageToken = '';
+                draft.videos = [];
+                break;
+            }
             default:
         }
     });

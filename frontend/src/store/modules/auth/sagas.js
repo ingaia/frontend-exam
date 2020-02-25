@@ -14,4 +14,11 @@ export function* signIn({ payload }) {
     history.push('/dashboard');
 }
 
-export default all([takeLatest('@auth/SIGN_IN_REQUEST', signIn)]);
+export function signOut() {
+    history.push('/');
+}
+
+export default all([
+    takeLatest('@auth/SIGN_IN_REQUEST', signIn),
+    takeLatest('@auth/SIGN_OUT', signOut),
+]);
