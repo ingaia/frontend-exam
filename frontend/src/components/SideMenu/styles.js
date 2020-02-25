@@ -8,7 +8,7 @@ export const Menu = styled.div`
     border-right: 1px solid #4c4c4c;
     justify-content: flex-start;
     align-items: center;
-
+    height: 100%;
     img {
         margin-top: 100px;
     }
@@ -37,5 +37,8 @@ export const Menu = styled.div`
         &:hover {
             cursor: pointer;
         }
+    }
+    @media (max-width: 992px) {
+        display: none;
     }
 `;

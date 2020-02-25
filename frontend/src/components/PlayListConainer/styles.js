@@ -4,15 +4,21 @@ import { lighten } from 'polished';
 export const Content = styled.div`
     background: linear-gradient(90deg, #000, rgba(0, 0, 0, 0));
     width: 100%;
+    @media (max-width: 992px) {
+        max-height: calc(100% - 108px);
+    }
 `;
 
 export const VideoList = styled.div`
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin: 58px 58px 0;
-    max-height: calc(100% - 58px);
+    margin: 40px 40px 0;
     overflow-y: scroll;
+    @media (max-width: 992px) {
+        margin: 20px 20px 0 50px;
+        max-height: calc(100% - 40px);
+    }
 `;
 
 export const LoadMore = styled.div`
