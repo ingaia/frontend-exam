@@ -15,9 +15,38 @@ export const VideoList = styled.div`
     justify-content: center;
     margin: 40px 40px 0;
     overflow-y: scroll;
+    max-height: calc(100% - 40px);
     @media (max-width: 992px) {
         margin: 20px 20px 0 50px;
-        max-height: calc(100% - 40px);
+        max-height: calc(100% - 20px);
+        overflow-y: scroll;
+    }
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-button {
+        width: 0;
+        height: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #a99e7e;
+        border: 5px solid #a99e7e;
+        border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar-track:hover {
+        background: #666666;
+    }
+
+    &::-webkit-scrollbar-track:active {
+        background: #333333;
+    }
+
+    &::-webkit-scrollbar-corner {
+        background: transparent;
     }
 `;
 
