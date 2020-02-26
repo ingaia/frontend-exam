@@ -7,7 +7,7 @@ export default function Loader() {
     return (
         <Container>
             <ToggleWrapper>
-                <LoaderSvg className="svg-1" />
+                <LoaderSvg data-testid="svg" className="svg-1" />
             </ToggleWrapper>
         </Container>
     );
