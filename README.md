@@ -19,6 +19,7 @@ Convert the following design to a Single Web Application (SPA):
 - Your application must be responsive (we did not create a mobile design version because we want to see your solution to this problem)
 - List all videos from this public playlist: https://www.youtube.com/playlist?list=PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF
 - Unit tests
+- **Deploy your application on a free host service and add the public link on this file**
 
 ## Tips
-- We ❤️ animations, code coverage, end-to-end tests and CI/CD (that's not mandatory for you to complete the test)
+- We ❤️ animations, code coverage and end-to-end tests
