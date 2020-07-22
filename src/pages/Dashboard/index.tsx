@@ -1,15 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import history from '../../services/history';
+import api from '../../services/api';
+import token_api from '../../services/token';
+import playlist from '../../services/playlist';
+
+import Reactotron from 'reactotron-react-js';
 
 import logo from '../../assets/logo_dark.png';
-import image from '../../assets/image.png';
 import Background from '../../components/Background';
 import { Container, Content, Sidenav, ContentBox, VideosBox, LoadMoreButton } from './styles';
 
+interface Videos {
+  snippet: {
+    title: string,
+    thumbnails: {
+      standard: {
+        url: string;
+      }
+    }
+  }
+}
+
 const Dashboard: React.FC = () => {
   // States
-  const [activeTrailerButton, setActiveTrailerButton] = useState(true);
+  const [activeTrailerButton, setActiveTrailerButton] = useState<Boolean>(true);
+  const [videos, setVideos] = useState<Videos[]>([]);
+
+  // Load Videos from playlist on enter on dashboard
+  useEffect(() => {
+    async function loadVideos() {
+      const response = await api.get(`/playlistItems?key=${token_api}&playlistId=${playlist}&part=snippet,contentDetails`);
+      const { items } = response.data;
+      setVideos(items);
+    }
+    loadVideos();
+  }, []);
+
 
   // Activate Trailers Button
   function handleTrailers() {
@@ -23,7 +50,7 @@ const Dashboard: React.FC = () => {
       history.push('/signin');
     }, 1000);
   };
-
+  Reactotron.log!(videos);
   return (
     <Container>
       <Background />
@@ -40,17 +67,19 @@ const Dashboard: React.FC = () => {
           >
             TRAILERS
           </button>
-          <button type="button" onClick={handleLogout}>LOGOUT</button>
+          <button onFocus={() => setActiveTrailerButton(false)} type="button" onClick={handleLogout}>LOGOUT</button>
         </Sidenav>
         <ContentBox>
           <VideosBox>
-            <img src={image} alt="image_from_video" />
-            <img src={image} alt="image_from_video" />
-            <img src={image} alt="image_from_video" />
-            <img src={image} alt="image_from_video" />
-            <img src={image} alt="image_from_video" />
-            <img src={image} alt="image_from_video" />
-            <img src={image} alt="image_from_video" />
+            {videos.map(video => (
+              <button id="button-img">
+                <img src={video.snippet.thumbnails.standard.url} alt="image_from_video" />
+                <div id='title-box'>
+                  <p>{video.snippet.title}</p>
+                </div>
+              </button>
+            ))}
+
             <LoadMoreButton>LOAD MORE</LoadMoreButton>
           </VideosBox>
         </ContentBox>

@@ -9,6 +9,7 @@ export const Content = styled.div`
   display: grid;
   grid-template-columns: 25% 75%;
 `;
+
 export const Sidenav = styled.nav`
   
   height: 100vh;
@@ -23,7 +24,7 @@ export const Sidenav = styled.nav`
     align-self: center;
     margin-bottom: 130px;
   }
-  button {
+  > button {
     color: #fff;
     background: transparent;
     border: none;
@@ -107,14 +108,32 @@ export const VideosBox = styled.div`
     background-color: ${darken(0.25, '#A99E7E')};
   }
  */
-  img {
-    width: 100%;
-    height: 320px;
-    border: 1px solid #A99E7E; 
-    box-shadow: 0px 0px 40px 50px rgba(0,0,0,0.6);
-  }
+  #button-img{
+    border: 1px solid #A99E7E;
+    background: #000; 
+    position: relative;
+
+    img {
+    width: 560px;
+    height: 340px;
+    box-shadow: 0px 0px 20px 70px rgba(0,0,0,0.6);
+    
+    }
+    #title-box{
+      background: #000;
+      
+      p {
+        padding: 10px;
+        font-size: 18px;
+        border: none;
+        color: #fff;
+      }
+    }
+ }
+  
   
 `;
+
 export const LoadMoreButton = styled.button`
   background: transparent;
   border: 1px solid #A99E7E;
@@ -125,4 +144,5 @@ export const LoadMoreButton = styled.button`
   font-size: 16px;
   align-self: center;
   box-shadow: 0px 0px 30px 20px rgba(0,0,0,0.5);
+  outline: none;
 `;
