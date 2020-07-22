@@ -4,13 +4,13 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
   
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 15%;
   
   img{
     width: 380px;
@@ -40,8 +40,9 @@ export const SubmitButton = styled.button`
   padding: 15px 10px;
   color: #A99E7E;
   width: 120px;
-  margin: 40px auto;
+  margin: 40px 0;
   font-size: 16px;
+  align-self: center;
   -webkit-box-shadow: 0px 0px 37px 4px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 37px 4px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 37px 4px rgba(0,0,0,0.75);

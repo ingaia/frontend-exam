@@ -10,6 +10,8 @@ import {
 } from './styles';
 
 const SignIn: React.FC = () => {
+
+  // Navigate with history to Dashboard
   function handleSubmit() {
     history.push('/dashboard');
   }
@@ -19,7 +21,7 @@ const SignIn: React.FC = () => {
       <Background />
       <Content>
         <img src={logo} alt="logo_witcher" />
-        <Form onSubmit={() => handleSubmit()}>
+        <Form onSubmit={handleSubmit}>
           <Input name="email" placeholder="Email" />
           <Input name="password" placeholder="Password" />
           <SubmitButton type="submit">LOGIN</SubmitButton>
