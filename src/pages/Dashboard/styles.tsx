@@ -58,7 +58,7 @@ export const VideosBox = styled.div`
   grid-template-columns: 1fr 1fr;
   padding: 30px 30px;
   grid-gap: 5%;
-  box-shadow: 0px 0px 20px 70px rgba(0,0,0,0.6);
+  box-shadow: 0px 0px 50px 70px rgba(0,0,0,0.8);
   background: transparent;
 
   ::-webkit-scrollbar {
@@ -112,15 +112,16 @@ export const VideosBox = styled.div`
     border: 1px solid #A99E7E;
     background: #000; 
     position: relative;
+    box-shadow: 0px 0px 30px 70px rgba(0,0,0,0.6);
 
     img {
     width: 560px;
     height: 340px;
-    box-shadow: 0px 0px 20px 70px rgba(0,0,0,0.6);
     
     }
     #title-box{
       background: #000;
+      box-shadow: 0px 0px 30px 70px rgba(0,0,0,0.6);
       
       p {
         padding: 10px;
@@ -145,4 +146,38 @@ export const LoadMoreButton = styled.button`
   align-self: center;
   box-shadow: 0px 0px 30px 20px rgba(0,0,0,0.5);
   outline: none;
+`;
+
+export const VideoFrame = styled.div`
+  position: absolute;
+  left: 20%;
+  top: 15%;
+  width: 60%;
+  height: 60%;
+
+  #frame-box{
+    border: 1px solid #A99E7E;
+    box-shadow: 0px 0px 0px 99999px rgba(29, 26, 26, 1);
+  }
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  z-index: 1;
+  top: -15%;
+  right: -20%;
+  display: flex;
+  color: #FFF;
+  background: transparent;
+  border: none;
+  align-items: center;
+  font-size: 24px;
+
+  &:hover {
+    color: ${darken(0.2, '#fff')};
+  }
+
+  p {
+    margin-left: 5px;
+  }
 `;

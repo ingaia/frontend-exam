@@ -19,6 +19,9 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0",
+    "react-iframe": "^1.8.0",
+    "react-player": "^2.5.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "reactotron-react-js": "^3.3.7",
@@ -26,13 +29,18 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.test.tsx"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
   },
   "browserslist": {
     "production": [
