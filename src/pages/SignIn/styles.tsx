@@ -1,5 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { darken } from 'polished';
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -25,7 +34,7 @@ export const Content = styled.div`
     > div{
         position: relative;
         width: 100%;
-        height: 60px;
+        height: 70px;
         line-height: 44px;
         transition: 0.2s;
 
@@ -47,25 +56,22 @@ export const Content = styled.div`
           padding: 0.5rem 0;
           width: 100%;
           color: #FFF;
+          font-size: 16px;
 
           &:invalid {
             outline: 0;
-          }
-          &:focus,
-          &:valid {
-            border-color: #00dd22;
           }
           &:focus~label,
           &:valid~label
            {
             font-size: 14px;
             top: -24px;
-            color: #00dd22;
           }
       }
   } 
 }
 `;
+
 export const SubmitButton = styled.button`
   background: transparent;
   border: 1px solid #A99E7E;
@@ -97,6 +103,9 @@ export const SubmitButton = styled.button`
   box-shadow: 0px 0px 37px 30px rgba(0,0,0,0.85);
   }
 
+  .loading-icon {
+        animation: ${rotate} 2s infinite;
+      }
 
 
 `;

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import { MdClose } from 'react-icons/md';
-
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { toast } from 'react-toastify';
 import history from '../../services/history';
 import api from '../../services/api';
 import token_api from '../../services/token';
@@ -37,6 +38,9 @@ const Dashboard: React.FC = () => {
   const [videos, setVideos] = useState<Videos[]>([]);
   const [nextToken, setNextToken] = useState<string>("");
   const [videoFrame, setVideoFrame] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [loadingLogout, setLoadingLogout] = useState<boolean>(false);
+
 
   // Load Videos from playlist on enter on dashboard
   useEffect(() => {
@@ -55,7 +59,11 @@ const Dashboard: React.FC = () => {
     const { items, nextPageToken } = response.data;
     const newVideos = [...videos];
     items.map((item: Videos) => newVideos.push(item));
-    setVideos(newVideos);
+    setLoading(true);
+    setTimeout(() => {
+      setVideos(newVideos);
+      setLoading(false);
+    }, 1000)
     if (nextPageToken) {
       setNextToken(nextPageToken);
     } else {
@@ -74,7 +82,6 @@ const Dashboard: React.FC = () => {
     setVideoFrameVisible(false);
   }
 
-
   // Activate Trailers Button
   function handleTrailers() {
     setActiveTrailerButton(true);
@@ -83,8 +90,10 @@ const Dashboard: React.FC = () => {
   // Navigation with history to SignIn
   function handleLogout() {
     setActiveTrailerButton(false);
+    setLoadingLogout(true);
     setTimeout(() => {
       history.push('/signin');
+      toast.success("Logout realizado com sucesso");
     }, 1000);
   };
   return (
@@ -103,7 +112,15 @@ const Dashboard: React.FC = () => {
           >
             TRAILERS
           </button>
-          <button onFocus={() => setActiveTrailerButton(false)} type="button" onClick={handleLogout}>LOGOUT</button>
+          <button
+            onFocus={() => setActiveTrailerButton(false)}
+            type="button"
+            onClick={handleLogout}>
+            {loadingLogout
+              ? (<AiOutlineLoading3Quarters className="loading-icon" />)
+              : "LOGOUT"
+            }
+          </button>
         </Sidenav>
         <ContentBox>
           <VideosBox>
@@ -124,7 +141,10 @@ const Dashboard: React.FC = () => {
               onClick={() => handleMoreVideos()}
               style={{ display: moreButton ? 'relative' : 'none' }}
             >
-              LOAD MORE
+              {loading
+                ? (<AiOutlineLoading3Quarters className="loading-icon" />)
+                : "LOAD MORE"
+              }
             </LoadMoreButton>
           </VideosBox>
         </ContentBox>

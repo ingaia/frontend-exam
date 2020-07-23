@@ -1,5 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { darken } from 'polished';
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 export const Container = styled.div`
   
@@ -50,6 +59,9 @@ export const Sidenav = styled.nav`
     color: #A99E7E;
     outline: none;
   }
+  .loading-icon {
+        animation: ${rotate} 2s infinite;
+      }
 }
   
 `;
@@ -164,6 +176,9 @@ export const LoadMoreButton = styled.button`
   box-shadow: 0px 0px 37px 30px rgba(0,0,0,0.85);
   
   }
+  .loading-icon {
+        animation: ${rotate} 2s infinite;
+      }
 `;
 
 export const VideoFrame = styled.div`

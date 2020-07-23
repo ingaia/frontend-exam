@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Input } from '@rocketseat/unform';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { toast } from 'react-toastify';
 
 import history from '../../services/history';
 
@@ -11,12 +13,14 @@ import {
 
 const SignIn: React.FC = () => {
   // States
-
+  const [loading, setLoading] = useState<boolean>(false);
 
   // Navigate with history to Dashboard
   function handleSubmit() {
+    setLoading(true);
     setTimeout(() => {
       history.push('/dashboard');
+      toast.success("Login realizado com sucesso!")
     }, 500)
   }
 
@@ -28,7 +32,7 @@ const SignIn: React.FC = () => {
         <Form onSubmit={handleSubmit}>
           <div>
             <Input required name="email" id="email" type="input" />
-            <label htmlFor="email" >Email</label>
+            <label htmlFor="email">Email</label>
           </div>
           <div>
             <Input required name="password" id="password" type="password" />
@@ -37,8 +41,11 @@ const SignIn: React.FC = () => {
           <SubmitButton
             type="submit"
           >
-            LOGIN
-            </SubmitButton>
+            {loading
+              ? (<AiOutlineLoading3Quarters className="loading-icon" />)
+              : "LOGIN"
+            }
+          </SubmitButton>
         </Form>
       </Content>
     </Container>
