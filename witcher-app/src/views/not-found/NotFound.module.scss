@@ -1,0 +1,17 @@
+@import '../../assets/styles/variables';
+
+.NotFoundContainer {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        color: $white;
+    }
+
+    .NotFoundBackButton {
+        width: 200px;
+    }
+}

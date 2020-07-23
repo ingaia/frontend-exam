@@ -1,0 +1,17 @@
+@import './assets/styles/variables';
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto';
+  overflow: hidden;
+  background-color: $black;
+}
+

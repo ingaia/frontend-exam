@@ -1,0 +1,22 @@
+@import '../../assets/styles/variables';
+
+.InputText {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    color: $white;
+
+    border: none;
+    border-bottom: 1px solid $primary-color;
+    outline: none;
+    line-height: 16px;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+
+    &::placeholder {
+        color: $primary-color;
+    }
+}

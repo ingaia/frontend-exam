@@ -1,0 +1,41 @@
+@import '../../assets/styles/variables';
+
+.SpinnerOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparentize($black, 0.4) ;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &.show {
+        visibility: visible;
+    }
+    &.hide {
+        visibility: hidden;
+    }
+    img {
+        animation: spinner 2s linear infinite;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    50% {
+      transform: rotate(180deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }

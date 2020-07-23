@@ -1,0 +1,29 @@
+.login {    
+    max-width: 300px;
+    margin: 0 20px;
+
+    display: grid;
+    grid-template-areas: 
+        "logo"
+        "fields"
+        "button";
+
+    .logo {
+        grid-area: logo;
+        margin-bottom: 40px;
+    }
+
+    .fields {
+        grid-area: fields;
+
+        input {
+            margin-bottom: 20px;
+        }
+    }
+
+    .loginButton {
+        grid-area: button;
+        width: 106px;
+        margin: 30px auto 0 auto;
+    }
+}
