@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { darken } from 'polished';
+import { device } from '../../styles/devices';
 
 const rotate = keyframes`
   from {
@@ -17,6 +18,10 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: grid;
   grid-template-columns: 25% 75%;
+
+  @media ${device.tabletS} {
+    grid-template-columns: 100%;
+    }
 `;
 
 export const Sidenav = styled.nav`
@@ -26,11 +31,25 @@ export const Sidenav = styled.nav`
   justify-content: center;
   border-right: 1px solid ${darken(0.2, '#A99E7E')};
 
+  @media ${device.tabletS} {
+    height: 20vh;
+    flex-direction: row;
+    }
+
   img{
     width: 380px;
     height: 180px;
     align-self: center;
     margin-bottom: 130px;
+
+    @media ${device.laptopM} {
+    width: 300px;
+    height: 180px;
+    }
+    @media ${device.tabletM} {
+    width: 240px;
+    height: 140px;
+    }
   }
   > button {
     color: #fff;
@@ -71,6 +90,10 @@ export const ContentBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media ${device.tabletM} {
+    height: 80vh;
+  }
 `;
 
 export const VideosBox = styled.div`
@@ -84,6 +107,9 @@ export const VideosBox = styled.div`
   box-shadow: 0px 0px 50px 70px rgba(0,0,0,0.8);
   background: transparent;
 
+  @media ${device.laptopS} {
+    grid-template-columns: 1fr;
+  }
   ::-webkit-scrollbar {
     width: 20px;
   }
@@ -116,20 +142,44 @@ export const VideosBox = styled.div`
     box-shadow: 0px 0px 30px 70px rgba(0,0,0,0.6);
     transition: 1s ease-in-out;
 
-    &:active {
-    transform: translateY(5px);
-    transition: all 0.3s;
+    @media ${device.laptopL} {
+      width: 450px;
+      height: 320px;
     }
-
-    &:hover {
-    transition: 0.7s ease-in-out;
-    border: 1px solid ${darken(0.3, "#A99E7E")};
+    @media ${device.laptopM} {
+      width: 420px;
+      height: 290px;
+    }
+    @media ${device.laptopS} {
+      width: 760px;
+      height: 420px;
+    }
+    @media ${device.tabletM} {
+    width: 650px;
+    height: 380px;
     }
 
     img {
-    width: 560px;
-    height: 340px;
+    width: 550px;
+    height: 330px;
     
+    @media ${device.laptopL} {
+    width: 440px;
+    height: 270px;
+    }
+    @media ${device.laptopM} {
+    width: 410px;
+    height: 220px;
+    }
+    @media ${device.laptopS} {
+      width: 750px;
+      height: 360px;
+    }
+    @media ${device.tabletM} {
+    width: 640px;
+    height: 320px;
+    }
+
     }
     #title-box{
       background: #000;
@@ -141,6 +191,16 @@ export const VideosBox = styled.div`
         border: none;
         color: #fff;
       }
+    }
+
+    &:active {
+    transform: translateY(5px);
+    transition: all 0.3s;
+    }
+
+    &:hover {
+    transition: 0.7s ease-in-out;
+    border: 1px solid ${darken(0.3, "#A99E7E")};
     }
  }
   
