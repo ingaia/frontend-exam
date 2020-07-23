@@ -11,7 +11,6 @@ export const Content = styled.div`
 `;
 
 export const Sidenav = styled.nav`
-  
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,13 +32,25 @@ export const Sidenav = styled.nav`
     margin-bottom: 10px;
     width: 60%;
     align-self: center;
+    transition: 0.3s ease-in-out;
 
-    &:focus {
-      border: 1px solid #A99E7E;
-      color: #A99E7E;
-      outline: none;
-    }
+  &:active {
+  transform: translateY(5px);
+  transition: all 0.3s ease-in-out;
   }
+
+  &:hover {
+  transition: 0.7s ease-in-out;
+  color: ${darken(0.1, "#A99E7E")};
+  box-shadow: 0px 0px 37px 10px rgba(0,0,0,0.85);
+  }
+
+  &:focus {
+    border: 1px solid #A99E7E;
+    color: #A99E7E;
+    outline: none;
+  }
+}
   
 `;
 
@@ -86,33 +97,22 @@ export const VideosBox = styled.div`
     background-color: ${darken(0.25, '#A99E7E')};
   }
 
-  /* &::-webkit-scrollbar{
-    width: 8px;
-    background-color: #A99E7E;
-    border-radius: 10px;
-  }
-  &::-webkit-scrollbar-track{
-	border-radius: 20px;
-  background-color: #A99E7E;
-  }
-
-  &::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: ${darken(0.15, '#A99E7E')}; 
-  }
-
-  &::-webkit-scrollbar-thumb:hover{
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: ${darken(0.25, '#A99E7E')};
-  }
- */
   #button-img{
     border: 1px solid #A99E7E;
     background: #000; 
     position: relative;
     box-shadow: 0px 0px 30px 70px rgba(0,0,0,0.6);
+    transition: 1s ease-in-out;
+
+    &:active {
+    transform: translateY(5px);
+    transition: all 0.3s;
+    }
+
+    &:hover {
+    transition: 0.7s ease-in-out;
+    border: 1px solid ${darken(0.3, "#A99E7E")};
+    }
 
     img {
     width: 560px;
@@ -141,11 +141,29 @@ export const LoadMoreButton = styled.button`
   padding: 20px 10px;
   color: #A99E7E;
   width: 300px;
+  height: 60px;
   margin: 0 auto;
   font-size: 16px;
   align-self: center;
   box-shadow: 0px 0px 30px 20px rgba(0,0,0,0.5);
   outline: none;
+  transition: 0.7s ease-in-out;
+
+  &:active {
+  transform: translateY(5px);
+  transition: all 0.3s;
+  }
+
+  &:hover {
+  transition: 0.7s ease-in-out;
+  color: ${darken(0.2, "#A99E7E")};
+  border: 1px solid ${darken(0.2, "#A99E7E")};
+  width: 320px;
+  height: 70px;
+  font-size: 20px;
+  box-shadow: 0px 0px 37px 30px rgba(0,0,0,0.85);
+  
+  }
 `;
 
 export const VideoFrame = styled.div`
@@ -172,9 +190,17 @@ export const CloseButton = styled.button`
   border: none;
   align-items: center;
   font-size: 24px;
+  transition: 1s ease-in-out;
+
+  &:active {
+  transform: translateY(5px);
+  transition: all 0.3s;
+  }
 
   &:hover {
-    color: ${darken(0.2, '#fff')};
+  transition: 0.7s ease-in-out;
+  color: ${darken(0.2, "#FFF")};
+  font-size: 28px;
   }
 
   p {

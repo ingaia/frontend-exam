@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 
 import history from '../../services/history';
@@ -10,10 +10,14 @@ import {
 } from './styles';
 
 const SignIn: React.FC = () => {
+  // States
+
 
   // Navigate with history to Dashboard
   function handleSubmit() {
-    history.push('/dashboard');
+    setTimeout(() => {
+      history.push('/dashboard');
+    }, 500)
   }
 
   return (
@@ -22,9 +26,19 @@ const SignIn: React.FC = () => {
       <Content>
         <img src={logo} alt="logo_witcher" />
         <Form onSubmit={handleSubmit}>
-          <Input name="email" placeholder="Email" />
-          <Input name="password" placeholder="Password" />
-          <SubmitButton type="submit">LOGIN</SubmitButton>
+          <div>
+            <Input required name="email" id="email" type="input" />
+            <label htmlFor="email" >Email</label>
+          </div>
+          <div>
+            <Input required name="password" id="password" type="password" />
+            <label htmlFor="password" >Password</label>
+          </div>
+          <SubmitButton
+            type="submit"
+          >
+            LOGIN
+            </SubmitButton>
         </Form>
       </Content>
     </Container>
