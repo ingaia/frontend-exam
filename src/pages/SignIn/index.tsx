@@ -11,7 +11,7 @@ import {
   Container, Content, SubmitButton,
 } from './styles';
 
-const SignIn: React.FC = () => {
+const SignIn = () => {
   // States
   const [loading, setLoading] = useState<boolean>(false);
 

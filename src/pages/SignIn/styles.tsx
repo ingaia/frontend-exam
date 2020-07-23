@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { darken } from 'polished';
+import { device } from '../../styles/devices';
 
 const rotate = keyframes`
   from {
@@ -26,7 +27,13 @@ export const Content = styled.div`
     width: 380px;
     height: 180px;
     margin-bottom: 50px;
+
+    @media ${device.mobileS} {
+    width: 280px;
+    height: 140px;
+    }
   }
+  
   form{
     display: flex;
     flex-direction: column;
