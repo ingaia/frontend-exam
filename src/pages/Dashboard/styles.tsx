@@ -39,22 +39,20 @@ export const Sidenav = styled.nav`
 
   img{
     width: 80%;
-    height: 26%;
+    height: 24%;
     align-self: center;
     margin-bottom: 130px;
 
     @media ${device.laptopM} {
       height: 22%;
     }
-    @media ${device.tabletM} {
-      height: 20%;
-    }
+   
     @media ${device.tabletM} {
       width: 80%;
       height: 15%;
     }
     @media ${device.tabletS} {
-      width: 40%;
+      width: 35%;
       height: 70%;
       margin-bottom: 20px;
 
