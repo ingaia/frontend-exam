@@ -1,25 +1,87 @@
-# InGaia Front-end Test 01
-Convert the following design to a Single Web Application (SPA):
+<h1 align="center">
+    <img alt="DevRadar" src="./src/assets/logo_dark.png" width="200px" />
+</h1>
 
-![Screenshot 1](screenshots/screenshot1.jpg)
-![Screenshot 2](screenshots/screenshot2.jpg)
-![Screenshot 3](screenshots/screenshot3.jpg)
+<h4 align="center">
+  Fake Web Aplication created for InGaia's Front-end Test
+</h4>
+<div align="center">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/croschel/frontend-exam">
 
-[Figma preview](https://www.figma.com/proto/COnJnZhaRmmAHt6MjBlRT3c1/Frontend---Test?node-id=20%3A1070&scaling=min-zoom)
+  <a>
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/croschel/frontend-exam">
+  </a>
 
-[Figma opened file](https://www.figma.com/file/COnJnZhaRmmAHt6MjBlRT3c1/Frontend---Test?node-id=0%3A1)
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+</p>
+</div>
 
-## Instructions
-- Fork this project, work and make a pull request when you're done
-- All assets you'll need are inside assets/ folder
-- Expect any username or password to get into the private area
+<p align="center">
+  <a href="#tecnologies">Tecnologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#external-services">External Services</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#requirements">Requirements</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#front-end-web">Front-End-Web</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#tests">Tests</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#deploy">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#license">Licença</a>
+</p>
+
+## Tecnologies
+
+This project was made with this main tecnologies:
+
+- [Node.js](https://nodejs.org/en/)
+- [ReactJS](https://reactjs.org/)
+- [Yarn](https://yarnpkg.com)
+- [Axios](https://github.com/axios/axios)
+- [React Player](https://www.npmjs.com/package/react-player)
+- [Cypress](https://docs.cypress.io)
+- [Heroku](https://www.heroku.com/)
+
+## External Services
+
+- [YoutubeAPI](https://developers.google.com/youtube/v3)
+
+## Project
+
+This Project is a Single Page Application to see a playlist of The Witcher's videos. 
 
 ## Requirements
-- Use a popular Javascript library ([React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Marko JS](https://markojs.com/), etc)
-- Your application must be responsive (we did not create a mobile design version because we want to see your solution to this problem)
-- List all videos from this public playlist: https://www.youtube.com/playlist?list=PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF
-- Unit tests
-- **Deploy your application on a free host service and add the public link on this file**
 
-## Tips
-- We ❤️ animations, code coverage and end-to-end tests
+- [Node](https://nodejs.org/pt-br/download/)
+- [Yarn](https://yarnpkg.com/cli/install)
+- [Git](https://git-scm.com)
+
+**Clone the repository**
+
+## Front-End-Web
+- Enter on root path of project
+- Run `yarn` to install de dependencies;
+- Run `yarn start` to begin;
+
+## Tests
+- Run yarn cypress:open
+- Test all pages
+
+## Deploy
+- This Application is running on Heroku.
+- URL: https://the-witcher-frontend.herokuapp.com
+
+## How to contribute
+
+- Do it a fork from this repository;
+- Create a branch with your feature: `git checkout -b my-feature`;
+- Do commits of your Changes: `git commit -m 'feat: My new feature'`;
+- Do it a push for your branch: `git push origin my-feature`.
+
+After the merge of your pull request will have done, You can delete your branch.
+
+## License
+
+This project is under the MIT license. See the archive [LICENSE](LICENSE.md) for more details.
+
+---
+
+Made with ❤️ by Caique Roschel
