@@ -33,22 +33,31 @@ export const Sidenav = styled.nav`
 
   @media ${device.tabletS} {
     height: 20vh;
-    flex-direction: row;
+    padding-top: 40px;
     }
+  
 
   img{
-    width: 380px;
-    height: 180px;
+    width: 80%;
+    height: 26%;
     align-self: center;
     margin-bottom: 130px;
 
     @media ${device.laptopM} {
-    width: 300px;
-    height: 180px;
+      height: 22%;
     }
     @media ${device.tabletM} {
-    width: 240px;
-    height: 140px;
+      height: 20%;
+    }
+    @media ${device.tabletM} {
+      width: 80%;
+      height: 15%;
+    }
+    @media ${device.tabletS} {
+      width: 40%;
+      height: 70%;
+      margin-bottom: 20px;
+
     }
   }
   > button {
@@ -61,6 +70,17 @@ export const Sidenav = styled.nav`
     width: 60%;
     align-self: center;
     transition: 0.3s ease-in-out;
+    
+    @media ${device.tabletS}{
+      width: 30%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 0;
+
+    }
+    @media ${device.mobileS} {
+      font-size: 14px;
+    }
 
   &:active {
   transform: translateY(5px);
@@ -92,6 +112,9 @@ export const ContentBox = styled.div`
   align-items: center;
 
   @media ${device.tabletM} {
+    height: 100vh;
+  }
+  @media ${device.tabletS} {
     height: 80vh;
   }
 `;
@@ -109,6 +132,13 @@ export const VideosBox = styled.div`
 
   @media ${device.laptopS} {
     grid-template-columns: 1fr;
+  }
+  @media ${device.mobileS} {
+    width: 100%;
+    padding: 30px 15px;
+    margin: 0 auto;
+    row-gap: 5%;
+    column-gap: 0;
   }
   ::-webkit-scrollbar {
     width: 20px;
@@ -141,44 +171,15 @@ export const VideosBox = styled.div`
     position: relative;
     box-shadow: 0px 0px 30px 70px rgba(0,0,0,0.6);
     transition: 1s ease-in-out;
-
-    @media ${device.laptopL} {
-      width: 450px;
-      height: 320px;
-    }
-    @media ${device.laptopM} {
-      width: 420px;
-      height: 290px;
-    }
-    @media ${device.laptopS} {
-      width: 760px;
-      height: 420px;
-    }
-    @media ${device.tabletM} {
-    width: 650px;
-    height: 380px;
-    }
+    width: 100%;
+    
+    @media ${device.mobileS} {
+      width: 92%;
+  }
 
     img {
-    width: 550px;
-    height: 330px;
-    
-    @media ${device.laptopL} {
-    width: 440px;
-    height: 270px;
-    }
-    @media ${device.laptopM} {
-    width: 410px;
-    height: 220px;
-    }
-    @media ${device.laptopS} {
-      width: 750px;
-      height: 360px;
-    }
-    @media ${device.tabletM} {
-    width: 640px;
-    height: 320px;
-    }
+    width: 100%;
+    height: 80%;
 
     }
     #title-box{
