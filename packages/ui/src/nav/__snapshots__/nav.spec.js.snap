@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Nav and NavItem with correct styles 1`] = `
+.emotion-6 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+@media screen and (min-width:448px) and (max-width:870px) {
+  .emotion-6 {
+    text-align: right;
+  }
+}
+
+.emotion-1 {
+  display: inline;
+}
+
+@media screen and (min-width:870px) {
+  .emotion-1 {
+    display: block;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width:870px) {
+  .emotion-1::after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    right: -6px;
+    top: 12px;
+    border-left: 1px solid #a99e7e;
+    border-bottom: 1px solid #a99e7e;
+    background-color: #fff;
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  background-color: transparent;
+  border-width: 1px 8px;
+  border-style: solid;
+  border-color: transparent;
+  color: #1d1a1a;
+  font-size: 0.857142857rem;
+  height: 2.785714286rem;
+  line-height: 39px;
+  padding: 0 1em;
+  text-transform: uppercase;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+  border-image-source: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzOSAzOSI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjQTk5RTdFIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0zOC41LjVILjVWMTZsNC4zIDQtNC4zIDR2MTQuNWgzOFYyNGwtMy45LTQgMy45LTR6Ii8+PC9zdmc+");
+  border-image-slice: 3% 13%;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  color: #a99e7e;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(169,158,126,.5);
+}
+
+@media screen and (min-width:780px) {
+  .emotion-0 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width:870px) {
+  .emotion-0 {
+    width: 254px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.emotion-3 {
+  display: inline;
+}
+
+@media screen and (min-width:870px) {
+  .emotion-3 {
+    display: block;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+}
+
+.emotion-2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  background-color: transparent;
+  border-width: 1px 8px;
+  border-style: solid;
+  border-color: transparent;
+  color: #1d1a1a;
+  font-size: 0.857142857rem;
+  height: 2.785714286rem;
+  line-height: 39px;
+  padding: 0 1em;
+  text-transform: uppercase;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.emotion-2:hover,
+.emotion-2:focus {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-2:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(169,158,126,.5);
+}
+
+@media screen and (min-width:780px) {
+  .emotion-2 {
+    font-size: 1rem;
+  }
+}
+
+.emotion-2:hover {
+  color: #a99e7e;
+  border-image-source: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzOSAzOSI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjQTk5RTdFIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0zOC41LjVILjVWMTZsNC4zIDQtNC4zIDR2MTQuNWgzOFYyNGwtMy45LTQgMy45LTR6Ii8+PC9zdmc+");
+  border-image-slice: 3% 13%;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+}
+
+@media screen and (min-width:870px) {
+  .emotion-2 {
+    width: 254px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+<nav>
+  <ul
+    className="emotion-6"
+  >
+    <li
+      className="emotion-1"
+    >
+      <a
+        aria-disabled="true"
+        className="emotion-0"
+        href="#"
+        onClick={[Function]}
+        role="button"
+      >
+        Trailers
+      </a>
+    </li>
+    <li
+      className="emotion-3"
+    >
+      <a
+        className="emotion-2"
+        href="#"
+        role="button"
+      >
+        Options
+      </a>
+    </li>
+    <li
+      className="emotion-3"
+    >
+      <a
+        className="emotion-2"
+        href="#"
+        role="button"
+      >
+        Logout
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

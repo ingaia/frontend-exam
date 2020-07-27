@@ -1,0 +1,66 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Theme } from '../theme';
+import Button from './button';
+
+<Meta title="Button" component={Button} />
+
+# Button
+
+## Kinds
+
+- primary: Render button with default style
+- active: Render button with active style
+
+<Preview>
+  <Story name="kinds">
+    <Theme setGlobalStyles theme="light">
+      <Button kind="primary">Primary</Button>
+      {' '}
+      <Button kind="active">Active</Button>
+    </Theme>
+  </Story>
+</Preview>
+
+## Disabled states
+
+- readOnly: Render normally but prevent actions
+- disabled: Render disabled
+
+<Preview>
+  <Story name="disabled">
+    <Theme setGlobalStyles theme="light">
+      <Button kind="active" disabled>Disabled</Button> {' '}
+      <Button kind="active" readOnly>Read Only</Button> {' '}
+    </Theme>
+  </Story>
+</Preview>
+
+## Type, link and custom Component
+
+- type: Form button type
+- link: Render as a link
+- as: Render with custom component
+
+<Preview>
+  <Story name="types">
+    <Theme setGlobalStyles theme="light">
+      <Button kind="active" type="submit">Submit</Button> {' '}
+      <Button kind="active" href="#" link>Link</Button> {' '}
+      <Button as='span' link>Span</Button>
+    </Theme>
+  </Story>
+</Preview>
+
+## Decorate
+
+Use decorated style borders.
+
+<Preview>
+  <Story name="decorate">
+    <Theme setGlobalStyles theme="light">
+      <Button kind="primary" decorate>Primary</Button>
+      {' '}
+      <Button kind="active" decorate>Active</Button>
+    </Theme>
+  </Story>
+</Preview>

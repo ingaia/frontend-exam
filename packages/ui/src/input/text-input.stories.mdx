@@ -1,0 +1,19 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Theme } from '../theme';
+import TextInput from './text-input';
+
+<Meta title="Text Input" component={TextInput} />
+
+# Text Input
+
+- placeholder: Text to be used as a placeholder/label (required).
+- block: render with `display: block`.
+
+<Preview>
+  <Story name="Input">
+    <Theme setGlobalStyles theme="light">
+      <TextInput type="number" placeholder="Number input" block />
+      <TextInput type="text" placeholder="Text input" onChange={e => console.log(e.target.value)} />
+    </Theme>
+  </Story>
+</Preview>
