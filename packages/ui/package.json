@@ -1,0 +1,75 @@
+{
+  "name": "@witcher-page/ui",
+  "version": "1.0.0",
+  "description": "Components Library for Witcher page",
+  "main": "cjs/index.js",
+  "author": "Thiago Polastri",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "story": "start-storybook",
+    "buildui": "cross-env NODE_ENV=production BABEL_ENV=cjs babel src -d cjs",
+    "lint": "eslint --ext .js,.jsx src/",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "emotion-normalize": "^10.1.0",
+    "emotion-theming": "^10.0.27",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-emotion": "^10.0.33",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-emotion": "^10.0.27",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "jest": "^24.9.0",
+    "jest-emotion": "^10.0.32",
+    "react-test-renderer": "^16.13.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb"
+    ],
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "plugins": [
+      "emotion"
+    ],
+    "rules": {
+      "react/jsx-filename-extension": [
+        0
+      ],
+      "react/react-in-jsx-scope": [
+        0
+      ],
+      "react/jsx-props-no-spreading": [
+        0
+      ]
+    }
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules"
+    ],
+    "snapshotSerializers": [
+      "jest-emotion"
+    ]
+  }
+}

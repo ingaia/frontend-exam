@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders text input with correct styles 1`] = `
+.emotion-1 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1.5rem;
+  display: block;
+  width: 100%;
+}
+
+.emotion-1 input {
+  outline: 0;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #a99e7e;
+  font-size: 1rem;
+  height: 2.785714286rem;
+  padding: 0 0.5rem;
+  color: #fff;
+}
+
+.emotion-1 input:focus {
+  border-color: #fff;
+}
+
+.emotion-1 input + span {
+  display: block;
+  position: absolute;
+  font-size: 1rem;
+  line-height: 2.785714286rem;
+  color: #a99e7e;
+  top: 0;
+  left: 0.5rem;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  -webkit-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+}
+
+.emotion-1 input:focus + span {
+  -webkit-transform: translateX(-0.5rem) translateY(-1.392857143rem) scale(0.8);
+  -ms-transform: translateX(-0.5rem) translateY(-1.392857143rem) scale(0.8);
+  transform: translateX(-0.5rem) translateY(-1.392857143rem) scale(0.8);
+}
+
+.emotion-1 input {
+  display: block;
+  width: 100%;
+}
+
+<label
+  className="emotion-1"
+>
+  <input
+    onChange={[Function]}
+    type="email"
+  />
+  <span
+    className="emotion-0"
+  >
+    test
+  </span>
+</label>
+`;

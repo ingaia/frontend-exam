@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders button with correct styles 1`] = `
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  color: #fff;
+  font-size: 0.857142857rem;
+  height: 2.785714286rem;
+  line-height: 39px;
+  padding: 0 1em;
+  text-transform: uppercase;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+  border-color: #a99e7e;
+  color: #a99e7e;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(169,158,126,.5);
+}
+
+@media screen and (min-width:780px) {
+  .emotion-0 {
+    font-size: 1rem;
+  }
+}
+
+.emotion-0:hover {
+  color: #a99e7e;
+  border-color: #a99e7e;
+}
+
+.emotion-0:hover {
+  color: #fff;
+  background-color: #a99e7e;
+}
+
+<a
+  className="emotion-0"
+  href="#"
+  role="button"
+>
+  Test
+</a>
+`;

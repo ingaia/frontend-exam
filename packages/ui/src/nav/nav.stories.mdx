@@ -1,0 +1,19 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Theme } from '../theme';
+import { Nav, NavItem } from './index';
+
+<Meta title="Nav" component={Nav} />
+
+# Nav
+
+<Preview>
+  <Story name="Nav">
+    <Theme setGlobalStyles theme="light">
+      <Nav decorate>
+        <NavItem href="#" active>Trailers</NavItem>
+        <NavItem href="#">Options</NavItem>
+        <NavItem href="#">Logout</NavItem>
+      </Nav>
+    </Theme>
+  </Story>
+</Preview>

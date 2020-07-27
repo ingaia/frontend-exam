@@ -1,0 +1,24 @@
+{
+  "name": "witcher-page",
+  "version": "1.0.0",
+  "description": "Front-end test",
+  "main": "index.js",
+  "author": "Thiago Polastri",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "story": "lerna run story --stream",
+    "prestart": "lerna run libbuild --stream",
+    "start": "lerna run start --stream",
+    "buildui": "lerna run buildui --stream",
+    "build": "lerna run build --stream",
+    "lint": "lerna run lint --stream",
+    "test": "lerna run test --stream"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
