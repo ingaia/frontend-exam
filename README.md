@@ -22,7 +22,7 @@ Convert the following design to a Single Web Application (SPA):
 - **Deploy your application on a free host service and add the public link on this file**
 
 ## Result
-[https://kaput-earthquake.surge.sh/](kaput-earthquake.surge.sh)
+[kaput-earthquake.surge.sh](http://kaput-earthquake.surge.sh)
 
 ## Tips
 - We ❤️ animations, code coverage and end-to-end tests
