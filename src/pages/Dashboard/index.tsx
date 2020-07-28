@@ -93,7 +93,11 @@ const Dashboard: React.FC = () => {
     setLoadingLogout(true);
     setTimeout(() => {
       history.push('/signin');
-      toast.success("Logout realizado com sucesso");
+      toast("Logout realizado com sucesso", {
+        className: 'black-background',
+        bodyClassName: "grow-font-size",
+        progressClassName: 'fancy-progress-bar'
+      });
     }, 1000);
   };
   return (
@@ -103,11 +107,13 @@ const Dashboard: React.FC = () => {
         <Sidenav>
           <img src={logo} alt="logo_witcher" />
           <button
+            disabled={videoFrameVisible}
             type="button"
             onClick={handleTrailers}
             style={{
               border: activeTrailerButton ? '1px solid #A99E7E' : 'none',
-              color: activeTrailerButton ? '#A99E7E' : '#fff'
+              color: activeTrailerButton ? '#A99E7E' : '#fff',
+              cursor: videoFrameVisible ? 'unset' : 'pointer'
             }}
           >
             TRAILERS
@@ -115,7 +121,10 @@ const Dashboard: React.FC = () => {
           <button
             onFocus={() => setActiveTrailerButton(false)}
             type="button"
-            onClick={handleLogout}>
+            onClick={handleLogout}
+            disabled={videoFrameVisible}
+            style={{ cursor: videoFrameVisible ? 'unset' : 'pointer' }}
+          >
             {loadingLogout
               ? (<AiOutlineLoading3Quarters className="loading-icon" />)
               : "LOGOUT"
@@ -126,11 +135,13 @@ const Dashboard: React.FC = () => {
           <VideosBox>
             {videos.map(video => (
               <button
+                disabled={videoFrameVisible}
+                style={{ cursor: videoFrameVisible ? 'unset' : 'pointer' }}
                 id="button-img"
                 key={video.id}
                 onClick={() => handleOpenVideo(video.contentDetails.videoId)}
               >
-                <img src={video.snippet.thumbnails.standard.url} alt="image_from_video" />
+                <img src={video.snippet.thumbnails.standard.url} alt={video.snippet.title} />
                 <div id='title-box'>
                   <p>{video.snippet.title}</p>
                 </div>
@@ -138,6 +149,7 @@ const Dashboard: React.FC = () => {
             ))}
 
             <LoadMoreButton
+              disabled={loading}
               onClick={() => handleMoreVideos()}
               style={{ display: moreButton ? 'relative' : 'none' }}
             >

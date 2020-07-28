@@ -18,10 +18,8 @@ const SignIn = () => {
   // Navigate with history to Dashboard
   function handleSubmit() {
     setLoading(true);
-    setTimeout(() => {
-      history.push('/dashboard');
-      toast.success("Login realizado com sucesso!")
-    }, 500)
+    history.push('/dashboard');
+    toast("Login realizado com sucesso!")
   }
 
   return (

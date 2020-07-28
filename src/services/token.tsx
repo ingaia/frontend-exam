@@ -1,4 +1,4 @@
 
-const token_api = "AIzaSyBo-JhDh-6AzXfX8hRsvDCYYpBgQ6017lM"
+const API_KEY = process.env.REACT_APP_API_KEY;
 
-export default token_api;
+export default API_KEY;
