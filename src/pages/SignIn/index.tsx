@@ -29,7 +29,7 @@ const SignIn = () => {
         <img src={logo} alt="logo_witcher" />
         <Form onSubmit={handleSubmit}>
           <div>
-            <Input required name="email" id="email" type="input" />
+            <Input required name="email" id="email" type="text" />
             <label htmlFor="email">Email</label>
           </div>
           <div>

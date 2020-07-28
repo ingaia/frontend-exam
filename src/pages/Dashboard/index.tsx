@@ -93,11 +93,7 @@ const Dashboard: React.FC = () => {
     setLoadingLogout(true);
     setTimeout(() => {
       history.push('/signin');
-      toast("Logout realizado com sucesso", {
-        className: 'black-background',
-        bodyClassName: "grow-font-size",
-        progressClassName: 'fancy-progress-bar'
-      });
+      toast("Logout realizado com sucesso");
     }, 1000);
   };
   return (

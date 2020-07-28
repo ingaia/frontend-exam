@@ -68,6 +68,7 @@ export const Content = styled.div`
           &:invalid {
             outline: 0;
           }
+          
           &:focus~label,
           &:valid~label
            {
