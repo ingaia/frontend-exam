@@ -1,0 +1,675 @@
+@import 'scss/components.scss';
+
+/* */
+
+$loading-placeholder-color: rgba(white, .05);
+$loading-placeholder-color-dark: rgba(white, .075);
+
+%loadingPlaceholder {
+
+    animation: loadingPlaceholder 1.5s infinite;
+
+    @keyframes loadingPlaceholder {
+
+        0%, 75%, 100% {
+
+            background: $loading-placeholder-color;
+
+        }
+
+        25% {
+
+            background: $loading-placeholder-color-dark;
+
+        }
+
+    }
+
+}
+
+.home {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    @media(min-width: $break-point-lg){
+
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    @media(max-width: $break-point-lg){
+
+        overflow: auto;
+
+    }
+
+    &Menu {
+
+        position: relative;
+
+        width: 400px;
+        height: 100%;
+
+        padding: $theme-padding * 5;
+
+        border-right: 1px solid rgba(#4C4C4C, .2);
+
+        flex-shrink: 0;
+
+        @media(max-width: $break-point-lg){
+
+            position: sticky;
+            top: 0;
+
+            padding: 0;
+
+            width: 100%;
+            height: 70px;
+
+            background: rgba(darken($md-grey-900, 5%), .75);
+
+            border: none;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            z-index: 100;
+
+        }
+
+        &Logo {
+
+            margin-bottom: $theme-padding * 3;
+
+            display: flex;
+            justify-content: center;
+
+            img {
+
+                width: 100%;
+
+                @media(max-width: $break-point-lg){
+
+                    width: 50%;
+
+                }
+
+                @media(max-width: $break-point-md){
+
+                    width: 80%;
+
+                }
+
+                @media(max-width: $break-point-sm){
+
+                    width: 100%;
+
+                }
+
+            }
+
+        }
+
+        &LogoWildHunt {
+
+            margin: 0;
+
+            img {
+
+                height: 60px;
+
+            }
+
+        }
+
+        &Logos {
+
+            position: absolute;
+
+            width: 100%;
+
+            bottom: 0;
+            left: 0;
+
+            padding: $theme-padding * 2;
+
+            img {
+
+                height: 50px;
+
+                &[alt=inGaia]{
+
+                    height: 25px;
+
+                }
+
+            }
+
+            a {
+
+                display: block;
+
+            }
+
+        }
+
+        @media(max-width: $break-point-lg){
+
+            &ButtonsCheckbox:checked + &Buttons {
+
+                opacity: 1;
+                transform: scale(1);
+                pointer-events: all;
+
+            }
+
+        }
+
+        &Buttons {
+
+            opacity: 1;
+
+            @media(max-width: $break-point-lg){
+
+                position: fixed;
+
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                padding: $theme-padding * 2;
+
+                z-index: 100;
+
+                background: $theme-color-1;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                opacity: 0;
+                transform: scale(1.01);
+                pointer-events: none;
+
+                transition: .2s ease;
+                transition-property: opacity, transform;
+
+            }
+
+            &Toggle {
+
+                $size: 30px;
+
+                position: absolute;
+
+                left: $theme-padding;
+
+                z-index: 100;
+
+                display: none;
+
+                @media(max-width: $break-point-lg){
+
+                    display: block;
+
+                }
+
+                svg {
+
+                    width: $size;
+                    height: $size;
+
+                    fill: $md-gold-500;
+
+                    cursor: pointer;
+
+                }
+
+            }
+
+            &Checkbox {
+
+                position: absolute;
+
+                pointer-events: none;
+
+                opacity: 0;
+
+            }
+
+            &Close {
+
+                position: fixed;
+
+                top: $theme-padding * 2;
+                right: $theme-padding * 2;
+
+                background: transparent;
+
+                display: none;
+
+                @media(max-width: $break-point-lg){
+
+                    display: block;
+
+                }
+
+                &:focus {
+
+                    outline: none;
+
+                }
+
+                svg {
+
+                    $size: 40px;
+
+                    width: $size;
+                    height: $size;
+
+                    fill: $md-gold-500;
+
+                    cursor: pointer;
+
+                }
+
+            }
+
+            &Row {
+
+                position: relative;
+
+                margin: 0;
+                padding: 0;
+
+                list-style: none;
+
+            }
+
+            &List {
+
+                @media(max-width: $break-point-lg){
+
+                    width: 100%;
+
+                }
+
+                &:not(:last-of-type){
+
+                    margin-bottom: $theme-padding;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &Main {
+
+        width: 100%;
+        height: 100%;
+
+        padding: $theme-padding * 3;
+
+        background: black;
+        background: linear-gradient(to right, rgba(black, .5) 0%, rgba(black, 0) 100%);
+
+        @media(min-width: $break-point-lg){
+
+            :global(.no-touch) & {
+
+                padding: $theme-padding * 2;
+
+            }
+
+        }
+
+        @media(max-width: $break-point-lg){
+
+            height: auto;
+
+            padding: $theme-padding * 2;
+
+        }
+
+        @media(max-width: $break-point-sm){
+
+            padding: $theme-padding;
+
+        }
+
+        &Title {
+
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 300;
+            @include font-sizer(24);
+            text-transform: uppercase;
+            color: $md-gold-500;
+
+            @media(max-width: $break-point-lg){
+
+                margin-bottom: $theme-padding * 2;
+
+            }
+
+            @media(max-width: $break-point-sm){
+
+                margin-bottom: $theme-padding;
+
+            }
+
+        }
+
+    }
+
+    &Playlist {
+
+        position: relative;
+
+        width: 100%;
+
+        @media(min-width: $break-point-lg){
+
+            height: 100%;
+
+        }
+
+        @media(min-width: $break-point-lg){
+
+            :global(.no-touch) & {
+
+                padding-right: 10px;
+
+                &::after {
+
+                    content: '';
+
+                    position: absolute;
+
+                    width: 1px;
+                    height: 100%;
+
+                    top: 0;
+                    right: 0;
+
+                    border-right: 1px solid rgba(white, .2);
+
+                    pointer-events: none;
+
+                    z-index: -1;
+
+                }
+
+            }
+
+        }
+
+        &Row {
+
+            padding: 0;
+
+            list-style: none;
+
+            @media(min-width: $break-point-lg){
+
+                height: 100%;
+
+                overflow-y: scroll;
+
+            }
+
+            @media(min-width: $break-point-lg){
+
+                :global(.no-touch) & {
+
+                    padding-right: 10px;
+
+                    &::-webkit-scrollbar {
+
+                        width: 10px;
+
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+
+                        $size: 6px;
+
+                        width: $size;
+
+                        background: $md-gold-500;
+
+                        border-radius: $size;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        &List {
+
+            margin-bottom: $theme-padding * 2;
+
+        }
+
+        &Cover {
+
+            position: relative;
+
+            width: 100%;
+
+            padding-bottom: percentage(1080 / 1920);
+            margin-bottom: $theme-padding;
+
+            border: 1px solid rgba($md-gold-500, 0);
+
+            transition: border-color .2s ease;
+
+            cursor: pointer;
+
+            overflow: hidden;
+
+            display: block;
+
+            &Loading {
+
+                background: $loading-placeholder-color;
+
+                pointer-events: none;
+
+                border-radius: 6px;
+
+                @extend %loadingPlaceholder;
+
+            }
+
+            &:hover {
+
+                border-color: $md-gold-500;
+            }
+
+            &:hover img {
+
+                transition: transform 40s ease;
+
+                transform: scale(1.6);
+
+            }
+
+            &:not(&Loading) &Wrapper::before {
+
+                content: '';
+
+                position: absolute;
+
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                border: 3px solid $theme-color-1;
+
+                z-index: 10;
+
+            }
+
+            &Wrapper {
+
+                position: absolute;
+
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+
+                overflow: hidden;
+
+                &Duration {
+
+                    position: absolute;
+
+                    bottom: 5px;
+                    right: 5px;
+
+                    padding: 3px 5px;
+
+                    font-family: 'Roboto Condensed', sans-serif;
+                    font-weight: 600;
+                    @include font-sizer(12);
+                    color: white;
+
+                    background: $theme-color-1;
+
+                    z-index: 20;
+
+                }
+
+                img {
+
+                    width: 100%;
+
+                    object-fit: cover;
+
+                    transition: transform .6s ease;
+
+                    backface-visibility: hidden;
+
+                    animation: fadeIn .8s ease;
+
+                    @keyframes fadeIn {
+
+                        from {
+
+                            opacity: 0;
+                            transform: scale(1.025)
+
+                        }
+
+                        to {
+
+                            opacity: 1;
+                            transform: scale(1)
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        &Info {
+
+            &Title {
+
+                font-family: 'Roboto Condensed', sans-serif;
+                font-weight: 600;
+                @include font-sizer(16);
+                color: white;
+
+                @media(max-width: $break-point-sm){
+
+                    @include font-sizer(14);
+
+                }
+
+                &Loading {
+
+                    width: 80%;
+
+                    background: $loading-placeholder-color;
+
+                    display: inline-block;
+
+                    border-radius: 6px;
+
+                    @extend %loadingPlaceholder;
+
+                }
+
+            }
+
+            &Owner {
+
+                font-family: 'Roboto Condensed', sans-serif;
+                font-weight: 300;
+                @include font-sizer(14);
+                color: rgba(white, .6);
+
+                transition: color .2s ease;
+
+                @media(max-width: $break-point-sm){
+
+                    @include font-sizer(12);
+
+                }
+
+                &Loading {
+
+                    width: 60%;
+
+                    margin-top: 3px;
+
+                    background: $loading-placeholder-color;
+
+                    display: inline-block;
+
+                    border-radius: 6px;
+
+                    @extend %loadingPlaceholder;
+
+                }
+
+                &:hover {
+
+                    color: $md-gold-500;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

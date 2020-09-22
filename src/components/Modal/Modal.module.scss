@@ -1,0 +1,103 @@
+@import 'scss/components.scss';
+
+.Modal {
+
+    $header-height: 85px;
+
+    /* */
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(#1D1A1A, .95);
+
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &Close {
+
+        position: fixed;
+
+        top: $theme-padding * 2;
+        right: $theme-padding * 2;
+
+        background: transparent;
+
+        &:focus {
+
+            outline: none;
+
+        }
+
+        svg {
+
+            $size: 40px;
+
+            width: $size;
+            height: $size;
+
+            fill: $md-gold-500;
+
+            cursor: pointer;
+
+        }
+
+    }
+
+    &:global(.transition-fade-exit-active) &Wrapper {
+
+        opacity: 0;
+        transform: scale(0.98);
+
+    }
+
+    &Wrapper {
+
+        background: $md-grey-900;
+
+        animation: slideUp .3s ease;
+
+        transition: .2s ease;
+        transition-property: opacity, transform;
+
+        border: 1px solid rgba(#4C4C4C, .2);
+        box-shadow: 0 0 50px rgba(black, .5);
+
+        @keyframes slideUp {
+
+            from {
+
+                opacity: 0;
+                transform: translateY(10px);
+
+            }
+
+            to {
+
+                opacity: 1;
+                transform: translateY(0);
+
+            }
+
+        }
+
+    }
+
+    &Content {
+
+        max-height: 90vh;
+        max-height: calc(90vh - #{$header-height});
+
+        overflow: auto;
+
+    }
+
+}

@@ -1,0 +1,30 @@
+@import 'scss/components.scss';
+
+.Confirm {
+
+    padding: $theme-padding * 2;
+
+    &Title {
+
+        margin-bottom: $theme-padding;
+
+        font-family: 'Roboto Condensed', sans-serif;
+        text-transform: uppercase;
+        @include font-sizer(20);
+        font-weight: 700;
+        line-height: 1;
+        color: $md-gold-500;
+
+    }
+
+    &Description {
+
+        margin-bottom: $theme-padding;
+
+        font-family: 'Roboto Condensed', sans-serif;
+        @include font-sizer(14);
+        color: white;
+
+    }
+
+}
