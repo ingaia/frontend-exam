@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 import WitcherLogo from '../../assets/images/logo_dark.png';
 
 // Components
-import CustomInput from '../custom-input/custom-input.component';
-import CustomButton from '../custom-button/custom-button.component';
+import CustomInput from '../../components/custom-input/custom-input.component';
+import CustomButton from '../../components/custom-button/custom-button.component';
 
 // Actions
 import { logIn } from '../../redux/user/user.actions';
