@@ -7,7 +7,6 @@ export const MainContainer = styled.div`
   align-items: center;
   position: absolute;
   width: 100%;
-  background: rgba(0, 0, 0, 0.7);
   height: 100%;
   img {width: 20%};
 
