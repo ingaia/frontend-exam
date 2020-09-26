@@ -17,7 +17,7 @@ AuthenticatedRoute.defaultProps = {
 
 AuthenticatedRoute.propTypes = {
   userAuth: PropTypes.bool,
-  component: PropTypes.func,
+  component: PropTypes.shape({}),
 };
 
 export default AuthenticatedRoute;
