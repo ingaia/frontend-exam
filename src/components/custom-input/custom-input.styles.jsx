@@ -14,12 +14,13 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  background: transparent;
+  background: transparent !important;
   border: none;
   border-bottom: 1px solid #a99e7e;
-  color: white;
+  color: white !important;
   height: 40px;
   width: 295px;
+
 
   &::-webkit-input-placeholder{ visibility: hidden; }
 
@@ -39,5 +40,11 @@ export const Input = styled.input`
       font-size: 12px;
       transform: translate(0, 0) scale(1);
     }
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover, 
+  &:-webkit-autofill:focus{
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: white !important;
   }
 `;

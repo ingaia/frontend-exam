@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage';
 
 // Reducers
 import userReducer from './user/user.reducer';
+import playlistReducer from './playlist/playlist.reducer';
 
 const persistConfig = {
   key: 'root',
@@ -14,6 +15,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   user: userReducer,
+  playlist: playlistReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

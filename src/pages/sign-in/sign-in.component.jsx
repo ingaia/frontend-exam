@@ -41,8 +41,8 @@ const SignIn = ({ logIn }) => {
     <MainContainer>
       <img src={WitcherLogo} alt="Witcher Light Logo" />
       <FormContainer onSubmit={handleSubmit}>
-        <CustomInput change={handleChange} id="userEmail" type="email" placeholder="Email" />
-        <CustomInput change={handleChange} id="userPassword" type="password" placeholder="Password" />
+        <CustomInput required change={handleChange} id="userEmail" type="email" placeholder="Email" />
+        <CustomInput required change={handleChange} id="userPassword" type="password" placeholder="Password" />
         <CustomButton isSignIn type="submit">LOGIN</CustomButton>
       </FormContainer>
     </MainContainer>

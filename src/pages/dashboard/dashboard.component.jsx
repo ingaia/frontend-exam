@@ -7,7 +7,14 @@ import PropTypes from 'prop-types';
 import WitcherLogo from '../../assets/images/logo_dark.png';
 
 // Styled Components
-import { MainContainer, MenuContainer, Menu, ButtonsContainer } from './dashboard.styles';
+import {
+  MainContainer,
+  MenuContainer,
+  Menu,
+  ButtonsContainer,
+  PlaylistContainer,
+}
+  from './dashboard.styles';
 
 // Actions
 import { logOut } from '../../redux/user/user.actions';
@@ -32,7 +39,9 @@ const Dashboard = ({ logOut }) => {
           </ButtonsContainer>
         </Menu>
       </MenuContainer>
-      <PlaylistOverview></PlaylistOverview>
+      <PlaylistContainer>
+        <PlaylistOverview></PlaylistOverview>
+      </PlaylistContainer>
     </MainContainer>
   );
 };

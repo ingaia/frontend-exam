@@ -21,6 +21,11 @@ export const MenuContainer = styled.div`
 
 `;
 
+export const PlaylistContainer = styled.div`
+    ${FlexStyles}
+    width: 65%;
+`;
+
 export const Menu = styled.div`
     ${FlexStyles};
     img {width: 75%};
