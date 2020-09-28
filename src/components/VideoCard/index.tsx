@@ -6,7 +6,7 @@ export interface Props {
   title: string,
   cover: string,
   onClick: () => void;
-};
+}
 
 const Component = ({ title, onClick, cover }: Props) => {
   return (

@@ -12,7 +12,7 @@ import rootSaga from './ducks/rootSaga';
 export interface ApplicationState {
   auth: AuthState;
   playlist: PlaylistState;
-};
+}
 
 const sagaMiddleware = createSagaMiddleware();
 

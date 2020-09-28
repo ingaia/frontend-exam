@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import playlistActions  from '../store/ducks/playlist/actions';
 import authActions      from '../store/ducks/auth/actions';
 import CircularProgress from '../components/CircularProgress';
-import { DataProps }    from '../store/ducks/playlist/types'
+import { DataProps }    from '../store/ducks/playlist/types';
 
 import { typedUseSelector } from '../store';
 

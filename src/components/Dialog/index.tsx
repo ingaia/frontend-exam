@@ -7,7 +7,7 @@ export interface Props {
   open: boolean;
   handleClose: () => void;
   videoId: string;
-};
+}
 
 const Component = ({ open, handleClose, videoId }: Props) => (
   <Dialog onClose={handleClose} maxWidth="md" fullWidth aria-labelledby="simple-dialog-title" open={open}>

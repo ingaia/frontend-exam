@@ -13,4 +13,4 @@ export default function* rootSaga() {
 
     takeEvery(PlaylistTypes.PLAYLIST_REQUEST, PlaylistSagas.request),
   ]);
-};
+}

@@ -9,7 +9,7 @@ export interface Props {
   fullWidth?: boolean,
   noborders?: boolean,
   onClick?: any
-};
+}
 
 const Component = ({children, noborders, ...props }: Props) => (
   <Button

@@ -10,7 +10,7 @@ export interface Props {
   label: string,
   value?: string,
   onChange?: any;
-};
+}
 
 const Component = (props: Props) => (
   <TextField
