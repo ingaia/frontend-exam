@@ -3,12 +3,20 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 
 export const ContainerWrapper = styled(Container)`
-  background-image: url('/assets/background.png');
-  background-position: center -98px;
-  background-size: 100% auto;
+  background-image: url('/assets/background-mobile.webp');
+  background-position: center center;
+  background-size: auto 100%;
   background-repeat: no-repeat;
-
   height: 100vh;
+
+  @media (min-width: 576px) {
+    background-image: url('/assets/background.webp');
+  }
+
+  @media (min-width: 960px) {
+    background-position: center -98px;
+   background-size: 100% auto;
+  }
 
   div.bg-opacity {
     background-color: rgb(0 0 0 / 0.5);
