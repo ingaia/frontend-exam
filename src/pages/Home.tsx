@@ -14,6 +14,8 @@ import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout';
 import Button from '../components/Button';
 import VideoCard from '../components/VideoCard';
+import Loader from '../components/Loader';
+
 import * as S from '../styles/Home';
 
 const Login = () => {
@@ -39,6 +41,10 @@ const Login = () => {
   const handleLogout = () => {
     dispatch(authActions.logoutRequest());
   };
+
+  if (authState.loading) {
+    return <Loader />;
+  }
 
   return (
     <Layout>

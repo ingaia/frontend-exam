@@ -10,6 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '../components/TextField';
 import Button from '../components/Button';
 import Layout from '../components/Layout';
+import Loader from '../components/Loader';
 
 import * as S from '../styles/Login';
 
@@ -30,9 +31,7 @@ const Login = () => {
   };
 
   if (state.loading) {
-    return (
-      <p>loading</p>
-    );
+    return <Loader />;
   }
 
   return (

@@ -12,11 +12,26 @@ const GlobalStyles = createGlobalStyle`
     --hillary: #A99E7E;
   }
 
+  @-webkit-keyframes mymove {
+    0% {
+      fill: #1D1A1A;
+    }
+    25% {
+      fill: #1D1A1A;
+    }
+    50% {
+      fill: #FF3509;
+    }
+    100% {
+      fill: #FF3509;
+    }
+  }
+
   html, body, main {
     width: 100vw;
     height: 100vh;
     min-height: 100vh;
-    background-color: var(--blackLighter);
+    background-color: var(--coldGray);
     margin: 0;
     padding: 0;
   }
