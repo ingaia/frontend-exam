@@ -1,13 +1,22 @@
 import React from 'react';
-import ModalContainer from './modal.styles';
-const Modal = () => {
-  const onClose = () => {
-    console.log('hue');
-  };
+import PropTypes from 'prop-types';
 
+import { ModalContainer } from './modal.styles';
+
+const Modal = ({ children }) => {
   return (
-    <ModalContainer>aa</ModalContainer>
+    <ModalContainer>
+      {children}
+    </ModalContainer>
   );
+};
+
+Modal.defaultProps = {
+  children: [],
+};
+
+Modal.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Modal;

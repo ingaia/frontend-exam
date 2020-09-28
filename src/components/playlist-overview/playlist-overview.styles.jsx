@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const OverviewContainer = styled.div`
   width: 80%;
@@ -22,20 +22,39 @@ export const OverviewContainer = styled.div`
 
   &::-webkit-scrollbar-thumb {
     background: #a99e7e;
-    border: 1px solid #a99e7e
+    border: 1px solid #a99e7e;
     border-radius: 10px;
   }
 
 `;
-
+const flexStyles = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 export const ThumbnailContainer = styled.div`
-  width: 390px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  ${flexStyles}
 
   img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     margin: auto;
     display: block;
+    border: 1px solid #a99e7e;
+  }
+
+  span {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    height: 35px;
+    width: 100%;
+    ${flexStyles}
+
+    background: rgba(0,0,0,0.6);
   }
 `;
