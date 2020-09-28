@@ -7,7 +7,9 @@ export interface Props {
   fullWidth?: boolean,
   id: string,
   type?: string,
-  label: string
+  label: string,
+  value?: string,
+  onChange?: any;
 };
 
 const Component = (props: Props) => (

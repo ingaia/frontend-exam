@@ -9,18 +9,18 @@ const Image = styled.svg`
   height: auto;
 
   .part1 {
-    animation: mymove 2s forwards;
-    -webkit-animation: mymove 2s forwards;
+    animation: loader 2s forwards;
+    -webkit-animation: loader 2s forwards;
   }
 
   .part2 {
-    animation: mymove 4s forwards;
-    -webkit-animation: mymove 4s forwards;
+    animation: loader 4s forwards;
+    -webkit-animation: loader 4s forwards;
   }
 
   .part3 {
-    animation: mymove 6s forwards;
-    -webkit-animation: mymove 6s forwards;
+    animation: loader 6s forwards;
+    -webkit-animation: loader 6s forwards;
   }
 
 `

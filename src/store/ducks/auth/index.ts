@@ -4,7 +4,8 @@ import { AuthState, AuthTypes } from './types';
 const INITIAL_STATE: AuthState = {
   isLogged: false,
   loading: false,
-  message: false
+  message: false,
+  action: ''
 };
 
 const reducer: Reducer<AuthState> = (state = INITIAL_STATE, action) => {
@@ -14,14 +15,16 @@ const reducer: Reducer<AuthState> = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: true,
-        message: false
+        message: false,
+        action: action.type
       };
     case AuthTypes.LOGIN_SUCCESS:
     case AuthTypes.LOGOUT_SUCCESS:
       return {
         isLogged: action.type === AuthTypes.LOGIN_SUCCESS,
         loading: false,
-        message: false
+        message: false,
+        action: action.type
       };
     default:
       return state;

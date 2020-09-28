@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { isEmpty, trim } from 'lodash';
 
 import actions from '../store/ducks/auth/actions';
 import { typedUseSelector } from '../store';
@@ -18,6 +19,7 @@ const Login = () => {
   let history = useHistory();
   const dispatch = useDispatch();
   const state = typedUseSelector((state) => state.auth);
+  const [values, setValues] = useState({ email: '', password: '' });
 
   useEffect(() => {
     if (state.isLogged) {
@@ -25,9 +27,18 @@ const Login = () => {
     }
   }, [state.isLogged]);
 
+  const isValid = () => {
+    return !isEmpty(trim(values.email)) && !isEmpty(trim(values.password))
+  }
   const onSubmit = (event: any) => {
     event.preventDefault();
-    dispatch(actions.loginRequest());
+    if (isValid()) {
+      dispatch(actions.loginRequest());
+    }
+  };
+
+  const handleChange = (prop: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [prop]: event.target.value });
   };
 
   if (state.loading) {
@@ -54,14 +65,20 @@ const Login = () => {
                         fullWidth
                         id='email'
                         type='email'
-                        label='Email'  />
+                        label='Email'
+                        value={values.email}
+                        onChange={handleChange('email')}
+                      />
                     </Grid>
                     <Grid item xs={12}>
                       <TextField
                         fullWidth
                         id='password'
                         type='password'
-                        label='Password'  />
+                        label='Password'
+                        value={values.password}
+                        onChange={handleChange('password')}
+                      />
                     </Grid>
                     <Grid item xs={12} md={4} xl={2}>
                       <Button fullWidth type='submit'>

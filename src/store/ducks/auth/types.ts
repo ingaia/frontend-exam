@@ -16,4 +16,5 @@ export interface AuthState {
   readonly isLogged: boolean;
   readonly loading: boolean;
   readonly message: boolean | string;
+  readonly action: string
 }

@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
     --hillary: #A99E7E;
   }
 
-  @-webkit-keyframes mymove {
+  @-webkit-keyframes loader {
     0% {
       fill: #1D1A1A;
     }

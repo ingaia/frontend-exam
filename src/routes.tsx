@@ -11,14 +11,14 @@ import NotFound from './pages/NotFound';
 const Routes = () => {
   const isLogged = () => {
     const token = localStorage.getItem('isLogged') || '';
-    return (!!token);
+    return !!token;
   }
 
   return (
     <Provider store={store}>
       <BrowserRouter>
         <Switch>
-          <Route exact path='/' render={((props) => (
+          <Route exact path='/' render={(() => (
             isLogged()
             ? <Home />
             : <Redirect to='/login' />

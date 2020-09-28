@@ -29,10 +29,10 @@ const Login = () => {
   }, []);
 
   useEffect(() => {
-    if (!authState.isLogged) {
+    if (!authState.isLogged && authState.action === '@auth/logout/success') {
       history.push('/login');
     }
-  }, [authState.isLogged]);
+  }, [authState.isLogged, authState.action]);
 
   const handleLoadMore = () => {
     dispatch(playlistActions.playlistRequest(state.nextPageToken));
