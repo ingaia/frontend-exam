@@ -5,7 +5,7 @@ import { ModalContainer } from './modal.styles';
 
 const Modal = ({ children }) => {
   return (
-    <ModalContainer>
+    <ModalContainer className="modal-container">
       {children}
     </ModalContainer>
   );

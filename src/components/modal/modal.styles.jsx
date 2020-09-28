@@ -10,7 +10,7 @@ export const ModalContainer = styled.div`
   height: 100%;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.8);
 
   button {
     color: white;
