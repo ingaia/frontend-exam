@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export const ContainerWrapper = styled(Container)`
   background-image: url('/assets/background-mobile.webp');
@@ -24,7 +25,7 @@ export const ContainerWrapper = styled(Container)`
   }
 `
 
-export const Logo = styled.img`
+export const Logo = styled(LazyLoadImage)`
   width: 100%;
   height: auto;
   padding-top: 30px;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export const Item = styled(Grid)`
   &:nth-child(1) {
@@ -27,7 +28,7 @@ export const Block = styled.div<{ paddingTop?: boolean }>`
 
 `
 
-export const Image = styled.img`
+export const Image = styled(LazyLoadImage)`
   width: 100%;
   height: auto;
 `
