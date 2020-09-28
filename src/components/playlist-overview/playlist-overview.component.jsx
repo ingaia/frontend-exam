@@ -11,9 +11,10 @@ import { selectFormattedPlaylistItems } from '../../redux/playlist/playlist.sele
 
 // Components
 import PlaylistItem from '../playlist-item/playlist-item.component';
+import Modal from '../modal/modal.component';
 
 // Style d Components
-import { OverviewContainer } from './playlist-overview.styles';
+import { OverviewContainer, ThumbnailContainer } from './playlist-overview.styles';
 
 const PlaylistOverview = ({ fetchStart, playlistItems }) => {
   useEffect(() => {
@@ -21,13 +22,17 @@ const PlaylistOverview = ({ fetchStart, playlistItems }) => {
     const playlistId = 'PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF';
     fetchStart(playlistId, key);
   }, []);
+
   return (
     <OverviewContainer>
       {
-        playlistItems.map(({ title, videoId }) => (
-          <PlaylistItem key={videoId} videoId={videoId} title={title} />
+        playlistItems.map(({ title, videoId, thumb }) => (
+          <ThumbnailContainer>
+            <img src={thumb} alt="Video Thumbnail" />
+          </ThumbnailContainer>
         ))
       }
+      <Modal></Modal>
     </OverviewContainer>
   );
 };
@@ -39,7 +44,7 @@ PlaylistOverview.defaultProps = {
 
 PlaylistOverview.propTypes = {
   fetchStart: PropTypes.func,
-  playlistItems: PropTypes.shape([]),
+  playlistItems: PropTypes.arrayOf(PropTypes.object),
 };
 
 const mapStateToProps = createStructuredSelector({

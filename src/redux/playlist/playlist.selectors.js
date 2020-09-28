@@ -10,7 +10,10 @@ export const selectFormattedPlaylistItems = createSelector([selectPlaylistItems]
     const newArr = [];
     if (playlistItems) {
       playlistItems.map((item) => newArr.push(
-        { title: item.snippet.title, videoId: item.contentDetails.videoId },
+        { title: item.snippet.title,
+          videoId: item.contentDetails.videoId,
+          thumb: item.snippet.thumbnails.maxres.url,
+        },
       ));
     }
     return newArr;

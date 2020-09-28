@@ -24,6 +24,9 @@ export const MenuContainer = styled.div`
 export const PlaylistContainer = styled.div`
     ${FlexStyles}
     width: 65%;
+    background-image: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1));
+    border-left: 1px solid #3a3a3a;
+
 `;
 
 export const Menu = styled.div`

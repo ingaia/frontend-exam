@@ -40,7 +40,7 @@ const Dashboard = ({ logOut }) => {
         </Menu>
       </MenuContainer>
       <PlaylistContainer>
-        <PlaylistOverview></PlaylistOverview>
+        <PlaylistOverview />
       </PlaylistContainer>
     </MainContainer>
   );
