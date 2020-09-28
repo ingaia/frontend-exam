@@ -19,10 +19,7 @@ const reducer: Reducer<PlaylistState> = (state = INITIAL_STATE, action) => {
     case PlaylistTypes.PLAYLIST_SUCCESS: {
       const { data } = action.payload;
       return {
-        data: [
-          ...state.data,
-          ...data.items
-        ],
+        data:[...state.data, ...data.items],
         nextPageToken: data.nextPageToken,
         loading: false,
         message: false

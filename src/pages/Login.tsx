@@ -41,7 +41,7 @@ const Login = () => {
     setValues({ ...values, [prop]: event.target.value });
   };
 
-  if (state.loading) {
+  if (state.loading || state.isLogged) {
     return <Loader />;
   }
 
@@ -49,15 +49,15 @@ const Login = () => {
     <Layout>
       <S.ContainerWrapper disableGutters maxWidth={false}>
         <Grid container justify='center' alignItems='center' className='bg-opacity'>
-          <Grid item xs={12} md={3}>
-            <Grid container>
+          <Grid item xs={10} md={3}>
+            <Grid container justify='center'>
               <Grid item xs={12}>
                 <S.Logo
                   src='/assets/logo_dark.png'
                   alt='logo'
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={10}>
                 <form noValidate autoComplete='off' onSubmit={onSubmit}>
                   <Grid container justify='center'>
                     <Grid item xs={12}>

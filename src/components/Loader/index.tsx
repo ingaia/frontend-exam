@@ -28,7 +28,7 @@ const Image = styled.svg`
 const Component = () => (
   <Layout>
     <Grid container justify="center" style={{ height: '100vh' }}>
-      <Grid xs={2} md={1} style={{ alignSelf: 'center' }}>
+      <Grid item xs={2} md={1} style={{ alignSelf: 'center' }}>
         <Image version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 232 294">
           <path className="part2" d="M102.5,185.7c1.7-2,3.1-3.8,4.9-6.1c0.8,2.4,1.4,4.4,2,6.3c0.3,0,0.5-0.1,0.8-0.1c0.1-0.5,0.4-1,0.4-1.6
             c0-5.3,0-10.6-0.2-16c-0.1-4.8-2.7-8.5-6.2-11.5c-2-1.8-2.8-3.9-2.8-6.6c-0.4-12,0.3-24,2.6-35.7c2.5-12.4,1.5-24.8,2.4-37.2

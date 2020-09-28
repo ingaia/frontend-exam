@@ -14,18 +14,24 @@ import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout';
 import Button from '../components/Button';
 import VideoCard from '../components/VideoCard';
+import Dialog from '../components/Dialog';
 import Loader from '../components/Loader';
 
 import * as S from '../styles/Home';
 
-const Login = () => {
+const Home = () => {
   let history = useHistory();
   const dispatch = useDispatch();
   const state = typedUseSelector((state) => state.playlist);
   const authState = typedUseSelector((state) => state.auth);
 
+  const [open, setOpen] = React.useState(false);
+  const [videoId, setVideoId] = React.useState('');
+
   useEffect(() => {
-    dispatch(playlistActions.playlistRequest());
+    if (!state.data.length) {
+      dispatch(playlistActions.playlistRequest());
+    }
   }, []);
 
   useEffect(() => {
@@ -42,6 +48,17 @@ const Login = () => {
     dispatch(authActions.logoutRequest());
   };
 
+  const handleClickOpen = (value: string) => {
+    setOpen(true);
+    setVideoId(value);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setVideoId('');
+  };
+
+
   if (authState.loading) {
     return <Loader />;
   }
@@ -50,39 +67,38 @@ const Login = () => {
     <Layout>
       <S.ContainerWrapper disableGutters maxWidth={false}>
         <Grid container justify='center' alignItems='center' className='bg-opacity'>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={5} md={4}>
             <Grid container spacing={1} justify='center'>
-              <Grid item xs={12} md={10}>
+              <Grid item xs={10} md={10}>
                 <S.Logo
                   src='/assets/logo_dark.png'
                   alt='logo'
                 />
               </Grid>
-              <Grid item xs={12} md={8}>
+              <Grid item xs={10} md={8}>
                 <S.Title>
                   Trailers
                 </S.Title>
               </Grid>
-              <Grid item xs={12} md={8}>
+              <Grid item xs={10} md={8}>
                 <Button fullWidth noborders onClick={handleLogout}>
                   Logout
                 </Button>
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} sm={7} md={8}>
             <S.VideosContainer container justify='center'>
-              <Grid item xs={12} md={10}>
+              <Grid item xs={10} md={10}>
                 <S.VideosContainer2 container spacing={4} justify='center'>
-                  {state.data.map(({ id, snippet }: DataProps, index: number) => {
+                  {state.data.map(({ id, snippet }: DataProps) => {
                     const { title, thumbnails: { medium }, resourceId } = snippet;
                     return (
                       <VideoCard
-                        index={index}
-                        id={id}
+                        key={id}
                         title={title}
-                        videoId={resourceId.videoId}
                         cover={medium.url}
+                        onClick={() => handleClickOpen(resourceId.videoId)}
                       />
                     )
                   })}
@@ -104,10 +120,12 @@ const Login = () => {
           </Grid>
         </Grid>
       </S.ContainerWrapper>
+
+      <Dialog open={open} handleClose={handleClose} videoId={videoId} />
     </Layout>
   );
 };
 
-export default Login;
+export default Home;
 
 

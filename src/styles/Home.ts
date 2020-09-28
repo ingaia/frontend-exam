@@ -19,6 +19,11 @@ export const ContainerWrapper = styled(Container)`
 export const Logo = styled.img`
   width: 100%;
   height: auto;
+  padding-top: 30px;
+
+  @media (min-width: 576px) {
+    padding-top: 0;
+  }
 `
 
 export const Title = styled.h1`
@@ -35,13 +40,24 @@ export const Title = styled.h1`
 
 export const VideosContainer = styled(Grid)`
   background: linear-gradient(90deg, var(--black) 0%, rgba(0, 0, 0, 0) 98.3%);
-  height: 100vh;
+  padding-top: 25px;
+
+  @media (min-width: 576px) {
+    height: 100vh;
+    padding-top: 0;
+  }
 `
 
 export const VideosContainer2 = styled(Grid)`
-  max-height: 100vh;
-  height: 100vh;
+  max-height: 60vh;
+  height: 60vh;
   overflow: auto;
+
+  @media (min-width: 576px) {
+    max-height: 100vh;
+    height: 100vh;
+  }
+
 
   &::-webkit-scrollbar
   {

@@ -1,10 +1,30 @@
 import styled from 'styled-components';
+import Grid from '@material-ui/core/Grid';
 
+export const Item = styled(Grid)`
+  &:nth-child(1) {
+    margin-top: 20px;
+  }
+
+  @media (min-width: 576px) {
+    &:nth-child(1) {
+      margin-top: 40px;
+    }
+  }
+
+  @media (min-width: 960px) {
+    &:nth-child(1), &:nth-child(2) {
+      margin-top: 58px;
+    }
+  }
+`
 export const Block = styled.div<{ paddingTop?: boolean }>`
-  margin-top: ${props => props.paddingTop ? '58px': 0 };
   border: 1px solid var(--hillary);
   background: var(--coldGray);
   position: relative;
+  cursor: pointer;
+
+
 `
 
 export const Image = styled.img`

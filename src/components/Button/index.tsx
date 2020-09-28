@@ -11,9 +11,11 @@ export interface Props {
   onClick?: any
 };
 
-const Component = (props: Props) => (
-  <Button {...props} classes={useStyles({ noBorders: props.noborders })}>
-    {props.children}
+const Component = ({children, noborders, ...props }: Props) => (
+  <Button
+    {...props}
+    classes={useStyles({ noBorders: noborders })}>
+    {children}
   </Button>
 );
 
