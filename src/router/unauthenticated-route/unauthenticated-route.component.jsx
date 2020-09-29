@@ -6,7 +6,7 @@ import { Route, Redirect } from 'react-router-dom';
 const UnauthenticatedRoute = ({ userAuth, component: Comp, ...otherProps }) => (
   <Route
     {...otherProps}
-    render={() => userAuth ? (<Redirect to="/" />) : (<Comp />)}
+    render={() => userAuth ? (<Redirect to="/dashboard" />) : (<Comp />)}
   />
 );
 

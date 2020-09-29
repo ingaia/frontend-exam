@@ -1,6 +1,7 @@
 // Tools
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
+
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import PropTypes from 'prop-types';
@@ -11,6 +12,7 @@ import selectCurrentUser from './redux/user/user.selectors';
 // Pages
 import Dashboard from './pages/dashboard/dashboard.component';
 import SignIn from './pages/sign-in/sign-in.component';
+import LoadingPage from './pages/loading/loading-page.component';
 
 // Router Components
 import AuthenticatedRoute from './router/authenticated-route/authenticated-route.component';
@@ -24,8 +26,10 @@ function App({ currentUser }) {
   return (
     <div>
       <Switch>
-        <AuthenticatedRoute userAuth={isUserAuthenticated} exact path="/" component={Dashboard} />
+        <Route exact path="/" component={() => <LoadingPage userAuth={isUserAuthenticated} />} />
+        <AuthenticatedRoute userAuth={isUserAuthenticated} path="/dashboard" component={Dashboard} />
         <UnauthenticatedRoute userAuth={isUserAuthenticated} path="/login" component={SignIn} />
+        <Redirect from="*" to="/" />
       </Switch>
     </div>
   );
