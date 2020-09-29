@@ -28,7 +28,7 @@ const PlaylistOverview = ({ fetchStart, toggleModal, playlistItems, modalVisible
 
   useEffect(() => {
     fetchStart();
-  }, []);
+  }, [fetchStart]);
 
   const handleClick = (videoId) => {
     setSelectedVideo(videoId);
@@ -40,7 +40,7 @@ const PlaylistOverview = ({ fetchStart, toggleModal, playlistItems, modalVisible
     setTimeout(() => {
       setMaxVideos(maxVideos + 5);
       setIsLoading(false);
-    }, 700);
+    }, 400);
   };
 
   return (

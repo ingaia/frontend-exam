@@ -26,7 +26,7 @@ const LoadingPage = ({ userAuth }) => {
         userAuth ? history.push('/dashboard') : history.push('/login');
       }, 800);
     }
-  }, [loadingStage]);
+  }, [loadingStage, userAuth, history]);
 
   return (
     <LoadingContainer>

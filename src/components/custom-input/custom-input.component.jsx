@@ -8,7 +8,7 @@ import { Input, InputContainer, Label } from './custom-input.styles';
 const CustomInput = ({ id, type, placeholder, change, ...otherProps }) => (
 
   <InputContainer>
-    <Input onChange={change} {...otherProps} placeholder={placeholder} id={id} type={type} />
+    <Input data-testid="custom-input" onChange={change} {...otherProps} placeholder={placeholder} id={id} type={type} />
     <Label htmlFor={id}>{placeholder}</Label>
   </InputContainer>
 );

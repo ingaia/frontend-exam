@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Button from './custom-button.styles';
 
 const CustomButton = ({ children, type, clickAction, ...props }) => (
-  <Button onClick={clickAction} {...props} type={type}>{children}</Button>
+  <Button data-testid="custom-button" onClick={clickAction} {...props} type={type}>{children}</Button>
 );
 
 CustomButton.defaultProps = {
