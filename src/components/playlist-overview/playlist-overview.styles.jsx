@@ -15,7 +15,30 @@ export const OverviewContainer = styled.div`
     min-height: 120px;
     margin: 0 15px 15px;
     justify-content: space-between;
-    text-align: center
+    text-align: center;
+
+    @media(max-width: 1085px) {
+      width: 40%;
+    }
+
+    @media(max-width: 935px) {
+      width: 45%;
+      height: 47%;
+    }
+
+    
+    @media(max-width: 650px) {
+      width: 40%;
+    };
+
+    @media(max-width: 525px) {
+      width: 44%;
+      height: 60%;
+    }
+
+    @media(max-width: 341px) {
+      height: 40%;
+    }
   }
 
   >div:last-child {
@@ -52,5 +75,13 @@ export const LoadMoreContainer = styled.div`
 
   button {
     width: 35%;
+
+    @media(max-width: 1076px) {
+      width : 55%;
+    }
+
+    @media(max-width: 316px) {
+      width : 65%;
+    }
   }
 `;

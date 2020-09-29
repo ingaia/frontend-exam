@@ -19,6 +19,10 @@ export const ModalContainer = styled.div`
     position: absolute;
     right: 90px;
     top: 45px;
-    cursor: pointer
+    cursor: pointer;
+
+    @media(max-width: 835px) {
+      right 30px;
+    }
   }
 `;

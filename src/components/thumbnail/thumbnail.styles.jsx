@@ -30,6 +30,11 @@ const ThumbnailContainer = styled.div`
     ${flexStyles}
 
     background: rgba(0,0,0,0.6);
+
+    @media(max-width: 341px) {
+      height: 62px;
+      font-size: 13px;
+    }
   }
 `;
 
