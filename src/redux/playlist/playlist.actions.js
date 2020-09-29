@@ -1,8 +1,7 @@
 import PlaylistActionTypes from './playlist.types';
 
-export const fetchStart = (playlistId, key) => ({
+export const fetchStart = () => ({
   type: PlaylistActionTypes.FETCH_START,
-  payload: { playlistId, key },
 });
 
 export const fetchSuccess = (playlistItems) => ({

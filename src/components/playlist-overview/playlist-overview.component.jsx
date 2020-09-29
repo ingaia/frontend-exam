@@ -27,9 +27,7 @@ const PlaylistOverview = ({ fetchStart, toggleModal, playlistItems, modalVisible
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const key = 'AIzaSyDWOc7XO_qqHI69BczyParTsuhn6T0yqfs';
-    const playlistId = 'PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF';
-    fetchStart(playlistId, key);
+    fetchStart();
   }, []);
 
   const handleClick = (videoId) => {
@@ -101,9 +99,8 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchStart: (playlistId, key) => dispatch(fetchStart(playlistId, key)),
+  fetchStart: () => dispatch(fetchStart()),
   toggleModal: () => dispatch(toggleModal()),
-
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistOverview);
