@@ -9,17 +9,13 @@ Convert the following design to a Single Web Application (SPA):
 
 [Figma opened file](https://www.figma.com/file/COnJnZhaRmmAHt6MjBlRT3c1/Frontend---Test?node-id=0%3A1)
 
-## Instructions
-- Fork this project, work and make a pull request when you're done
-- All assets you'll need are inside assets/ folder
-- Expect any username or password to get into the private area
+## Technologies
 
-## Requirements
-- Use a popular Javascript library ([React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Marko JS](https://markojs.com/), etc)
-- Your application must be responsive (we did not create a mobile design version because we want to see your solution to this problem)
-- List all videos from this public playlist: https://www.youtube.com/playlist?list=PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF
-- Unit tests
-- **Deploy your application on a free host service and add the public link on this file**
+- ReactJs
+- Typescript
+- Styled-components
+- Material-ui
+- React redux/saga
+- Jest
 
-## Tips
-- We ❤️ animations, code coverage and end-to-end tests
+Application available [link](https://frontend-exam-mu.vercel.app/login)
