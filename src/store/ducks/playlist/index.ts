@@ -1,3 +1,4 @@
+import { unionBy } from 'lodash';
 import { Reducer } from 'redux';
 import { PlaylistState, PlaylistTypes } from './types';
 
@@ -19,7 +20,7 @@ const reducer: Reducer<PlaylistState> = (state = INITIAL_STATE, action) => {
     case PlaylistTypes.PLAYLIST_SUCCESS: {
       const { data } = action.payload;
       return {
-        data:[...state.data, ...data.items],
+        data: unionBy(state.data, data.items, 'id'),
         nextPageToken: data.nextPageToken,
         loading: false,
         message: false

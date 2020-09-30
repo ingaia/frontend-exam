@@ -9,9 +9,6 @@ const defaultactions = (name: string, constant: string) => (
     ),
     [`${name}Success`]: (data?: any) => (
       action(get(AuthTypes, `${constant}_SUCCESS`), { data })
-    ),
-    [`${name}Failure`]: (data?: any) => (
-      action(get(AuthTypes, `${constant}_FAILURE`), { data })
     )
   }
 )
