@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should render correctly 1`] = `
+<button
+  class="MuiButtonBase-root MuiButton-root makeStyles-root-1 makeStyles-root-2 MuiButton-text"
+  tabindex="0"
+  type="button"
+>
+  <span
+    class="MuiButton-label"
+  >
+    Button
+  </span>
+  <span
+    class="MuiTouchRipple-root"
+  />
+</button>
+`;
+
+exports[`<Button /> should render correctly 2`] = `
+<button
+  class="MuiButtonBase-root MuiButton-root makeStyles-root-3 makeStyles-root-4 MuiButton-text"
+  tabindex="0"
+  type="button"
+>
+  <span
+    class="MuiButton-label"
+  >
+    Button
+  </span>
+  <span
+    class="MuiTouchRipple-root"
+  />
+</button>
+`;

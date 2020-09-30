@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CircularProgress /> should render correctly 1`] = `
+<div
+  class="MuiCircularProgress-root makeStyles-root-1 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+  role="progressbar"
+  style="width: 80px; height: 80px;"
+>
+  <svg
+    class="MuiCircularProgress-svg"
+    viewBox="22 22 44 44"
+  >
+    <circle
+      class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+      cx="44"
+      cy="44"
+      fill="none"
+      r="21"
+      stroke-width="2"
+    />
+  </svg>
+</div>
+`;

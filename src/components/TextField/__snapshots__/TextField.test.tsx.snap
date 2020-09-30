@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField /> should render correctly 1`] = `
+<div
+  class="MuiFormControl-root MuiTextField-root"
+>
+  <label
+    class="MuiFormLabel-root MuiInputLabel-root makeStyles-root-3 MuiInputLabel-formControl MuiInputLabel-animated"
+    data-shrink="false"
+    for="jest"
+    id="jest-label"
+  >
+    jest
+  </label>
+  <div
+    class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-underline-2 MuiInputBase-formControl MuiInput-formControl"
+  >
+    <input
+      aria-invalid="false"
+      class="MuiInputBase-input MuiInput-input makeStyles-input-1"
+      id="jest"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;

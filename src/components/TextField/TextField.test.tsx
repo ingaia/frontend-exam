@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Layout from '.';
+import TextField from '.';
 
-describe('<Layout />', () => {
+describe('<TextField />', () => {
   it('should render correctly', () => {
-    const { container } = render(<Layout />)
+    const { container } = render(<TextField id="jest" label="jest" />)
 
     expect(container.firstChild).toMatchSnapshot()
   })

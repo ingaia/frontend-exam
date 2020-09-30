@@ -1,11 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Layout from '.';
+import Loader from '.';
 
-describe('<Layout />', () => {
+describe('<Loader />', () => {
   it('should render correctly', () => {
-    const { container } = render(<Layout />)
-
+    const { container } = render(<Loader />)
     expect(container.firstChild).toMatchSnapshot()
   })
 })

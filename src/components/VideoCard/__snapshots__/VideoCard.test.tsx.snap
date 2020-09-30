@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VideoCard /> should render correctly 1`] = `
+.c0:nth-child(1) {
+  margin-top: 20px;
+}
+
+.c1 {
+  border: 1px solid var(--hillary);
+  background: var(--coldGray);
+  position: relative;
+  cursor: pointer;
+}
+
+.c2 {
+  width: 100%;
+  height: auto;
+}
+
+.c3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  text-align: center;
+  padding: 15px 0;
+}
+
+@media (min-width:576px) {
+  .c0:nth-child(1) {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width:960px) {
+  .c0:nth-child(1),
+  .c0:nth-child(2) {
+    margin-top: 58px;
+  }
+}
+
+<div
+  class="MuiGrid-root c0 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+>
+  <div
+    class="c1"
+  >
+    <img
+      alt="Test component"
+      class="c2"
+      src="/assets/background.webp"
+    />
+    <span
+      class="c3"
+    >
+      Test component
+    </span>
+  </div>
+</div>
+`;
