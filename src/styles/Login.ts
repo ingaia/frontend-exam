@@ -27,4 +27,5 @@ export const ContainerWrapper = styled(Container)`
 export const Logo = styled(LazyLoadImage)`
   width: 100%;
   height: auto;
+  padding-bottom: 25px;
 `

@@ -58,8 +58,8 @@ const Login = () => {
                 />
               </Grid>
               <Grid item xs={10}>
-                <form noValidate autoComplete='off' onSubmit={onSubmit}>
-                  <Grid container justify='center'>
+                <form autoComplete='off' onSubmit={onSubmit}>
+                  <Grid container justify='center' spacing={1}>
                     <Grid item xs={12}>
                       <TextField
                         fullWidth
