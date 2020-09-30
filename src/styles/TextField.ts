@@ -5,17 +5,13 @@ export const inputStyles = makeStyles(() => ({
     color: 'var(--white)'
   },
   underline: {
-    borderBottomColor: 'var(--hillary)',
+    borderBottomColor: 'var(--hillary) !important',
     '&:before, &:after': {
-      borderBottomColor: 'var(--hillary)',
-      '&:hover': {
-        borderBottomColor: 'red',
-      }
+      borderBottomColor: 'var(--hillary) !important',
     },
     '&:hover': {
-      borderBottomColor: 'red',
       '&:before': {
-        borderBottomColor: 'red',
+        borderBottomColor: 'var(--hillary) !important',
       }
     }
   }
