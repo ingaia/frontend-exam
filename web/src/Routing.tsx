@@ -7,8 +7,8 @@ function Routing() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" render={Home} />
-        <Route path="/trailers" render={Trailers} />
+        <Route path="/" exact render={Home} />
+        <Route path="/trailers" exact render={Trailers} />
       </Switch>
     </BrowserRouter>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Playlist() {
-  return "";
+function Trailers() {
+  return <div>traillers</div>;
 }
-export default Playlist;
+export default Trailers;
