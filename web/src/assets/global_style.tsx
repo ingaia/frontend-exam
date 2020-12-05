@@ -18,6 +18,10 @@ const devices = {
   desktop: `(max-width: ${size.desktop})`,
   desktopL: `(max-width: ${size.desktop})`,
 };
+const theme = {
+  primary: "white",
+  secondary: "#A99E7E",
+};
 const GlobalStyle = css`
   html {
     height: 100%;
@@ -36,14 +40,18 @@ const GlobalStyle = css`
       height: 100%;
       background-image: url(${process.env.PUBLIC_URL}"/images/background.png");
       background-repeat: no-repeat;
-      opacity: 0.5;
+      opacity: 0.3;
     }
     @media ${devices.mobileL} {
       background-position: center;
+    }
+
+    * {
+      z-index: 1;
     }
   }
 `;
 
 const GlobalStyleConst = createGlobalStyle`${GlobalStyle}`;
 
-export { GlobalStyleConst, devices };
+export { GlobalStyleConst, devices, theme };
