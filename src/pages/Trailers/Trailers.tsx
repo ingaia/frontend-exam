@@ -11,12 +11,13 @@ import Button from "../../components/Common/Button/Button";
 import VideoBlock from "../../components/TrailersList/VideoBlock";
 import VideoApi from "../../service/route";
 import { AppContext } from "../../store/context";
+import { TrailerInterface } from "../../types/trailer";
 function Trailers() {
   useEffect(() => {
     getTrailers();
   }, []);
   const [error, setError] = useState(false);
-  const [trailers, setTrailers] = useState([]);
+  const [trailers, setTrailers] = useState<TrailerInterface[]>([]);
   const { setLogin, setPassword, setEmail } = useContext(AppContext);
 
   //control side bar on mobile
@@ -27,6 +28,10 @@ function Trailers() {
   const getTrailers = async () => {
     const trailers = await VideoApi();
     console.log(trailers);
+    if (trailers.error) {
+    } else {
+      setTrailers(trailers.items);
+    }
   };
   const Logout = () => {
     setEmail("");
@@ -56,12 +61,12 @@ function Trailers() {
           />
         </ContainerButtonMobile>
         <PlayListContainerItens>
-          <VideoBlock />
-          <VideoBlock />
-          <VideoBlock />
-          <VideoBlock />
-          <VideoBlock />
-          <VideoBlock />
+          {trailers.map((trailer: TrailerInterface, index: number) => (
+            <VideoBlock
+              thumbnail={trailer.snippet.thumbnails.standard.url}
+              title={trailer.snippet.title}
+            />
+          ))}
         </PlayListContainerItens>
       </PlayListContainer>
     </Container>

@@ -31,6 +31,7 @@ const PlayListContainer = styled.div`
   height: 100%;
   width: 100%;
   flex-direction: column;
+
   @media ${devicesMax.mobileL} {
     display: ${(props) => (props.sidebarStatus ? "none" : "flex")};
     flex: 100%;
