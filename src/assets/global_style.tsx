@@ -1,4 +1,6 @@
-import { createGlobalStyle, css } from "styled-components";
+import styled, { keyframes, createGlobalStyle, css } from "styled-components";
+import BaseAnimation from "./base_animation";
+
 const size = {
   mobileS: "320px",
   mobileM: "375px",
@@ -62,7 +64,36 @@ const GlobalStyle = css`
     }
   }
 `;
+const FadeInAnimation = keyframes`  
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+const FadeIn = styled(BaseAnimation)`
+  animation-name: ${FadeInAnimation};
+`;
 
+const GlobalStyleLoading = css`
+  html {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    margin: 0px;
+    background-color: #131313;
+    * {
+      z-index: 1;
+    }
+  }
+`;
 const GlobalStyleConst = createGlobalStyle`${GlobalStyle}`;
+const GlobalStyleConstLoading = createGlobalStyle`${GlobalStyleLoading}`;
 
-export { GlobalStyleConst, devicesMax, devicesMin, theme };
+export {
+  FadeIn,
+  GlobalStyleConst,
+  GlobalStyleConstLoading,
+  devicesMax,
+  devicesMin,
+  theme,
+};

@@ -1,20 +1,40 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyleConst, theme } from "./assets/global_style";
+import {
+  GlobalStyleConst,
+  GlobalStyleConstLoading,
+  FadeIn,
+  theme,
+} from "./assets/global_style";
 import Home from "./pages/Home/Home";
 import Trailers from "./pages/Trailers/Trailers";
+import Loading from "./pages/Loading/Loading";
 import { AppContext, AppProvider } from "./store/context";
 
 function App() {
   const { is_login } = useContext(AppContext);
-
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return (
+      <FadeIn>
+        <GlobalStyleConstLoading />
+        <Loading />
+      </FadeIn>
+    );
+  }
   return (
-    <div className="App">
+    <FadeIn key={is_login}>
       <GlobalStyleConst />
       <ThemeProvider theme={theme}>
         {is_login ? <Trailers /> : <Home />}
       </ThemeProvider>
-    </div>
+    </FadeIn>
   );
 }
 const AppWrapper = () => {
