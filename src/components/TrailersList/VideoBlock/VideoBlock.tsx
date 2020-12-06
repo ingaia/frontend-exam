@@ -7,14 +7,20 @@ import {
 
 function VideoBlock({
   title,
+  idVideo,
   thumbnail,
+  tooglePopup,
 }: {
   title: string;
+  idVideo: string;
   thumbnail: string;
+  tooglePopup: (x: string) => void;
 }) {
-  console.log(title);
+  const tooglePopupRequest = () => {
+    tooglePopup(idVideo);
+  };
   return (
-    <ContainerVideoBlock background={thumbnail}>
+    <ContainerVideoBlock onClick={tooglePopupRequest} background={thumbnail}>
       <ContainerVideoBlockImage background={thumbnail}>
         <VideoLabel>{title}</VideoLabel>
       </ContainerVideoBlockImage>

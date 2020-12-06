@@ -22,10 +22,10 @@ function App() {
   }, []);
   if (loading) {
     return (
-      <FadeIn>
+      <div>
         <GlobalStyleConstLoading />
         <Loading />
-      </FadeIn>
+      </div>
     );
   }
   return (

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devicesMax } from "../../assets/global_style";
+import { devicesMax } from "../../../assets/global_style";
 const ContainerVideoBlock = styled.div`
   display: flex;
   flex: 1 0 40%;
