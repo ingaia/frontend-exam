@@ -63,6 +63,20 @@ const GlobalStyle = css`
       z-index: 1;
     }
   }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #a99e7e;
+    border-radius: 10px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+
+    background-color: #a99e7e;
+  }
 `;
 const FadeInAnimation = keyframes`  
   from { opacity: 0; }
