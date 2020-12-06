@@ -23,6 +23,7 @@ const ContainerVideo = styled.div`
   margin-top: 10%;
   > iframe {
     border: 1px solid ${(props) => props.theme.primary};
+    box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.51);
   }
 `;
 export { ContainerPopup, ContainerButton, ContainerVideo };

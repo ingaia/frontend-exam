@@ -10,17 +10,23 @@ function VideoBlock({
   idVideo,
   thumbnail,
   tooglePopup,
+  key,
 }: {
   title: string;
   idVideo: string;
   thumbnail: string;
   tooglePopup: (x: string) => void;
+  key: number;
 }) {
   const tooglePopupRequest = () => {
     tooglePopup(idVideo);
   };
   return (
-    <ContainerVideoBlock onClick={tooglePopupRequest} background={thumbnail}>
+    <ContainerVideoBlock
+      key={key}
+      onClick={tooglePopupRequest}
+      background={thumbnail}
+    >
       <ContainerVideoBlockImage background={thumbnail}>
         <VideoLabel>{title}</VideoLabel>
       </ContainerVideoBlockImage>

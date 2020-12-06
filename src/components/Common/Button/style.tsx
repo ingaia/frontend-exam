@@ -13,7 +13,7 @@ const Button = styled.button`
   font-weight: 400;
   font-family: Roboto Condensed;
   pointer-events: ${(props) => (props.disable ? "none" : "all")};
-
+  outline: none;
   border: ${(props) => (props.noBorder ? "none" : "1px solid #c4c4c4")};
   color: ${(props) =>
     props.disable ? props.theme.secondary : props.theme.primary};

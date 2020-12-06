@@ -6,6 +6,7 @@ import {
   PlayListContainerItens,
   ContainerButtonMobile,
 } from "./style";
+import { ContainerVideoBlockEmpty } from "../../components/TrailersList/VideoBlock/style";
 import Logo from "../../components/Common/Logo/Logo";
 import Button from "../../components/Common/Button/Button";
 import VideoBlock from "../../components/TrailersList/VideoBlock/VideoBlock";
@@ -71,12 +72,14 @@ function Trailers() {
         <PlayListContainerItens>
           {trailers.map((trailer: TrailerInterface, index: number) => (
             <VideoBlock
+              key={index}
               idVideo={trailer.snippet.resourceId.videoId}
               tooglePopup={tooglePopup}
               thumbnail={trailer.snippet.thumbnails.standard.url}
               title={trailer.snippet.title}
             />
           ))}
+          {trailers.length % 2 === 0 ? null : <ContainerVideoBlockEmpty />}
         </PlayListContainerItens>
       </PlayListContainer>
     </Container>

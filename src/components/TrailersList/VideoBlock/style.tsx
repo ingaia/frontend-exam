@@ -20,6 +20,20 @@ const ContainerVideoBlock = styled.div`
     margin: 16px;
   }
 `;
+const ContainerVideoBlockEmpty = styled.div`
+  display: flex;
+  flex: 1 0 40%;
+  flex-direction: row;
+  height: 232px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 80px;
+
+  @media ${devicesMax.mobileL} {
+    flex: 1 0 80%;
+    margin: 16px;
+  }
+`;
 const ContainerVideoBlockImage = styled.div`
   border: 1px solid #131313;
 
@@ -43,4 +57,9 @@ const VideoLabel = styled.div`
   padding: 8px;
   opacity: 0.7;
 `;
-export { ContainerVideoBlock, ContainerVideoBlockImage, VideoLabel };
+export {
+  ContainerVideoBlock,
+  ContainerVideoBlockImage,
+  ContainerVideoBlockEmpty,
+  VideoLabel,
+};
