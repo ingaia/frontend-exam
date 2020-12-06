@@ -5,7 +5,7 @@ function InputComp(props: InputInterface) {
   return (
     <Container>
       <Label>{props.label}</Label>
-      <Input />
+      <Input onChange={props.onChange} type={props.type} value={props.value} />
     </Container>
   );
 }

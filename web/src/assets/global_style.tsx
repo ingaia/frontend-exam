@@ -8,7 +8,7 @@ const size = {
   laptopL: "1440px",
   desktop: "2560px",
 };
-const devices = {
+const devicesMax = {
   mobileS: `(max-width: ${size.mobileS})`,
   mobileM: `(max-width: ${size.mobileM})`,
   mobileL: `(max-width: ${size.mobileL})`,
@@ -17,6 +17,16 @@ const devices = {
   laptopL: `(max-width: ${size.laptopL})`,
   desktop: `(max-width: ${size.desktop})`,
   desktopL: `(max-width: ${size.desktop})`,
+};
+const devicesMin = {
+  mobileS: `(min-width: ${size.mobileS})`,
+  mobileM: `(min-width: ${size.mobileM})`,
+  mobileL: `(min-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+  laptopL: `(min-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktop})`,
+  desktopL: `(min-width: ${size.desktop})`,
 };
 const theme = {
   primary: "white",
@@ -29,6 +39,7 @@ const GlobalStyle = css`
   }
 
   body {
+    margin: 0px;
     background-color: #000;
     &:before {
       content: " ";
@@ -42,7 +53,7 @@ const GlobalStyle = css`
       background-repeat: no-repeat;
       opacity: 0.3;
     }
-    @media ${devices.mobileL} {
+    @media ${devicesMax.mobileL} {
       background-position: center;
     }
 
@@ -54,4 +65,4 @@ const GlobalStyle = css`
 
 const GlobalStyleConst = createGlobalStyle`${GlobalStyle}`;
 
-export { GlobalStyleConst, devices, theme };
+export { GlobalStyleConst, devicesMax, devicesMin, theme };

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "../../../assets/global_style";
+import { devicesMax } from "../../../assets/global_style";
 
 const Input = styled.input`
   align-items: center;
@@ -15,7 +15,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 20vw;
-  @media ${devices.mobileL} {
+  @media ${devicesMax.mobileL} {
     width: 50vw;
   }
 `;
