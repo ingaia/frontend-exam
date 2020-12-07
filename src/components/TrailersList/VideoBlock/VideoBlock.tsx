@@ -9,14 +9,20 @@ function VideoBlock({
   idVideo,
   thumbnail,
   tooglePopup,
+  isMobile,
 }: {
   title: string;
   idVideo: string;
   thumbnail: string;
   tooglePopup: (x: string) => void;
+  isMobile: boolean;
 }) {
   const tooglePopupRequest = () => {
-    tooglePopup(idVideo);
+    if (isMobile) {
+      window.open(`https://youtu.be/${idVideo}`);
+    } else {
+      tooglePopup(idVideo);
+    }
   };
   return (
     <ContainerVideoBlock onClick={tooglePopupRequest}>

@@ -43,6 +43,7 @@ const GlobalStyle = css`
   body {
     margin: 0px;
     background-color: #000;
+    overflow-y: none;
     &:before {
       content: " ";
       display: block;
@@ -74,7 +75,6 @@ const GlobalStyle = css`
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 20px;
-
     background-color: #a99e7e;
   }
 `;

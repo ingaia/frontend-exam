@@ -17,10 +17,13 @@ import VideoApi from "../../service/route";
 import { AppContext } from "../../store/context";
 import { TrailerInterface } from "../../types/trailer";
 import { Loader } from "../../components/Common/Loader";
+import useWindowDimensions from "../../hooks/windowHook";
 function Trailers() {
   useEffect(() => {
     getTrailers();
   }, []);
+  const { width } = useWindowDimensions();
+
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -61,7 +64,7 @@ function Trailers() {
     setPassword("");
     setLogin(false);
   };
-  console.log(trailersTotal, trailersState.length);
+  console.log(trailersState);
   return (
     <Container>
       <VideoPopup tooglePopup={tooglePopup} popup={popup} idVideo={idVideo} />
@@ -99,6 +102,7 @@ function Trailers() {
           ) : (
             trailersState.map((trailer: TrailerInterface, index: number) => (
               <VideoBlock
+                isMobile={width < 450 ? true : false}
                 key={index}
                 idVideo={trailer.snippet.resourceId.videoId}
                 tooglePopup={tooglePopup}
