@@ -16,12 +16,14 @@ import VideoPopup from "../../components/TrailersList/VideoPopup/VideoPopup";
 import VideoApi from "../../service/route";
 import { AppContext } from "../../store/context";
 import { TrailerInterface } from "../../types/trailer";
+import { Loader } from "../../components/Common/Loader";
 function Trailers() {
   useEffect(() => {
     getTrailers();
   }, []);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const [popup, setPopup] = useState(false);
   const [idVideo, setIdVideo] = useState("");
   const [trailersTotal, setTrailersTotal] = useState(0);
@@ -35,16 +37,19 @@ function Trailers() {
     setSidebar(!sidebar);
   };
   const getTrailers = async (pageToken = "") => {
+    setLoading(true);
     const trailers = await VideoApi(pageToken);
     if (trailers.error) {
       setErrorMessage(trailers.error.message);
       setError(true);
+      setLoading(false);
     } else {
       setErrorMessage("");
       setError(false);
       setTrailersTotal(trailers.pageInfo.totalResults);
       setTrailerNextPageToken(trailers.nextPageToken);
       setTrailers([...trailersState, ...trailers.items]);
+      setLoading(false);
     }
   };
   const tooglePopup = (idVideo: string) => {
@@ -102,7 +107,11 @@ function Trailers() {
               />
             ))
           )}
-          {trailersState.length < trailersTotal ? (
+          {loading ? (
+            <ContainerLoadMore>
+              <Loader />
+            </ContainerLoadMore>
+          ) : trailersState.length < trailersTotal ? (
             <ContainerLoadMore>
               <Button
                 onClick={() => getTrailers(trailerNextPageToken)}

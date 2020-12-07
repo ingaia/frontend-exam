@@ -69,6 +69,7 @@ const ContainerLoadMore = styled.div`
   margin-left: 40px;
   margin-right: 40px;
   margin-top: 160px;
+  align-items: center;
 `;
 
 export {
