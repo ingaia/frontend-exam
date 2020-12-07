@@ -3,17 +3,21 @@ import React, { useState } from "react";
 type Props = {
   children: React.ReactNode;
 };
+
 const defaultValue = {
   is_login: false,
-  setLogin: (x: any) => null,
-  setEmail: (x: any) => null,
-  setPassword: (x: any) => null,
+  setLogin: (x: boolean) => {},
+  setPassword: (x: string) => {},
+  setEmail: (x: string) => {},
+
+  email: "",
+  password: "",
 };
 const AppContext = React.createContext(defaultValue);
 const AppProvider = ({ children }: Props) => {
-  const [is_login, setLogin] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [is_login, setLogin] = useState(defaultValue.is_login);
+  const [email, setEmail] = useState(defaultValue.email);
+  const [password, setPassword] = useState(defaultValue.password);
   return (
     <AppContext.Provider
       value={{

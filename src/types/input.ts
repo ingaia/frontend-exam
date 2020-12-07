@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction } from "react";
+import React from "react";
 
 export interface InputInterface {
   label: string;
   type: string;
   value: string;
-  onChange: Dispatch<SetStateAction<boolean>>;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

@@ -5,6 +5,7 @@ import {
   PlayListContainer,
   PlayListContainerItens,
   ContainerButtonMobile,
+  ContainerErrorMessage,
 } from "./style";
 import { ContainerVideoBlockEmpty } from "../../components/TrailersList/VideoBlock/style";
 import Logo from "../../components/Common/Logo/Logo";
@@ -19,6 +20,7 @@ function Trailers() {
     getTrailers();
   }, []);
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [popup, setPopup] = useState(false);
   const [idVideo, setIdVideo] = useState("");
   const [trailers, setTrailers] = useState<TrailerInterface[]>([]);
@@ -31,9 +33,12 @@ function Trailers() {
   };
   const getTrailers = async () => {
     const trailers = await VideoApi();
-    console.log(trailers);
     if (trailers.error) {
+      setErrorMessage(trailers.error.message);
+      setError(true);
     } else {
+      setErrorMessage("");
+      setError(false);
       setTrailers(trailers.items);
     }
   };
@@ -70,15 +75,27 @@ function Trailers() {
           />
         </ContainerButtonMobile>
         <PlayListContainerItens>
-          {trailers.map((trailer: TrailerInterface, index: number) => (
-            <VideoBlock
-              key={index}
-              idVideo={trailer.snippet.resourceId.videoId}
-              tooglePopup={tooglePopup}
-              thumbnail={trailer.snippet.thumbnails.standard.url}
-              title={trailer.snippet.title}
-            />
-          ))}
+          {error ? (
+            <ContainerErrorMessage>
+              <p>{errorMessage}</p>
+              <Button
+                onClick={getTrailers}
+                noMargin
+                longButton
+                label={"Try Again"}
+              />
+            </ContainerErrorMessage>
+          ) : (
+            trailers.map((trailer: TrailerInterface, index: number) => (
+              <VideoBlock
+                key={index}
+                idVideo={trailer.snippet.resourceId.videoId}
+                tooglePopup={tooglePopup}
+                thumbnail={trailer.snippet.thumbnails.standard.url}
+                title={trailer.snippet.title}
+              />
+            ))
+          )}
           {trailers.length % 2 === 0 ? null : <ContainerVideoBlockEmpty />}
         </PlayListContainerItens>
       </PlayListContainer>

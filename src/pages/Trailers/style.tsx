@@ -53,6 +53,15 @@ const ContainerButtonMobile = styled.div`
   align-items: flex-end;
   margin: 16px;
 `;
+const ContainerErrorMessage = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px;
+  p {
+    color: ${(props) => props.theme.primary};
+  }
+`;
 
 export {
   Container,
@@ -60,4 +69,5 @@ export {
   PlayListContainer,
   PlayListContainerItens,
   ContainerButtonMobile,
+  ContainerErrorMessage,
 };

@@ -12,10 +12,10 @@ function Home() {
   const toogleLogin = () => {
     setLogin(true);
   };
-  const changePassword = (e: React.FormEvent<HTMLInputElement>) => {
+  const changePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
-  const changeEmail = (e: React.FormEvent<HTMLInputElement>) => {
+  const changeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
   return (

@@ -22,11 +22,7 @@ function VideoBlock({
     tooglePopup(idVideo);
   };
   return (
-    <ContainerVideoBlock
-      key={key}
-      onClick={tooglePopupRequest}
-      background={thumbnail}
-    >
+    <ContainerVideoBlock key={key} onClick={tooglePopupRequest}>
       <ContainerVideoBlockImage background={thumbnail}>
         <VideoLabel>{title}</VideoLabel>
       </ContainerVideoBlockImage>

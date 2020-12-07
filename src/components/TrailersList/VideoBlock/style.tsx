@@ -48,7 +48,7 @@ const ContainerVideoBlockImage = styled.div`
   height: 230px;
 `;
 
-const VideoLabel = styled.div`
+const VideoLabel = styled.span`
   flex: 1;
   align-self: flex-end;
   text-align: center;
