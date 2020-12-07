@@ -6,6 +6,7 @@ import {
   PlayListContainerItens,
   ContainerButtonMobile,
   ContainerErrorMessage,
+  ContainerLoadMore,
 } from "./style";
 import { ContainerVideoBlockEmpty } from "../../components/TrailersList/VideoBlock/style";
 import Logo from "../../components/Common/Logo/Logo";
@@ -23,7 +24,9 @@ function Trailers() {
   const [errorMessage, setErrorMessage] = useState("");
   const [popup, setPopup] = useState(false);
   const [idVideo, setIdVideo] = useState("");
-  const [trailers, setTrailers] = useState<TrailerInterface[]>([]);
+  const [trailersTotal, setTrailersTotal] = useState(0);
+  const [trailerNextPageToken, setTrailerNextPageToken] = useState("");
+  const [trailersState, setTrailers] = useState<TrailerInterface[]>([]);
   const { setLogin, setPassword, setEmail } = useContext(AppContext);
 
   //control side bar on mobile
@@ -31,15 +34,17 @@ function Trailers() {
   const toogleSideBar = () => {
     setSidebar(!sidebar);
   };
-  const getTrailers = async () => {
-    const trailers = await VideoApi();
+  const getTrailers = async (pageToken = "") => {
+    const trailers = await VideoApi(pageToken);
     if (trailers.error) {
       setErrorMessage(trailers.error.message);
       setError(true);
     } else {
       setErrorMessage("");
       setError(false);
-      setTrailers(trailers.items);
+      setTrailersTotal(trailers.pageInfo.totalResults);
+      setTrailerNextPageToken(trailers.nextPageToken);
+      setTrailers([...trailersState, ...trailers.items]);
     }
   };
   const tooglePopup = (idVideo: string) => {
@@ -51,6 +56,7 @@ function Trailers() {
     setPassword("");
     setLogin(false);
   };
+  console.log(trailersTotal, trailersState.length);
   return (
     <Container>
       <VideoPopup tooglePopup={tooglePopup} popup={popup} idVideo={idVideo} />
@@ -79,14 +85,14 @@ function Trailers() {
             <ContainerErrorMessage>
               <p>{errorMessage}</p>
               <Button
-                onClick={getTrailers}
+                onClick={() => getTrailers}
                 noMargin
                 longButton
                 label={"Try Again"}
               />
             </ContainerErrorMessage>
           ) : (
-            trailers.map((trailer: TrailerInterface, index: number) => (
+            trailersState.map((trailer: TrailerInterface, index: number) => (
               <VideoBlock
                 key={index}
                 idVideo={trailer.snippet.resourceId.videoId}
@@ -96,7 +102,17 @@ function Trailers() {
               />
             ))
           )}
-          {trailers.length % 2 === 0 ? null : <ContainerVideoBlockEmpty />}
+          {trailersState.length < trailersTotal ? (
+            <ContainerLoadMore>
+              <Button
+                onClick={() => getTrailers(trailerNextPageToken)}
+                noMargin
+                label={"LOAD MORE"}
+              />
+            </ContainerLoadMore>
+          ) : trailersState.length % 2 === 0 ? null : (
+            <ContainerVideoBlockEmpty />
+          )}
         </PlayListContainerItens>
       </PlayListContainer>
     </Container>

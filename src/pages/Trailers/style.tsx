@@ -62,6 +62,14 @@ const ContainerErrorMessage = styled.div`
     color: ${(props) => props.theme.primary};
   }
 `;
+const ContainerLoadMore = styled.div`
+  display: flex;
+  flex: 1 0 40%;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 160px;
+`;
 
 export {
   Container,
@@ -70,4 +78,5 @@ export {
   PlayListContainerItens,
   ContainerButtonMobile,
   ContainerErrorMessage,
+  ContainerLoadMore,
 };
