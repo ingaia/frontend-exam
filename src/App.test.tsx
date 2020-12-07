@@ -43,7 +43,9 @@ describe("Login", () => {
     await page.$$eval(".video", (videos) =>
       videos.forEach(async (element) => {
         await page.click(element);
-        await page.click("button");
+        await page.$$eval("* > div", (elements) =>
+          elements.some((el) => el.textContent.includes("CLOSE"))
+        );
       })
     );
 
