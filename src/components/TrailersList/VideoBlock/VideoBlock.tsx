@@ -25,7 +25,7 @@ function VideoBlock({
     }
   };
   return (
-    <ContainerVideoBlock onClick={tooglePopupRequest}>
+    <ContainerVideoBlock className="video" onClick={tooglePopupRequest}>
       <ContainerVideoBlockImage background={thumbnail}>
         <VideoLabel>{title}</VideoLabel>
       </ContainerVideoBlockImage>
