@@ -21,9 +21,16 @@ function Home() {
   return (
     <Container>
       <Logo />
-      <Input type="email" value={email} onChange={changeEmail} label="Email" />
+      <Input
+        name="email"
+        type="email"
+        value={email}
+        onChange={changeEmail}
+        label="Email"
+      />
       <Input
         type="password"
+        name="password"
         onChange={changePassword}
         value={password}
         label="Password"

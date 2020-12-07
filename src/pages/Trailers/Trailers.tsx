@@ -20,10 +20,9 @@ import { Loader } from "../../components/Common/Loader";
 import useWindowDimensions from "../../hooks/windowHook";
 function Trailers() {
   useEffect(() => {
-    getTrailers();
+    getTrailers("", false);
   }, []);
   const { width } = useWindowDimensions();
-
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -39,8 +38,8 @@ function Trailers() {
   const toogleSideBar = () => {
     setSidebar(!sidebar);
   };
-  const getTrailers = async (pageToken = "") => {
-    setLoading(true);
+  const getTrailers = async (pageToken = "", loading = true) => {
+    setLoading(loading);
     const trailers = await VideoApi(pageToken);
     if (trailers.error) {
       setErrorMessage(trailers.error.message);
@@ -64,7 +63,6 @@ function Trailers() {
     setPassword("");
     setLogin(false);
   };
-  console.log(trailersState);
   return (
     <Container>
       <VideoPopup tooglePopup={tooglePopup} popup={popup} idVideo={idVideo} />

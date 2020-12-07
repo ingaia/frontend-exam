@@ -5,6 +5,7 @@ const Container = styled.div`
   flex-direction: row;
   align-items: flex-start;
   height: 100vh;
+  overflow-y: none;
 `;
 const Sidebar = styled.div`
   align-items: center;
@@ -16,6 +17,7 @@ const Sidebar = styled.div`
   @media ${devicesMax.mobileL} {
     display: ${(props) => (props.sidebarStatus ? "flex" : "none")};
   }
+  overflow-y: none;
 `;
 const PlayListContainer = styled.div`
   display: flex;
@@ -31,7 +33,7 @@ const PlayListContainer = styled.div`
   height: 100%;
   width: 100%;
   flex-direction: column;
-
+  overflow-y: none;
   @media ${devicesMax.mobileL} {
     display: ${(props) => (props.sidebarStatus ? "none" : "flex")};
     flex: 100%;

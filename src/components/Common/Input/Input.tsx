@@ -5,7 +5,12 @@ function InputComp(props: InputInterface) {
   return (
     <Container>
       <Label>{props.label}</Label>
-      <Input onChange={props.onChange} type={props.type} value={props.value} />
+      <Input
+        name={props.name}
+        onChange={props.onChange}
+        type={props.type}
+        value={props.value}
+      />
     </Container>
   );
 }

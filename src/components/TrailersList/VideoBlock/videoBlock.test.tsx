@@ -17,6 +17,7 @@ describe("VideoBlock", () => {
     const wrapper = mount(
       <VideoBlock
         key={infoVideo.key}
+        isMobile={false}
         idVideo={infoVideo.idVideo}
         tooglePopup={infoVideo.tooglePopup}
         thumbnail={infoVideo.thumbnail}
